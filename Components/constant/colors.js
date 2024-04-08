@@ -1,5 +1,5 @@
 export const colors = {
-    /* colorAzulFuerte: #000635, */
-    /* colorNaranja: #FF9800, */
+    azulBackground: '#000635',
+    naranjaTitle: '#FF9800',
 }
 
