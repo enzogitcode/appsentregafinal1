@@ -1,11 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-import { useCallback } from 'react';
-import { colors } from './Components/constant/colors';
-
-
+import { colors } from './src/constant/colors';
+import Home from './src/screens/Home';
 export default function App() {
 
   const [fontsLoaded, fontError] = useFonts({
@@ -17,7 +14,8 @@ export default function App() {
   if (fontsLoaded && !fontError) {
     return (
       <View style={styles.container}>
-        <Text style={styles.mainTitle}>Changas App</Text>
+        <Header style={styles.mainTitle}>Changas App</Header>
+        <Home/>
         <StatusBar style="auto" />
       </View>
     );
