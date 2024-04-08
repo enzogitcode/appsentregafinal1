@@ -1,0 +1,7 @@
+Apuntes
+
+crear pantalla inicial
+
+-ver si se hace una para empleador y otra para empleados
+-ver si se puede hacer un registro
+
