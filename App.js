@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
-import { colors } from './src/constant/colors';
+import { colors } from './src/constant/colors.js';
 import Home from './src/screens/Home';
+import Header from './src/component/Header';
 export default function App() {
 
   const [fontsLoaded, fontError] = useFonts({
     'retosta': require('./assets/fonts/retosta.otf'),
+    'kathen': require('./assets/fonts/kathen.otf')
   });
   if (!fontsLoaded || fontError) {
     return null
@@ -14,9 +16,8 @@ export default function App() {
   if (fontsLoaded && !fontError) {
     return (
       <View style={styles.container}>
-        <Header style={styles.mainTitle}>Changas App</Header>
+        <Header title={"ChangasApp"} />
         <Home/>
-        <StatusBar style="auto" />
       </View>
     );
   }
@@ -25,15 +26,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.azulBackground,
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    marginTop: 30,
-
-  },
-  mainTitle: {
-    fontFamily: 'retosta',
-    fontSize: 40,
-    color: colors.naranjaTitle,
+    justifyContent: "center",
   }
 });
