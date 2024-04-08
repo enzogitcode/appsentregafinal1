@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import {useFonts} from 'expo-font';
+import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import { colors } from './Components/constant/colors';
@@ -11,20 +11,17 @@ export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     'retosta': require('./assets/fonts/retosta.otf'),
   });
-
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded || fontError) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  
-  return (
-    <View style={styles.container}>
-      <Text style= {styles.title}>Changas App</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  if (!fontsLoaded || fontError) {
+    return null
+  }
+  if (fontsLoaded && !fontError) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.mainTitle}>Changas App</Text>
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -36,9 +33,9 @@ const styles = StyleSheet.create({
     marginTop: 30,
 
   },
-  title: {
-  fontFamily: 'retosta',
-  fontSize: 40,
-  color: colors.naranjaTitle,
+  mainTitle: {
+    fontFamily: 'retosta',
+    fontSize: 40,
+    color: colors.naranjaTitle,
   }
 });
