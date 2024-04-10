@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 import { colors } from './src/constant/colors.js';
-import Home from './src/screens/Home';
+import Home from './src/component/Home.jsx';
 import Header from './src/component/Header';
+import { useEffect, useState} from 'react';
+
 export default function App() {
+  const [orientation, setOrientation] = useState("portrait")
+  const { width, height } = useWindowDimensions()
+  useEffect(() => {
+    if (width > height) setOrientation("landscape")
+    else setOrientation("portrait")
+  }, [width, height])
 
   const [fontsLoaded, fontError] = useFonts({
     'retosta': require('./assets/fonts/retosta.otf'),
@@ -26,7 +34,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: "center",
+    marginTop: 30,
   }
 });
