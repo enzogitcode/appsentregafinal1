@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useFonts } from 'expo-font';
-import { colors } from './src/constant/colors.js';
-import Home from './src/component/Home.jsx';
+//import { colors } from './src/constant/colors.js';
+import {Header, Home} from './src/component'
 import Header from './src/component/Header';
 import { useEffect, useState} from 'react';
 
@@ -33,6 +33,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#fff',
     flex: 1,
     marginTop: 30,
   }

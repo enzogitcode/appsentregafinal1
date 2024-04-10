@@ -15,6 +15,11 @@ const Home = () => {
 export default Home;
 
 const styles = StyleSheet.create({
+    homeContainer: {
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     textBtn: {
         fontFamily: 'kathen',
         color: colors.naranjaTitle,
@@ -29,12 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.azulBackground,
         borderRadius: 10,
         padding: '2%'
-    },
-    homeContainer: {
-        marginTop: 20,
-        alignItems: 'center',
-        justifyContent: 'center'
     }
-        
-    }
+
+}
 )
