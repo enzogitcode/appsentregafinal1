@@ -1,8 +1,7 @@
 import Header from "./Header";
-import Home from "./Home";
+import Home from "../screens/Home";
 
 export {
     Header,
     Home
-
 }
