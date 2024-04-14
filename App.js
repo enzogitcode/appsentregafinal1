@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useFonts } from 'expo-font';
-//import { colors } from './src/constant/colors.js';
-import {Header} from './src/component'
-import { Home } from './src/screens';
+import { colors } from './src/constant/colors.js';
+import { Header } from './src/component/indexComponent.js';
+import {Home} from './src/component/indexComponent.js'
 import { useEffect, useState} from 'react';
 
 export default function App() {
