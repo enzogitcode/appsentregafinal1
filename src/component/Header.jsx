@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         height: 70,
         backgroundColor: colors.azulBackground,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'black'
     },
     mainTitle: {
         fontFamily: 'retosta',

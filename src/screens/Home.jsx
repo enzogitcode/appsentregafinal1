@@ -1,14 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, Touchable, View, Pressable } from 'react-native'
 import { colors } from '../constant/colors'
 import React from 'react'
 
 
 const Home = () => {
+
+
+    /* return (
+    VER SI SE PUEDE RENDERIZAR UN LOGIN
     
+    //ENTRAR COMO INVITADO
+    //LOGUEARSE
+    ) */
+
+
+
     return (
         <View homeContainer>
-            <View style={styles.viewHomeContainer}><Text style={styles.textBtn}>Soy Empleador</Text></View>
-            <View style={styles.viewHomeContainer}><Text style={styles.textBtn}>Busco Empleo</Text></View>
+            <Pressable style= {styles.viewHomeContainer}>
+                    <Text style={styles.textBtn}>Soy Empleador</Text>
+            </Pressable>
+            <Pressable style= {styles.viewHomeContainer}>
+                    <Text style={styles.textBtn}>Busco empleo</Text>
+            </Pressable>
         </View>
     )
 }
@@ -33,10 +47,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 30,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 10,
+        borderRadius: 18,
         padding: '2%',
-        backgroundColor: colors.azulBackground
-        
+        borderWidth: 5,
+        borderColor: '#fff',
+        backgroundColor: '#000'
+
     }
 
 }

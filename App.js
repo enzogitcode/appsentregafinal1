@@ -1,10 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, useWindowDimensions, SafeAreaView, Platform, StatusBar } from 'react-native';
 import { useFonts } from 'expo-font';
 import { colors } from './src/constant/colors.js';
 import { Header } from './src/component/indexComponent.js';
-import {Home} from './src/component/indexComponent.js'
-import { useEffect, useState} from 'react';
+import { Home } from './src/screens/indexScreens.js'
+import { useEffect, useState } from 'react';
+
 
 export default function App() {
   const [orientation, setOrientation] = useState("portrait")
@@ -23,18 +23,18 @@ export default function App() {
   }
   if (fontsLoaded && !fontError) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Header title={"ChangasApp"} />
-        <Home/>
-      </View>
+        <Home />
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
-    flex: 1,
-    marginTop: 30,
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight:0 ,
+    backgroundColor: colors.azulBackground,
+    flex: 1
   }
 });
