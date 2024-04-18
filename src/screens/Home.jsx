@@ -1,10 +1,9 @@
 import { StyleSheet, Text, Touchable, View, Pressable } from 'react-native'
 import { colors } from '../constant/colors'
 import React from 'react'
-
+import { Employer, Employee, JobsCategories } from './indexScreens.js'
 
 const Home = () => {
-
 
     /* return (
     VER SI SE PUEDE RENDERIZAR UN LOGIN
@@ -17,11 +16,11 @@ const Home = () => {
 
     return (
         <View homeContainer>
-            <Pressable style= {styles.viewHomeContainer}>
-                    <Text style={styles.textBtn}>Soy Empleador</Text>
+            <Pressable onPress={Employer} style={styles.viewHomeContainer}>
+                <Text style={styles.textBtn}>Soy Empleador</Text>
             </Pressable>
-            <Pressable style= {styles.viewHomeContainer}>
-                    <Text style={styles.textBtn}>Busco empleo</Text>
+            <Pressable style={styles.viewHomeContainer}>
+                <Text style={styles.textBtn}>Busco empleo</Text>
             </Pressable>
         </View>
     )

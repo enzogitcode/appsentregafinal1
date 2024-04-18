@@ -1,6 +1,6 @@
 import Header from './Header'
-import Container from './Container'
+import JobsList from './JobsList'
 export {
     Header,
-    Container
+    JobsList
 }
