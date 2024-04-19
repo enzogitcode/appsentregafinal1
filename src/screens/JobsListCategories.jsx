@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Employer = () => {
+const JobslistCategories = () => {
   return (
     <View>
-      <Text>Employer</Text>
+      <Text>JobslistCategories</Text>
     </View>
   )
 }
 
-export default Employer
+export default JobslistCategories
 
 const styles = StyleSheet.create({})

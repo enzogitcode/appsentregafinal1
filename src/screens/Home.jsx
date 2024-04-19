@@ -5,18 +5,10 @@ import { Employer, Employee, JobsCategories } from './indexScreens.js'
 
 const Home = () => {
 
-    /* return (
-    VER SI SE PUEDE RENDERIZAR UN LOGIN
-    
-    //ENTRAR COMO INVITADO
-    //LOGUEARSE
-    ) */
-
-
 
     return (
         <View homeContainer>
-            <Pressable onPress={Employer} style={styles.viewHomeContainer}>
+            <Pressable style={styles.viewHomeContainer}>
                 <Text style={styles.textBtn}>Soy Empleador</Text>
             </Pressable>
             <Pressable style={styles.viewHomeContainer}>

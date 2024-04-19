@@ -4,12 +4,10 @@ import React from 'react'
 const JobsList = () => {
 
 
-
   return (
     <View>
       <Text>JobsList</Text>
       <FlatList>
-
       </FlatList>
     </View>
   )

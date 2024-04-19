@@ -4,6 +4,7 @@ import { colors } from './src/constant/colors.js';
 import { Header } from './src/component/indexComponent.js';
 import { Home } from './src/screens/indexScreens.js'
 import { useEffect, useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 export default function App() {
