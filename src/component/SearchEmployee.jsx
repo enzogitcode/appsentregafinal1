@@ -1,13 +1,14 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { colors } from '../constant/colors'
 import React from 'react'
 
 const SearchEmployee = () => {
 
 
   return (
-    <View>
-      <Text>SearchEmployee</Text>
-      <TextInput style={styles.inputEmployer} placeholder='Empleados'></TextInput>
+    <View style={styles.searchEmployeeContainer} >
+      <TextInput placeholder='Escriba un nombre o una categoría' style={styles.inputSearchEmployee} />
+      <Pressable style={styles.pressableBuscar}><Text style={styles.textBuscar}>Buscar</Text></Pressable>
     </View>
   )
 }
@@ -17,17 +18,18 @@ export default SearchEmployee
 const styles = StyleSheet.create({
   searchEmployeeContainer: {
     alignItems: 'center',
-    justifyContent: 'center'
+    gap: 10
   },
-  inputEmployer: {
-    margin: 10,
-    width: 50,
-    height: 20,
-    borderWidth: 2,
-    borderColor: 'black'
+  inputSearchEmployee: {
+    textAlign:'center',
+    borderRadius: 5,
+    minHeight: 15,
+    minWidth: 15
   },
-  employeeList: {
-
-  }
-
+  pressableBuscar: {
+    backgroundColor: colors.azulBackground,
+    padding: 10,
+    borderRadius: 15
+  },
+  textBuscar: { fontSize: 25, fontFamily: 'retosta', color: colors.naranjaTitle }
 })
