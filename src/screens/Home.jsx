@@ -1,17 +1,20 @@
+import React from 'react'
 import { StyleSheet, Text, Touchable, View, Pressable } from 'react-native'
 import { colors } from '../constant/colors'
-import React from 'react'
-import { Employer, Employee, JobsCategories } from './indexScreens.js'
 
-const Home = () => {
 
+const Home = ({navigation}) => {
 
     return (
-        <View homeContainer>
-            <Pressable style={styles.viewHomeContainer}>
+        <View style= {styles.homeContainer}>
+            <Pressable onPress={()=> {
+                navigation.navigate('Employer')
+            }} style={styles.viewHomeContainer}>
                 <Text style={styles.textBtn}>Soy Empleador</Text>
             </Pressable>
-            <Pressable style={styles.viewHomeContainer}>
+            <Pressable onPress={()=> {
+                navigation.navigate('Employee')
+            }} style={styles.viewHomeContainer}>
                 <Text style={styles.textBtn}>Busco empleo</Text>
             </Pressable>
         </View>

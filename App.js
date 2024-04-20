@@ -2,10 +2,9 @@ import { StyleSheet, useWindowDimensions, SafeAreaView, Platform, StatusBar } fr
 import { useFonts } from 'expo-font';
 import { colors } from './src/constant/colors.js';
 import { Header } from './src/component/indexComponent.js';
-import { Home } from './src/screens/indexScreens.js'
 import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import Navigator from './src/navigation/navigator.js';
+import Navigator from './src/navigation/Navigator.js';
 
 
 export default function App() {
