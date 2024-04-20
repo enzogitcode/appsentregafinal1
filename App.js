@@ -5,6 +5,7 @@ import { Header } from './src/component/indexComponent.js';
 import { Home } from './src/screens/indexScreens.js'
 import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import Navigator from './src/navigation/navigator.js';
 
 
 export default function App() {
@@ -26,7 +27,7 @@ export default function App() {
     return (
       <SafeAreaView style={styles.container}>
         <Header title={"ChangasApp"} />
-        <Home />
+        <Navigator />
       </SafeAreaView>
     );
   }

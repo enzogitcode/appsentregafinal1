@@ -1,11 +1,27 @@
 import { StyleSheet } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import Home from '../screens/Home'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import {Home, Employee, Employer} from '../screens/indexScreens.js'
 
+const Stack= createNativeStackNavigator()
 const Navigator = () => {
   return (
     <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen
+            name='Home'
+            component= {Home}
+            />
+            <Stack.Screen
+            name='Employer'
+            component= {Employer}
+            />
+            <Stack.Screen
+            name='Employee'
+            component= {Employee}
+            />
+        </Stack.Navigator>
     </NavigationContainer>
   )
 }
