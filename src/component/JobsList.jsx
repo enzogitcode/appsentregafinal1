@@ -7,8 +7,7 @@ const JobsList = () => {
   return (
     <View>
       <Text>JobsList</Text>
-      <FlatList>
-      </FlatList>
+      <FlatList/>
     </View>
   )
 }

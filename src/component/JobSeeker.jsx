@@ -3,13 +3,10 @@ import React from 'react'
 
 const JobSeeker = () => {
 
-  
-  
-
   return (
     <View>
-      <Text>JobSeeker</Text>
-      <TextInput placeholder='Escriba el nombre del empleo que esta buscando'></TextInput>
+      <Text>Buscador de empleos</Text>
+      <TextInput placeholder='Escriba el nombre de un empleo o una Categoría'></TextInput>
     </View>
   )
 }
