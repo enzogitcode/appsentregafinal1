@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { JobSeeker } from '../component/indexComponent.js'
+import {JobsList} from './indexScreens.js'
 const Employee = () => {
 
   return (
@@ -11,6 +12,7 @@ const Employee = () => {
       <View styles={styles.containerJobSeeker}>
         <Text style={styles.textJobSeeker}>Buscador de empleos</Text>
         <JobSeeker />
+        <JobsList />
       </View>
     </View>
   )

@@ -1,16 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { FlatList } from 'react-native-web'
 
-const EmployeeList = () => {
-
+const JobItem = () => {
   return (
-      <FlatList 
-      
-      />
+    <JobItem>
+        <View>
+        </View>
+    </JobItem>
   )
 }
 
-export default EmployeeList
+export default JobItem
 
 const styles = StyleSheet.create({})
