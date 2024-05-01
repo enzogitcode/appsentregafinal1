@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, Touchable, View, Pressable } from 'react-native'
-import { colors } from '../constant/colors'
+import { colors } from '../constants/colors'
 
 
 const Home = ({navigation}) => {

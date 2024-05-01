@@ -6,9 +6,10 @@ import { Home, Employee, Employer } from '../screens/indexScreens.js'
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
+
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator >
         <Stack.Screen
           name='Home'
           component={Home}
