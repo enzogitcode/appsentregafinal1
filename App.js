@@ -1,6 +1,6 @@
 import { StyleSheet, useWindowDimensions, SafeAreaView, Platform, StatusBar } from 'react-native';
 import { useFonts } from 'expo-font';
-import { colors } from './src/constant/colors.js';
+import { colors } from './src/constants/colors.js';
 import { Header } from './src/component/indexComponent.js';
 import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';

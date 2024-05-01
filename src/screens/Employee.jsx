@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { JobSeeker } from '../component/indexComponent.js'
-import {JobsList} from './indexScreens.js'
+import JobsList from './JobsList.jsx'
 const Employee = () => {
 
   return (

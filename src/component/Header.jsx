@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { colors } from '../constant/colors'
+import { colors } from '../constants/colors'
 import React from 'react'
 
 const Header = ({ title }) => {
