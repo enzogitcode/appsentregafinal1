@@ -24,8 +24,6 @@ const Navigator = () => {
         <Stack.Screen
           name='Employee'
           component={Employee}
-          options={{
-          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

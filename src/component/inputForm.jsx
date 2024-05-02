@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+/* import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../constants/colors.js';
 const InputForm = ({
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
         fontFamily: 'retosta',
         fontSize: 14,
     }
-})
+}) */

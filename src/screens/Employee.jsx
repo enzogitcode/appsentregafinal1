@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { JobSeeker } from '../component/indexComponent.js'
-import JobsList from './JobsList.jsx'
+import { JobSeeker, JobsList } from '../component/indexComponent'
+
 const Employee = () => {
 
   return (
@@ -9,11 +9,8 @@ const Employee = () => {
       <View>
         <Text style={styles.titleSearchEmployee}>Busca un Empleador o Postulate para un trabajo</Text>
       </View>
-      <View styles={styles.containerJobSeeker}>
-        <Text style={styles.textJobSeeker}>Buscador de empleos</Text>
-        <JobSeeker />
-        <JobsList />
-      </View>
+      <JobSeeker title={"Buscador de Empleos"} />
+      <JobsList title={"Lista de Empleos"} />
     </View>
   )
 }
@@ -26,8 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 10
   },
-  containerJobSeeker: {},
-  textJobSeeker: {
-    fontSize: 20
+  titleSearchEmployee: {
+    fontSize: 28
   }
 })

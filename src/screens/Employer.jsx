@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import { SearchEmployee } from '../component/indexComponent'
+import { SearchEmployee, EmployeeList } from '../component/indexComponent'
 const Employer = () => {
 
 
@@ -13,7 +13,7 @@ const Employer = () => {
         <Text style={styles.textSearchEmployee}>Buscador de trabajadores</Text>
         <SearchEmployee />
       </View>
-      {/* <EmployeeList/> */}
+      <EmployeeList/>
       <View>
         {/* <PostAJob /> */}
       </View>
