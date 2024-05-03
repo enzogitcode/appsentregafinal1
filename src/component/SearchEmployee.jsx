@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { colors } from '../constants/colors'
 import React from 'react'
+import SearchButton from './SearchButton'
 
 const SearchEmployee = () => {
 
@@ -9,6 +10,7 @@ const SearchEmployee = () => {
     <View style={styles.searchEmployeeContainer} >
       <TextInput placeholder='Escriba un nombre o una categoría' style={styles.inputSearchEmployee} />
       <Pressable style={styles.pressableBuscar}><Text style={styles.textBuscar}>Buscar</Text></Pressable>
+      <SearchButton/>
     </View>
   )
 }
@@ -25,11 +27,5 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     minHeight: 15,
     minWidth: 15
-  },
-  pressableBuscar: {
-    backgroundColor: colors.azulBackground,
-    padding: 10,
-    borderRadius: 15
-  },
-  textBuscar: { fontSize: 25, fontFamily: 'retosta', color: colors.naranjaTitle }
+  }
 })

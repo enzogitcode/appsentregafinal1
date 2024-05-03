@@ -1,23 +1,17 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import { SearchEmployee, EmployeeList } from '../component/indexComponent'
+import { JobSeeker, EmployeeList } from '../component/indexComponent'
 const Employer = () => {
 
 
   return (
-    <View style={styles.containerEmployerScreens}>
+    <SafeAreaView style={styles.containerEmployerScreens}>
       <View>
-        <Text style={styles.titleSearchEmployee}>Busca un trabajador o Postea un empleo</Text>
+        <Text style={styles.titleEmployer}>Busca un Empleador o Postulate para un trabajo</Text>
       </View>
-      <View styles={styles.containerSearchEmployee}>
-        <Text style={styles.textSearchEmployee}>Buscador de trabajadores</Text>
-        <SearchEmployee />
-      </View>
-      <EmployeeList/>
-      <View>
-        {/* <PostAJob /> */}
-      </View>
-    </View>
+      <JobSeeker title={"Buscador de Empleados"} placeholder={"Escriba el nombre de un Empleado o busque por categoría"} />
+      <EmployeeList style={styles.employeeListTitle} title={"Lista de Empleados"} />
+    </SafeAreaView>
   )
 }
 
@@ -27,15 +21,10 @@ const styles = StyleSheet.create({
   containerEmployerScreens: {
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 10
+    gap: 25
   },
-  titleSearchEmployee: {
-
-  },
-  containerSearchEmployee: {
-
-  },
-  textSearchEmployee: {
-    fontSize: 20
+  titleEmployer: {
+    fontSize: 28
   }
+
 })

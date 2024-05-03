@@ -1,13 +1,15 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
+import SearchButton from './SearchButton'
 
-const JobSeeker = ({ title }) => {
+const JobSeeker = ({ title, placeholder }) => {
 
   return (
     <View style={styles.JobSeekerContainer}>
       <Text style={styles.JobSeekerTextTitle}>{title}</Text>
-      <TextInput style={styles.JobSeekerTextInput} placeholder='Escriba el nombre de un empleo o una Categoría'></TextInput>
+      <TextInput style={styles.JobSeekerTextInput} placeholder={placeholder}></TextInput>
+    <SearchButton/>
     </View>
   )
 }
@@ -38,4 +40,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#fff'
   }
+  ,
+  pressableBuscar: {
+    backgroundColor: colors.azulBackground,
+    padding: 10,
+    borderRadius: 15
+  },
+  textBuscar: { fontSize: 25, fontFamily: 'retosta', color: colors.naranjaTitle }
 })

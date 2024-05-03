@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const JobItem = ({jobTitle}) => {
+const JobItem = ({jobTitle }) => {
   return (
-    <JobItem>
+    <View>
         <View>
+          <Text>{jobTitle}</Text>
         </View>
-    </JobItem>
+    </View>
   )
 }
 
