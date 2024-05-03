@@ -4,7 +4,7 @@ import React from 'react'
 const JobItem = ({ jobTitle, jobAge, category, firm, location, otherdata, experience }) => {
   return (
     <View>
-      <View><Text style={styles.jobTitle}>{jobTitle}</Text></View>
+      <View style={styles.jobTitleContainer}><Text style={styles.jobTitleText}>{jobTitle}</Text></View>
       <Text style={styles.textSyle}>{jobAge}</Text>
       <Text style={styles.textSyle}>{category}</Text>
       <Text style={styles.textSyle}>{firm}</Text>
@@ -18,8 +18,15 @@ const JobItem = ({ jobTitle, jobAge, category, firm, location, otherdata, experi
 export default JobItem
 
 const styles = StyleSheet.create({
-  jobTitle: {
-    fontSize: 25,
-    fontFamily: 'retosta'
+  jobTitleContainer: {
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: 'lightblue',
+    borderTopStartRadius: 10,
+    borderTopEndRadius: 10
+  },
+  jobTitleText: {
+    fontFamily: 'retosta',
+    fontSize: 25
   }
 })
