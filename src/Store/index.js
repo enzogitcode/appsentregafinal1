@@ -1,7 +1,7 @@
 import { configureStore } from "@import { connect } from 'reduxjs/toolkit"
 
-export default configureStore {
+export default configureStore = {
     reducer: {
-        
+//buscar los reducers
     }
 }
