@@ -5,11 +5,6 @@ import JobItem from './JobItem'
 
 const JobsList = ({ title }) => {
 
-  const arrayJobs = [
-    { id: "1", titulo: "plomero" },
-    { id: "2", titulo: "gasista" },
-    { id: "3", titulo: "electricista" }
-  ]
 
   return (
     <View>
