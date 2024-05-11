@@ -8,5 +8,15 @@
         "otherdata": "Idioma inglés excluyente",
         "jobAge": "18-25",
         "experience": "10"
+    },
+    {
+        "id": 2,
+        "category": "Contrucción",
+        "jobtitle": "Albañil",
+        "firm": "Constructora",
+        "location": "Location",
+        "otherdata": "Saber pegar ladrillos",
+        "jobAge": "18-25",
+        "experience": "10"
     }
 ]

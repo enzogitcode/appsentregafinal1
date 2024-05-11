@@ -1,16 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
-import JobsList from './JobsList'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
+import JobsListData from '../data/jobsListData.json'
+import JobItem from './JobItem'
 import React from 'react'
+import JobCategory from './JobCategory'
 
-const JobsListCategories = ({jobCategory}) => {
+const JobsListCategories = () => {
   return (
-    <View>
+    <View style={styles.JobsListCategoriesContainer}>
       <Text>JobsListCategories</Text>
-      <Text>{jobCategory}</Text>
+      <FlatList
+      data={JobsListData}
+      renderItem={({item})=> {<JobCategory category={item.category}
+      />}}
+      keyExtractor={job => job.id}
+      />
     </View>
   )
 }
 
 export default JobsListCategories
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  JobsListCategoriesContainer: {
+    backgroundColor: 'white'
+  }
+})

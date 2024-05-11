@@ -7,10 +7,10 @@ const EmployeeList = ({ title }) => {
   return (
     <View>
       <Text style={styles.employeeListTitle}>{title}</Text>
-      {/* <FlatList
+       <FlatList
      data={jobListData}
      renderItem={({JobItem}) => <JobItem JobItem={item} />}
-   /> */}
+   />
     </View>
   )
 }

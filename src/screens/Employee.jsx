@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { JobSeeker, JobsList } from '../component/indexComponent'
+import { JobSeeker, JobsList, JobsListCategories } from '../component/indexComponent'
 
 const Employee = () => {
 
@@ -10,6 +10,7 @@ const Employee = () => {
         <Text style={styles.titleSearchEmployee}>Busca un Empleador o Postulate para un trabajo</Text>
       </View>
       <JobSeeker title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
+      <JobsListCategories/>
       <JobsList title={"Lista de Empleos"} />
     </SafeAreaView>
   )

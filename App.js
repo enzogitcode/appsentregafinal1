@@ -1,10 +1,11 @@
 import { StyleSheet, useWindowDimensions, SafeAreaView, Platform, StatusBar } from 'react-native';
 import { useFonts } from 'expo-font';
 import { colors } from './src/constants/colors.js';
-import { Header } from './src/component/indexComponent.js';
+import { Header, JobItem, JobSeeker, JobsList, JobsListCategories } from './src/component/indexComponent.js';
 import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigator from './src/navigation/Navigator.js';
+import JobCategory from './src/component/JobCategory.jsx';
 
 
 export default function App() {
@@ -26,7 +27,8 @@ export default function App() {
     return (
       <SafeAreaView style={styles.container}>
         <Header title={"ChangasApp"} />
-        <Navigator />
+        {/* <Navigator /> */}
+        <JobsListCategories />
       </SafeAreaView>
     );
   }
@@ -35,7 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight:0 ,
-    backgroundColor: colors.azulBackground,
+    backgroundColor: 'white',
     flex: 1
   }
 });
