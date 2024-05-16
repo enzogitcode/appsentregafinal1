@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, FlatList } from 'react-native'
+import jobListData from '../data/jobsListData.json'
+import JobItem from './JobItem'
 import React from 'react'
-/* import { FlatList } from 'react-native-web'
- */
+
 const EmployeeList = ({ title }) => {
 
   return (
@@ -9,7 +10,7 @@ const EmployeeList = ({ title }) => {
       <Text style={styles.employeeListTitle}>{title}</Text>
        <FlatList
      data={jobListData}
-     renderItem={({JobItem}) => <JobItem JobItem={item} />}
+     renderItem={({item}) => <JobItem JobItem={item} />}
    />
     </View>
   )

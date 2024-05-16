@@ -6,16 +6,16 @@ import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigator from './src/navigation/Navigator.js';
 import JobCategory from './src/component/JobCategory.jsx';
+import { View } from 'react-native';
 
 
-export default function App() {
+export default function App({nro=9}) {
   const [orientation, setOrientation] = useState("portrait")
   const { width, height } = useWindowDimensions()
   useEffect(() => {
     if (width > height) setOrientation("landscape")
     else setOrientation("portrait")
   }, [width, height])
-
   const [fontsLoaded, fontError] = useFonts({
     'retosta': require('./assets/fonts/retosta.otf'),
     'kathen': require('./assets/fonts/kathen.otf')
@@ -27,8 +27,7 @@ export default function App() {
     return (
       <SafeAreaView style={styles.container}>
         <Header title={"ChangasApp"} />
-        {/* <Navigator /> */}
-        <JobsListCategories />
+        <Navigator />
       </SafeAreaView>
     );
   }

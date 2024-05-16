@@ -5,3 +5,8 @@ crear pantalla inicial
 -ver si se hace una para empleador y otra para empleados
 -ver si se puede hacer un registro
 
+-Crear un solo searcher
+-crear un "card" tanto para empleados como para empleadores
+-crear las listas de trabajos
+-Hacer la página de contratación
+
