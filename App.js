@@ -5,11 +5,7 @@ import { Header, JobItem, JobSeeker, JobsList, JobsListCategories } from './src/
 import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigator from './src/navigation/Navigator.js';
-import JobCategory from './src/component/JobCategory.jsx';
-import { View } from 'react-native';
-import JobsCategories from './src/screens/JobsCategories.jsx';
 import { Provider } from 'react-redux';
-import store from './src/store'
 
 export default function App() {
   const [orientation, setOrientation] = useState("portrait")
@@ -28,9 +24,7 @@ export default function App() {
   if (fontsLoaded && !fontError) {
     return (
       <SafeAreaView style={styles.container}>
-        <Provider store={store}>
           <Navigator />
-        </Provider>
       </SafeAreaView>
     );
   }

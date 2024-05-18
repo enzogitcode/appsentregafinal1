@@ -1,12 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native'
 import { colors } from '../constants/colors'
 import React from 'react'
+import SwitchCustom from './SwitchCustom'
+import { useState } from 'react'
+import { isEnabled } from 'react-native/Libraries/Performance/Systrace'
 
 const Header = ({ title }) => {
 
+    const [isEnabled, setIsEnabled] = useState(false)
+
     return (
         <View style={styles.container}>
-            <Text style={styles.mainTitle}>{title}</Text>
+            <View><Text style={styles.mainTitle}>{title}</Text></View>
+            <SwitchCustom
+                isEnabled={isEnabled}
+                setIsEnabled={setIsEnabled}
+            />
         </View>
     )
 }
