@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, Touchable, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
-import {Header} from '../component/indexComponent'
+import {Header, changasLayout} from '../component/indexComponent'
 
 const Home = ({ navigation }) => {
 
     return (
-        <View style={styles.homeContainer}>
+        <changasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />
 
             <Pressable onPress={() => {
@@ -19,7 +19,7 @@ const Home = ({ navigation }) => {
             }} style={styles.viewHomeContainer}>
                 <Text style={styles.textBtn}>Busco empleo</Text>
             </Pressable>
-        </View>
+        </changasLayout>
     )
 }
 
