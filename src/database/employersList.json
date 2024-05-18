@@ -1,0 +1,13 @@
+[
+    {
+        "category": "Informática",
+        "firm_name": "Coderhouse",
+        "location": "Home Office",
+        "points": 10
+    },
+    {
+        "category": "Construcción",
+        "firm_name": "Constructora SRL",
+        "points": 5
+    }
+]

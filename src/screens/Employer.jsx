@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 10,
-    flex: 1
+    flex: 2
   },
   titleEmployer: {
     fontSize: 28

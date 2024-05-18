@@ -1,0 +1,9 @@
+[
+    {
+        "first_name":"Juan",
+        "last_name": "Gómez",
+        "email": "e@e.com",
+        "categories":["Informática", "Comercio"],
+        "points":10
+    }
+]

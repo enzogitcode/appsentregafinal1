@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 10,
+    flex: 2
   },
   titleSearchEmployee: {
     fontSize: 28

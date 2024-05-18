@@ -24,10 +24,7 @@ const Navigator = () => {
         <Stack.Screen
           name='Employee'
           component={Employee}
-          options={{
-            headerShown: false
-          }
-        }
+        
         />
       </Stack.Navigator>
     </NavigationContainer>
