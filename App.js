@@ -7,9 +7,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import Navigator from './src/navigation/Navigator.js';
 import JobCategory from './src/component/JobCategory.jsx';
 import { View } from 'react-native';
+import JobsCategories from './src/screens/JobsCategories.jsx';
+import { Provider } from 'react-redux';
+import store from './src/store'
 
-
-export default function App({nro=9}) {
+export default function App() {
   const [orientation, setOrientation] = useState("portrait")
   const { width, height } = useWindowDimensions()
   useEffect(() => {
@@ -26,8 +28,9 @@ export default function App({nro=9}) {
   if (fontsLoaded && !fontError) {
     return (
       <SafeAreaView style={styles.container}>
-        <Header title={"ChangasApp"} />
-        <Navigator />
+        <Provider store={store}>
+          <Navigator />
+        </Provider>
       </SafeAreaView>
     );
   }
@@ -35,7 +38,7 @@ export default function App({nro=9}) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS === "android" ? StatusBar.currentHeight:0 ,
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     backgroundColor: 'white',
     flex: 1
   }
