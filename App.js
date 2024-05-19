@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigator from './src/navigation/Navigator.js';
 import { Provider } from 'react-redux';
-
+import store from './src/store';
 export default function App() {
   const [orientation, setOrientation] = useState("portrait")
   const { width, height } = useWindowDimensions()
@@ -24,7 +24,9 @@ export default function App() {
   if (fontsLoaded && !fontError) {
     return (
       <SafeAreaView style={styles.container}>
-          <Navigator />
+        <Provider store={store}>
+          <Navigator/>
+        </Provider>
       </SafeAreaView>
     );
   }
@@ -33,7 +35,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: 'white',
     flex: 1
   }
 });
