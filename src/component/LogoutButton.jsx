@@ -13,7 +13,11 @@ export default LogoutButton
 
 const styles = StyleSheet.create({
   logoutButton: {
+<<<<<<< HEAD
     color: '#fff',
     backgroundColor: '#c1121f'
+=======
+    color: ''
+>>>>>>> dc22512f7bb61eae923d2ef2c2fe6463a005185c
   }
 })
