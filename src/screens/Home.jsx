@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
-import { Header, ChangasLayout } from '../component/indexComponent'
+import { Header, ChangasLayout } from '../component/indexComponent.js'
 const Home = ({ navigation }) => {
 
     return (
