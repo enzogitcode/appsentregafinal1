@@ -8,8 +8,10 @@ import SearchButton from './SearchButton'
 /* import InputForm from './inputForm'
 import SubmitButton from './SubmitButton' */
 import JobsList from './JobsList'
+import ChangasLayout from './changasLayout'
 export {
     Header,
+    ChangasLayout,
     JobsListCategories,
     Searcher,
     SearchEmployee,
