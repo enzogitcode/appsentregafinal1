@@ -2,8 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
 import { Header, ChangasLayout } from '../component/indexComponent.js'
+import { useSelector } from 'react-redux'
 const Home = ({ navigation }) => {
-
     return (
         <ChangasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         padding: '2%',
         borderWidth: 5,
-        borderColor: '#fff',
+        borderColor: colors.naranjaTitle,
         textAlign: 'center',
         backgroundColor: colors.azulBackground
     }

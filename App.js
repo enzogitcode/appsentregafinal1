@@ -1,10 +1,7 @@
 import { StyleSheet, useWindowDimensions, SafeAreaView, Platform, StatusBar } from 'react-native';
 import { useFonts } from 'expo-font';
-import { colors } from './src/constants/colors.js';
-import { Header, JobItem, JobSeeker, JobsList, JobsListCategories } from './src/component/indexComponent.js';
 import { useEffect, useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import Navigator from './src/navigation/Navigator.js';
+import Navigator from './src/navigation/Navigator';
 import { Provider } from 'react-redux';
 import store from './src/store';
 export default function App() {

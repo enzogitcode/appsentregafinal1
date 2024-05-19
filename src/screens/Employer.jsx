@@ -1,11 +1,12 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import { JobSeeker, EmployeeList, Searcher } from '../component/indexComponent'
+import { JobSeeker, EmployeeList, Searcher, Header } from '../component/indexComponent'
 
 const Employer = () => {
 
   return (
     <SafeAreaView style={styles.containerEmployerScreens}>
+      <Header/>
       <View>
         <Text style={styles.titleEmployer}>Busca un Empleador o Postulate para un trabajo</Text>
       </View>

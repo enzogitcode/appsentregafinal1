@@ -2,19 +2,21 @@ import { SafeAreaView, StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import { Header, JobSeeker, JobsList, JobsListCategories, Searcher } from '../component/indexComponent'
 
-const Employee = ({goBack=()=> {}}) => {
+const Employee = ({ goBack = () => { } }) => {
 
   return (
     <SafeAreaView style={styles.containerEmployeeScreen}>
-      <View><View>
-        <Text style={styles.titleSearchEmployee}>Busca un Empleador o Postulate para un trabajo</Text>
-      </View>
-      <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
-      <View onPress={goBack}>
-        <Pressable name="back" size={24} color="white" />
-      </View>
-      <JobsListCategories/>
-      <JobsList title={"Lista de Empleos"} />
+      <View>
+        <Header/>
+        <View>
+          <Text style={styles.titleSearchEmployee}>Busca un Empleador o Postulate para un trabajo</Text>
+        </View>
+        <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
+        <View onPress={goBack}>
+          <Pressable name="back" size={24} color="white" />
+        </View>
+        <JobsListCategories />
+        <JobsList title={"Lista de Empleos"} />
       </View>
     </SafeAreaView>
   )

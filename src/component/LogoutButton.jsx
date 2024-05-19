@@ -1,11 +1,11 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const LogoutButton = () => {
   return (
-    <Pressable style={styles.logoutButton}>
-      <Text>Logout</Text>
-    </Pressable>
+    <TouchableOpacity style={styles.logoutButton}>
+      <Text style={styles.textLogout}>Logout</Text>
+    </TouchableOpacity>
   )
 }
 
@@ -13,11 +13,17 @@ export default LogoutButton
 
 const styles = StyleSheet.create({
   logoutButton: {
-<<<<<<< HEAD
+    padding: 10,
+    borderRadius: 15,
     color: '#fff',
     backgroundColor: '#c1121f'
-=======
-    color: ''
->>>>>>> dc22512f7bb61eae923d2ef2c2fe6463a005185c
+  },
+  textLogout: {
+    textAlign: 'center',
+    fontSize: 30,
+    fontFamily: 'retosta',
+    color: '#fff',
+    padding: 10,
+    fontFamily: 'retosta',
   }
 })
