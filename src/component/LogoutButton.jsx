@@ -1,14 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const LogoutButton = () => {
   return (
-    <View>
-      <Text>LogoutButton</Text>
-    </View>
+    <Pressable style={styles.logoutButton}>
+      <Text>Logout</Text>
+    </Pressable>
   )
 }
 
 export default LogoutButton
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  logoutButton: {
+    color: ''
+  }
+})
