@@ -1,24 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { colors } from '../constants/colors'
 import React from 'react'
-
-const changasLayout = ({ children }) => {
-  const isDark = true
-  const backgroundColor = isDark ? colors.azulBackground : '#fff'
-  return (
-    <View>
-      <Text st yle={{...styles.changasContainer, backgroundColor: backgroundColor}}>{children}</Text>
-    </View >
-  )
+import { useSelector } from 'react-redux'
+const ChangasLayout = ({ children }) => {
+  const isDark = useSelector(state => state.global.value.darkMode)
+  const backgroundColor = isDark ? colors.azulBackground: '#fff'
+  return <View style={{ ...styles.changasContainer, backgroundColor }}>{children}</View >
 }
 
-export default changasLayout
+export default ChangasLayout
 
 const styles = StyleSheet.create({
   changasContainer: {
-    width: '100%',
-    flex:1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex: 1,
   }
 })
