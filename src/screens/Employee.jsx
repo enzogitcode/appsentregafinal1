@@ -1,22 +1,18 @@
-import { SafeAreaView, StyleSheet, Text, View, Pressable } from 'react-native'
+import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight } from 'react-native'
 import React from 'react'
-import { Header, JobSeeker, JobsList, JobsListCategories, Searcher } from '../component/indexComponent'
-
-const Employee = ({ goBack = () => { } }) => {
+import { colors } from '../constants/colors'
+import { GoBackButton, Header, JobSeeker, JobsList, JobsListCategories, Searcher } from '../component/indexComponent'
+const Employee = ({navigation}) => {
 
   return (
-    <SafeAreaView style={styles.containerEmployeeScreen}>
-      <View>
-        <Header/>
+    <SafeAreaView style={styles.areaContainer}>
+      <View style={styles.containerEmployeeScreen}>
+        <Header title={"Empleados"} />
         <View>
-          <Text style={styles.titleSearchEmployee}>Busca un Empleador o Postulate para un trabajo</Text>
+          <Text style={styles.titleSearchEmployer}> Postúlese para un trabajo</Text>
         </View>
         <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
-        <View onPress={goBack}>
-          <Pressable name="back" size={24} color="white" />
-        </View>
-        <JobsListCategories />
-        <JobsList title={"Lista de Empleos"} />
+        <TouchableHighlight onPress={() => { navigation.goBack() }} style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
       </View>
     </SafeAreaView>
   )
@@ -25,13 +21,30 @@ const Employee = ({ goBack = () => { } }) => {
 export default Employee
 
 const styles = StyleSheet.create({
+  areaContainer: {
+    margin: Platform.OS === "android" ? StatusBar.currentHeight : 0
+  },
   containerEmployeeScreen: {
     alignItems: 'center',
     justifyContent: 'center',
     gap: 10,
-    flex: 2
   },
-  titleSearchEmployee: {
-    fontSize: 28
+  titleSearchEmployer: {
+    fontSize: 28, 
+    textAlign: 'center'
+  },
+  goBackPressable: {
+    backgroundColor: '#000',
+        padding: 10,
+        borderRadius: 15,
+        borderColor: colors.naranjaTitle,
+        borderWidth: 2
+  },
+  goBackText: {
+    fontSize: 25,
+        fontFamily: 'retosta',
+        color: colors.naranjaTitle,
+        padding: 10
   }
+
 })

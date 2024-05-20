@@ -4,11 +4,12 @@ import SearchEmployee from './SearchEmployee'
 import EmployeeList from './EmployeeList'
 import JobItem from './JobItem'
 import JobsListCategories from './JobsListCategories'
-import SearchButton from './SearchButton'
+import ButtonCustom from './ButtonCustom'
 /* import InputForm from './inputForm'
 import SubmitButton from './SubmitButton' */
 import JobsList from './JobsList'
 import ChangasLayout from './ChangasLayout'
+import GoBackButton from './GoBackButton'
 export {
     Header,
     ChangasLayout,
@@ -18,7 +19,8 @@ export {
     EmployeeList,
     JobsList,
     JobItem,
-    SearchButton
+    ButtonCustom,
+    GoBackButton
     /* ,
     InputForm,
     SubmitButton */

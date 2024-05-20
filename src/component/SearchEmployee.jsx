@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { colors } from '../constants/colors'
 import React from 'react'
-import SearchButton from './SearchButton'
+import ButtonCustom from './ButtonCustom'
 
 const SearchEmployee = () => {
 
@@ -10,7 +10,7 @@ const SearchEmployee = () => {
     <View style={styles.searchEmployeeContainer} >
       <TextInput placeholder='Escriba un nombre o una categoría' style={styles.inputSearchEmployee} />
       <Pressable style={styles.pressableBuscar}><Text style={styles.textBuscar}>Buscar</Text></Pressable>
-      <SearchButton/>
+      <ButtonCustom textTitle={"Buscar"}/>
     </View>
   )
 }

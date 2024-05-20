@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const FormEmployee = () => {
+const BottomTabNavigator = () => {
   return (
     <View>
-      <Text>FormEmployee</Text>
+      <Text>BottomTabNavigator</Text>
     </View>
   )
 }
 
-export default FormEmployee
+export default BottomTabNavigator
 
 const styles = StyleSheet.create({})

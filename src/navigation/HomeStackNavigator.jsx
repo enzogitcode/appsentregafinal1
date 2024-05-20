@@ -17,11 +17,16 @@ const HomeStackNavigator = () => {
             <Stack.Screen
                 name='Employer'
                 component={Employer}
+                options={{
+                    headerShown: false
+                }}
             />
             <Stack.Screen
                 name='Employee'
                 component={Employee}
-
+                options={{
+                    headerShown: false
+                }}
             />
         </Stack.Navigator>
     )

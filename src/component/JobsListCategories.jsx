@@ -8,13 +8,13 @@ const JobsListCategories = () => {
   return (
     <View style={styles.JobsListCategoriesContainer}>
       <Text>JobsListCategories</Text>
-       <FlatList
+       {/* <FlatList
       data={jobsListData}
       renderItem={({item})=> {<JobCategory category={item.category}
       />}}
       keyExtractor={job => job.id}
       />
-    </View>
+   */}  </View>
   )
 }
 

@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const JobsCategories = () => {
   
   return (
-    <View>
-      <Text>JobsCategories</Text>
-    </View>
+    <FlatList
+    /* data={}
+    renderItem={} */
+    
+    />
   )
 }
 

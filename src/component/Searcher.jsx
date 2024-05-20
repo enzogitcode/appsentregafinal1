@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
-import SearchButton from './SearchButton'
+import ButtonCustom from './ButtonCustom'
 
 const JobSeeker = ({ title, placeholder }) => {
 
@@ -9,7 +9,7 @@ const JobSeeker = ({ title, placeholder }) => {
     <View style={styles.JobSeekerContainer}>
       <Text style={styles.JobSeekerTextTitle}>{title}</Text>
       <TextInput style={styles.JobSeekerTextInput} placeholder={placeholder}></TextInput>
-    <SearchButton/>
+    <ButtonCustom textTitle={"Buscar"}/>
     </View>
   )
 }
