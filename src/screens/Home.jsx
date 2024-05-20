@@ -7,6 +7,7 @@ import { useGetCategoriesQuery } from '../services/changasServices.js'
 const Home = ({ navigation }) => {
     const {data, categories, error, isLoading} =useGetCategoriesQuery()
     console.log(categories)
+    
     return (
         <ChangasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />
