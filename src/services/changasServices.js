@@ -1,6 +1,5 @@
-import {createApi} from '@reduxjs/toolkit/query/react'
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 import { baseUrl } from '../database/realtimedatabase/realtimeDatabase'
-
 
 export const changasApi = createApi ({
     baseQuery: fetchBaseQuery ({baseUrl:baseUrl}),
@@ -19,3 +18,4 @@ export const changasApi = createApi ({
     })
 })
 export const {useGetCategoriesQuery, useGetJobByIdQuery, useGetProductsByCategoryQuery} = changasApi
+

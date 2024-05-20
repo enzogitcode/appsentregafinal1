@@ -12,3 +12,8 @@ crear pantalla inicial
 
 
 Link realtime database https://console.firebase.google.com/u/0/project/changas-app1/database/changas-app1-default-rtdb/data/~2F?hl=es-419
+
+//Generamos las tres apis 1 para cat
+//urlbase
+//mediante query params definimos cuáles son esos parámetros
+//exportamos eso en forma de hooks
