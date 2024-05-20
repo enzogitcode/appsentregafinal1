@@ -1,0 +1,6 @@
+-EL COMPONENTE genera un dispatch de una Action
+-Componentes generan acciones (NO MANEJAN ESTADOS)
+
+-La action será manejada por el REDUCER que genera la MODIFICACIÓN DEL ESTADOS
+
+-EL REDUCER y la ACTION estan nucleados en el SLICE
