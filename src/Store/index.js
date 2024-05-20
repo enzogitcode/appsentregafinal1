@@ -1,9 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
 import globalReducer from '../features/Global/globalSlice'
+import { changasApi } from '../services/changasApi'
+import { setupListeners } from '@reduxjs/toolkit/query'
 
-export default configureStore ({
+const store = configureStore ({
     reducer: {
-    global: globalReducer
+    global: globalReducer,
+    [changasApi.reducerPath]: changasApi.reducer
+
+
         //buscar los reducers
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(changasApi.middleware),
+
 })
+setupListeners(store.dispatch)
+
+export default store
