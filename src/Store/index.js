@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import globalReducer from '../features/Global/globalSlice'
 import { changasApi } from '../services/changasServices'
-import { setupListeners } from '@reduxjs/toolkit/query'
+import { setupListeners } from '@reduxjs/toolkit/query' 
 
 const store = configureStore ({
     reducer: {

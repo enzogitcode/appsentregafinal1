@@ -8,7 +8,6 @@ export const changasApi = createApi({
         getJobs: builder.query({ query: () => `jobs.json` }),
         getJobsbyCategory: builder.query({
             query: (category) => `jobs.json?orderBy="category"&equalTo="${category}"`
-
         }),
         getJobsById: builder.query({
             query: (id) => `jobs.json?orderBy="id"&equalTo=${id}`
@@ -17,7 +16,8 @@ export const changasApi = createApi({
 
     })
 })
-export const { useGetJobsCategoriesQuery, useGetJobByIdQuery, useGetProductsByCategoryQuery } = changasApi
+
+export const { useGetJobs, useGetJobsCategoriesQuery, useGetJobByIdQuery, useGetProductsByCategoryQuery } = changasApi
 
 
 

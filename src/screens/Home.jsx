@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux'
 import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
 const Home = ({ navigation }) => {
     const {data, categories, error, isLoading} =useGetJobsCategoriesQuery()
-    console.log(categories)
     console.log (error)
+    console.log(categories)
     return (
         <ChangasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />

@@ -1,5 +1,4 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
-import jobsListData from '../database/jobsListData.json'
 import JobItem from './JobItem'
 import React from 'react'
 import JobCategory from './JobCategory'
