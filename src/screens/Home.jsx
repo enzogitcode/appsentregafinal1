@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
 import { Header, ChangasLayout } from '../component/indexComponent.js'
 import { useSelector } from 'react-redux'
-import { useGetCategoriesQuery } from '../services/changasServices.js'
+import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
 const Home = ({ navigation }) => {
-    const {data, categories, error, isLoading} =useGetCategoriesQuery()
+    const {data, categories, error, isLoading} =useGetJobsCategoriesQuery()
     console.log(categories)
-    
+    console.log (error)
     return (
         <ChangasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />
