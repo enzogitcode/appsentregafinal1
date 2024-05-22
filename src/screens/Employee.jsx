@@ -1,8 +1,11 @@
-import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight } from 'react-native'
+import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight, FlatList } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
-import { GoBackButton, Header, JobSeeker, JobsList, JobsListCategories, Searcher } from '../component/indexComponent'
-const Employee = ({navigation}) => {
+import { GoBackButton, Header, JobItem, JobSeeker, JobsList, JobsListCategories, Searcher } from '../component/indexComponent'
+import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
+
+const Employee = ({ navigation }) => {
+  const { data: categories, error, isLoading } = useGetJobsCategoriesQuery()
 
   return (
     <SafeAreaView style={styles.areaContainer}>
@@ -12,7 +15,10 @@ const Employee = ({navigation}) => {
           <Text style={styles.titleSearchEmployer}> Postúlese para un trabajo</Text>
         </View>
         <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
+        <JobsListCategories />
+
         <TouchableHighlight onPress={() => { navigation.goBack() }} style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
+
       </View>
     </SafeAreaView>
   )
@@ -30,21 +36,21 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   titleSearchEmployer: {
-    fontSize: 28, 
+    fontSize: 28,
     textAlign: 'center'
   },
   goBackPressable: {
     backgroundColor: '#000',
-        padding: 10,
-        borderRadius: 15,
-        borderColor: colors.naranjaTitle,
-        borderWidth: 2
+    padding: 10,
+    borderRadius: 15,
+    borderColor: colors.naranjaTitle,
+    borderWidth: 2
   },
   goBackText: {
     fontSize: 25,
-        fontFamily: 'retosta',
-        color: colors.naranjaTitle,
-        padding: 10
+    fontFamily: 'retosta',
+    color: colors.naranjaTitle,
+    padding: 10
   }
 
 })

@@ -4,3 +4,10 @@
 -La action será manejada por el REDUCER que genera la MODIFICACIÓN DEL ESTADOS
 
 -EL REDUCER y la ACTION estan nucleados en el SLICE
+
+-JobsListcategories RENDERIZA una lista de las Categorías a las que pertenecen los trabajos.
+-JobCategoryItem: item de la categoría correspondiente
+
+-JobsByCategories RENDERIZA una lista de una misma categoría
+-JobList flatlist de los trabajos
+-JobItem card de c/u de los trabajos

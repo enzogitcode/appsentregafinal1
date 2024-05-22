@@ -4,7 +4,6 @@ import JobItem from './JobItem'
 
 const JobsList = ({ title }) => {
 
-
   return (
     <View>
       <Text style={styles.jobListTitle}>{title}</Text>
