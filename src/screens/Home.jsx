@@ -5,8 +5,7 @@ import { Header, ChangasLayout } from '../component/indexComponent.js'
 import { useSelector } from 'react-redux'
 import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
 const Home = ({ navigation }) => {
-    const {data, categories, error, isLoading} =useGetJobsCategoriesQuery()
-    console.log (error)
+    const {data: categories, error, isLoading} =useGetJobsCategoriesQuery()
     console.log(categories)
     return (
         <ChangasLayout style={styles.homeContainer}>
