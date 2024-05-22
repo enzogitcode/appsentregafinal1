@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, FlatList } from 'react-native'
-import jobListData from '../database/jobs.json'
-import JobItem from './JobItem'
+import jobListData from '../../database/jobs.json'
 import React from 'react'
+import JobItem from '../EmployeeItems/JobItem'
 
 const EmployeeList = ({ title }) => {
 

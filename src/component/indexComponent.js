@@ -1,15 +1,16 @@
 import Header from './Header'
 import Searcher from './Searcher'
-import SearchEmployee from './SearchEmployee'
-import EmployeeList from './EmployeeList'
-import JobItem from './JobItem'
-import JobsListCategories from './JobsListCategories'
 import ButtonCustom from './ButtonCustom'
+import GoBackButton from './GoBackButton'
+import SearchEmployee from './EmployerItems/SearchEmployee'
+import EmployeeList from './EmployerItems/EmployeeList'
+import JobItem from './EmployeeItems/JobItem'
+import JobsListCategories from './EmployeeItems/JobsListCategories'
 /* import InputForm from './inputForm'
 import SubmitButton from './SubmitButton' */
-import JobsList from './JobsList'
+import JobsList from './EmployeeItems/JobsList'
 import ChangasLayout from './ChangasLayout'
-import GoBackButton from './GoBackButton'
+
 export {
     Header,
     ChangasLayout,
@@ -21,7 +22,4 @@ export {
     JobItem,
     ButtonCustom,
     GoBackButton
-    /* ,
-    InputForm,
-    SubmitButton */
 }

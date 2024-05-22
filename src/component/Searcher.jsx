@@ -3,7 +3,7 @@ import React from 'react'
 import { colors } from '../constants/colors'
 import ButtonCustom from './ButtonCustom'
 
-const JobSeeker = ({ title, placeholder }) => {
+const Searcher = ({ title, placeholder }) => {
 
   return (
     <View style={styles.JobSeekerContainer}>
@@ -14,7 +14,7 @@ const JobSeeker = ({ title, placeholder }) => {
   )
 }
 
-export default JobSeeker
+export default Searcher
 
 const styles = StyleSheet.create({
   JobSeekerContainer: {
