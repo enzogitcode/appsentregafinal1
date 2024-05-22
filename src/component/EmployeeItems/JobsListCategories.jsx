@@ -1,9 +1,7 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import JobItem from './JobItem'
 import React from 'react'
-import JobCategory from './JobCategoryItem.jsx'
-import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import JobCategoryItem from './JobCategoryItem.jsx'
+import { useGetJobsCategoriesQuery } from '../../services/changasServices.js'
 
 const JobsListCategories = ({navigation}) => {
       const {data: categories, error, isLoading} =useGetJobsCategoriesQuery()

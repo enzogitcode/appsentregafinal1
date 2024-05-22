@@ -8,6 +8,6 @@
 -JobsListcategories RENDERIZA una lista de las Categorías a las que pertenecen los trabajos.
 -JobCategoryItem: item de la categoría correspondiente
 
--JobsByCategories RENDERIZA una lista de una misma categoría
--JobList flatlist de los trabajos
+-JobList flatlist de los trabajos (sin clasificar)
+-JobsListByCategories RENDERIZA una lista de una misma categoría
 -JobItem card de c/u de los trabajos

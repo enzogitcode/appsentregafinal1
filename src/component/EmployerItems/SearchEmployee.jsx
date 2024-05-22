@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
-import { colors } from '../constants/colors'
+import { colors } from '../../constants/colors'
 import React from 'react'
-import ButtonCustom from './ButtonCustom'
+import ButtonCustom from '../ButtonCustom'
 
 const SearchEmployee = () => {
 
