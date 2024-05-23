@@ -5,12 +5,16 @@ import JobItem from './JobItem'
 
 const JobsListByCategories = () => {
     const {data: jobsListByCategories, error, isLoading}=useGetJobsCategoriesQuery()
+    
+    console.log(jobsListByCategories)
+
+
     return (
         <View>
             <FlatList 
            data={jobsListByCategories}
-            renderItem={(item) => <JobItem />} 
-            
+            renderItem={({category}) => <JobItem   />} 
+            keyExtractor={(item) => item.id}
             />
         </View>
     )
