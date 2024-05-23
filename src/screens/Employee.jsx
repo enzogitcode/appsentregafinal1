@@ -1,12 +1,9 @@
 import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight, FlatList } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
-import { GoBackButton, Header, JobItem, JobsList, JobsListCategories, Searcher } from '../component/indexComponent'
-import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
-import JobsListByCategories from '../component/EmployeeItems/JobsListByCategories.jsx'
+import { GoBackButton, Header, JobItem, JobsList, JobsListCategories, Searcher, JobsListByCategories} from '../component/indexComponent'
 
 const Employee = ({ navigation }) => {
-  const { data: categories, error, isLoading } = useGetJobsCategoriesQuery()
 
   return (
     <SafeAreaView style={styles.areaContainer}>
@@ -17,9 +14,7 @@ const Employee = ({ navigation }) => {
         </View>
         <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
         <JobsListCategories />
-        <JobsListByCategories />
         <TouchableHighlight onPress={() => { navigation.goBack() }} style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
-
       </View>
     </SafeAreaView>
   )

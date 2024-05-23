@@ -1,8 +1,8 @@
 import React from 'react'
 import { StatusBar, Platform, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight } from 'react-native'
-import { Searcher, EmployeeList, Header, GoBackButton } from '../component/indexComponent'
+import { Searcher, EmployeeList, Header, GoBackButton, ChangasLayout } from '../component/indexComponent'
 import { colors } from '../constants/colors'
-const Employer = ({navigation}) => {
+const Employer = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.areaContainer}>
@@ -38,16 +38,16 @@ const styles = StyleSheet.create({
   },
   goBackPressable: {
     backgroundColor: '#000',
-        padding: 10,
-        borderRadius: 15,
-        borderColor: colors.naranjaTitle,
-        borderWidth: 2
+    padding: 10,
+    borderRadius: 15,
+    borderColor: colors.naranjaTitle,
+    borderWidth: 2
   },
   goBackText: {
     fontSize: 25,
-        fontFamily: 'retosta',
-        color: colors.naranjaTitle,
-        padding: 10
+    fontFamily: 'retosta',
+    color: colors.naranjaTitle,
+    padding: 10
   }
 
 })

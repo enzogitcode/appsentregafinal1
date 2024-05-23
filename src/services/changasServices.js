@@ -22,7 +22,7 @@ export const changasApi = createApi({
     })
 })
 
-export const { useGetJobs, useGetJobsCategoriesQuery, useGetJobByIdQuery, useGetProductsByCategoryQuery } = changasApi
+export const { useGetJobsQuery, useGetJobsCategoriesQuery, useGetJobsByIdQuery, useGetProductsByCategoryQuery } = changasApi
 
 
 
