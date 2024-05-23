@@ -4,18 +4,19 @@ import  { useGetJobsCategoriesQuery } from '../../services/changasServices.js'
 import JobItem from './JobItem'
 
 const JobsListByCategories = () => {
-    const {data: jobsListByCategories, error, isLoading}=useGetJobsCategoriesQuery()
+    
+    const {data: jobsListByCategories, error, isLoading}=useGetJobsCategoriesQuery(categorySelected)
     
     console.log(jobsListByCategories)
 
 
     return (
         <View>
-            <FlatList 
+            {/* <FlatList 
            data={jobsListByCategories}
-            renderItem={({category}) => <JobItem   />} 
-            keyExtractor={(item) => item.id}
-            />
+           keyExtractor={(jobs) => (jobs.id)}
+            renderItem={(job) => <JobItem category={job.category}  />} 
+            /> */}
         </View>
     )
 }
