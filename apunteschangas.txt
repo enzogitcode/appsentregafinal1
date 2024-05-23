@@ -11,3 +11,5 @@
 -JobList flatlist de los trabajos (sin clasificar)
 -JobsListByCategories RENDERIZA una lista de una misma categoría
 -JobItem card de c/u de los trabajos
+
+usar un Slice para los empleados y otro para los empleadores
