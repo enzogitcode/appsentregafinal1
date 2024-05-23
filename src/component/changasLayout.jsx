@@ -12,7 +12,6 @@ export default ChangasLayout
 
 const styles = StyleSheet.create({
   changasContainer: {
-    flex: 1,
-    borderColor: colors.naranjaTitle
+    flex: 1
   }
 })
