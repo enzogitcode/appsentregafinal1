@@ -4,9 +4,8 @@ import { colors } from '../constants/colors'
 import { Header, ChangasLayout, JobsListCategories } from '../component/indexComponent.js'
 import { useSelector } from 'react-redux'
 import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
+import SignupScreen from './SignupScreen.jsx'
 const Home = ({ navigation }) => {
-
-    
 
     return (
         <ChangasLayout style={styles.homeContainer}>
@@ -22,7 +21,7 @@ const Home = ({ navigation }) => {
                 }} style={styles.viewHomeContainer}>
                     <Text style={styles.textBtn}>Busco empleo</Text>
                 </Pressable>
-                
+                <SignupScreen/>
             </View>
         </ChangasLayout>
     )

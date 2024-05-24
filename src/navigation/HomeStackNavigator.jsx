@@ -6,43 +6,8 @@ import BottomTabNavigatorEmployee from './BottomTabNavigatorEmployee.jsx'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import Profile from '../component/AuthComponents/Profile.jsx'
-//const Stack = createNativeStackNavigator()
-
-/*     return (
-        <Stack.Navigator >
-            <Stack.Screen
-                name='Home'
-                component={Home}
-                options={{
-                    headerShown: false
-                }}
-            />
-            <Stack.Screen
-                name='Employer'
-                component={Employer}
-                options={{
-                    headerShown: false
-                }}
-            />
-            <Stack.Screen
-                name='Employee'
-                component={Employee}
-                options={{
-                    headerShown: false
-                }}
-            />
-        </Stack.Navigator>
-    )
-}
-
-export default HomeStackNavigator
-
-const styles = StyleSheet.create({})
- */
-
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
 
 const HomeTabs = () => {
   return (
