@@ -1,9 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-
+import {Searcher, Header, JobsListCategories} from '../component/indexComponent'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { JobsListByCategories } from '../component/indexComponent'
-const employeeTab = createBottomTabNavigator
+
+const employeeTab = createBottomTabNavigator ()
 const BottomTabNavigatorEmployee = () => {
   return (
     <employeeTab.Navigator
@@ -15,14 +16,14 @@ const BottomTabNavigatorEmployee = () => {
         tabBarStyle: styles.tabBar,
       })}
     >
-      <Tab.Screen
+      <employeeTab.Screen
         name="JobSeeker"
         component={Searcher}
         options={{
           tabBarIcon: ({ focused }) => {
             return (
               <View>
-                <FontAwesome5
+                <View
                   name="Searcher"
                   size={24}
                   color={focused ? "black" : "white"}
@@ -32,14 +33,14 @@ const BottomTabNavigatorEmployee = () => {
           },
         }}
       />
-      <Tab.Screen
+      <employeeTab.Screen
         name="JobsList"
-        component={JobsListByCategories}
+        component={JobsListCategories}
         options={{
           tabBarIcon: ({ focused }) => {
             return (
               <View>
-                <FontAwesome5
+                <View
                   name="JobsListByCategories"
                   size={24}
                   color={focused ? "black" : "white"}

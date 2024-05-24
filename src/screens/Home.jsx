@@ -5,8 +5,9 @@ import { Header, ChangasLayout, JobsListCategories } from '../component/indexCom
 import { useSelector } from 'react-redux'
 import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
 const Home = ({ navigation }) => {
-    /* const {data: categories, error, isLoading} =useGetJobsCategoriesQuery()
-    console.log(categories) */
+
+    
+
     return (
         <ChangasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />
@@ -21,6 +22,7 @@ const Home = ({ navigation }) => {
                 }} style={styles.viewHomeContainer}>
                     <Text style={styles.textBtn}>Busco empleo</Text>
                 </Pressable>
+                
             </View>
         </ChangasLayout>
     )

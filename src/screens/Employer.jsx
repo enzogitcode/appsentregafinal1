@@ -5,7 +5,7 @@ import { colors } from '../constants/colors'
 const Employer = ({ navigation }) => {
 
   return (
-    <SafeAreaView style={styles.areaContainer}>
+    <ChangasLayout style={styles.areaContainer}>
       <View style={styles.employerScreenContainer}>
         <Header title={"Employer"} />
         <View>
@@ -15,7 +15,7 @@ const Employer = ({ navigation }) => {
         <TouchableHighlight onPress={() => { navigation.goBack() }} title="Go back" style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
         {/* <EmployeeList style={styles.employeeListTitle} title={"Lista de Empleados"} /> */}
       </View>
-    </SafeAreaView>
+    </ChangasLayout>
   )
 }
 

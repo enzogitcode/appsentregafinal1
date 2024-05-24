@@ -24,6 +24,7 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <Provider store={store}>
           <Navigator/>
+          
         </Provider>
       </SafeAreaView>
     );
