@@ -1,6 +1,6 @@
 import React from 'react'
 import { StatusBar, Platform, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight } from 'react-native'
-import { Searcher, EmployeeList, Header, GoBackButton, ChangasLayout } from '../component/indexComponent'
+import { Searcher, Header, ChangasLayout } from '../component/indexComponent'
 import { colors } from '../constants/colors'
 const Employer = ({ navigation }) => {
 
