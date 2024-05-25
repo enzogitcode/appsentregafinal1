@@ -13,7 +13,7 @@ export default SubmitButton;
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: 'blue',
+        backgroundColor: colors.azulBackground,
         borderRadius: 6,
         justifyContent: 'center',
         alignItems: 'center',
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
         width: '60%'
     },
     text: {
-        color: 'black',
-        fontFamily: 'PlayFair',
+        color: colors.naranjaTitle,
+        fontFamily: 'retosta',
         fontSize: 22
     },
 });

@@ -43,15 +43,14 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         width: '90%',
-        fontSize: 16,
+        fontSize: 20,
         fontFamily: 'retosta'
     },
     error: {
         paddintTop: 2,
-        fontSize: 16,
+        fontSize: 20,
         color: 'red',
         fontFamily: 'retosta',
-        fontStyle: 'italic',
     },
     input: {
         width: '90%',

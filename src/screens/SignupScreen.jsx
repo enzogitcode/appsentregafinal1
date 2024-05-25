@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { useState, useEffect } from 'react'
-import {InputForm} from '../component/indexComponent'
+import { ChangasLayout, Header, InputForm, SubmitButton } from '../component/indexComponent'
 import { useDispatch } from 'react-redux'
-import { useSignUpMutation } from '../services/authServices' 
+import { useSignUpMutation } from '../services/authServices'
+import { colors } from '../constants/colors'
 
-const SignupScreen = () => {
+const SignupScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +20,7 @@ const SignupScreen = () => {
 
   useEffect(() => {
     if (result.isSuccess) {
-      console.log( result)
+      console.log(result)
       dispatch(
         setUser({
           email: result.data.email,
@@ -52,40 +53,58 @@ const SignupScreen = () => {
           break;
       }
     }
-
-    return (
-      <View>
-        <Text>SignupScreen</Text>
-        <Text>Continuar como visitante</Text>
-        <View style={styles.main}>
-          <View style={styles.container}>
-            <Text style={styles.title}>Signup</Text>
-            <InputForm label={"email"} onChange={setEmail} error={errorMail} />
-            <InputForm
-              label={"password"}
-              onChange={setPassword}
-              error={errorPassword}
-              isSecure={true}
-            />
-            <InputForm
-              label={"confirm password"}
-              onChange={setconfirmPassword}
-              error={errorConfirmPassword}
-              isSecure={true}
-            />
-            <SubmitButton onPress={onSubmit} title="Send" />
-            <Text style={styles.sub}>Already have an account?</Text>
-            <Pressable onPress={() => navigation.navigate("Login")}>
-              <Text style={styles.subLink}>Login</Text>
-            </Pressable>
+  }
+  return (
+    <ChangasLayout>
+      <Header style={styles.title} title={"Signup"} />
+      <View style={styles.main}>
+        <View style={styles.container}>
+          <InputForm label={"email"} onChange={setEmail} error={errorMail} />
+          <InputForm
+            label={"password"}
+            onChange={setPassword}
+            error={errorPassword}
+            isSecure={true}
+          />
+          <InputForm
+            label={"confirm password"}
+            onChange={setconfirmPassword}
+            error={errorConfirmPassword}
+            isSecure={true}
+          />
+          <View style={styles.submitContainer}>
+            <SubmitButton style={styles.submitButtonStyle} onPress={onSubmit} title="Enviar" />
+            <Text style={styles.sub}>¿Ya tiene usted una cuenta?</Text>
+            <SubmitButton style={styles.submitButtonStyle} onPress={() => navigation.navigate("Login")} title="Login" />
+            <SubmitButton style={styles.submitButtonStyle} onPress={() => navigation.navigate("Home")} title="¿Continuar como visitante?" />
           </View>
         </View>
-
       </View>
-    )
-  }
+    </ChangasLayout>
+  )
 }
+
 
 export default SignupScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  main: {marginTop: 10},
+  container: { alignItems: 'center' },
+  submitButtonStyle: { margin: 10, alignSelf: 'center' },
+  pressableLogin: {
+    alignSelf: 'center',
+    backgroundColor: colors.azulBackground
+  },
+  sub: {
+    width: '90%',
+    fontSize: 30,
+    fontFamily: 'retosta',
+    textAlign: 'center'
+  },
+  submitContainer: {
+    alignItems: 'center',
+    textAlign: 'center',
+    marginTop: 10,
+    gap: 10
+  }
+})

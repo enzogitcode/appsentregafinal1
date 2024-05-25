@@ -13,6 +13,7 @@ const HomeTabs = () => {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="SignUpScreen" component={SignupScreen} />
     </Tab.Navigator>
   );
 }

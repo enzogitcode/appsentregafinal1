@@ -21,7 +21,6 @@ const Home = ({ navigation }) => {
                 }} style={styles.viewHomeContainer}>
                     <Text style={styles.textBtn}>Busco empleo</Text>
                 </Pressable>
-                <SignupScreen/>
             </View>
         </ChangasLayout>
     )
