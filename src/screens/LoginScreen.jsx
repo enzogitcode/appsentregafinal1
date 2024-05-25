@@ -1,10 +1,9 @@
 import { Pressable, StyleSheet, Text, View } from "react-native"
 import React, { useState, useEffect } from "react"
 import { colors } from "../constants/colors"
-import {InputForm} from '../component/indexComponent'
-import {SubmitButton} from "../component/indexComponent"
-import { useSignInMutation } from "../services/authServices"
-import { setUser } from "../services/authServices"
+import {SubmitButton, InputForm} from '../component/indexComponent'
+import { useSignInMutation } from "../services/authServices.js"
+import { setUser } from "../features/Users/usersSlice"
 import { useDispatch } from "react-redux"
 
 const LoginScreen = ({ navigation }) => {

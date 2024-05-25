@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { Home, Employee, Employer, SignupScreen } from '../screens/indexScreens.js'
+import { Home, SignupScreen } from '../screens/indexScreens.js'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import Profile from '../component/AuthComponents/Profile.jsx'
@@ -13,7 +13,6 @@ const HomeTabs = () => {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name= "ScreenSignUp" component={SignupScreen}/>
     </Tab.Navigator>
   );
 }

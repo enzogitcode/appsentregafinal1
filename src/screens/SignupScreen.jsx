@@ -1,9 +1,9 @@
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import {InputForm} from '../component/indexComponent'
 import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../services/authServices' 
-import {InputForm} from '../component/indexComponent'
-import React from 'react'
 
 const SignupScreen = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ const SignupScreen = () => {
 
   useEffect(() => {
     if (result.isSuccess) {
-      console.log(" ~ useEffect ~ result:", result)
+      console.log( result)
       dispatch(
         setUser({
           email: result.data.email,
@@ -85,6 +85,7 @@ const SignupScreen = () => {
     )
   }
 }
+
 export default SignupScreen
 
 const styles = StyleSheet.create({})
