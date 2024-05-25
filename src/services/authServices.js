@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
-import { baseAuthUrl, apiKey } from '../database/users'
+import { baseAuthUrl, apiKey } from '../database/users.js'
 export const authApi = createApi({
   reducePath: "authApi",
   baseQuery: fetchBaseQuery({ baseUrl: baseAuthUrl }),
@@ -15,7 +15,7 @@ export const authApi = createApi({
     })
     Login: builder.mutation({
       query: ({ ...auth }) => ({
-        url: `/accounts:signWithPassword?key=${apiKey}`,
+        url: `/accounts:signInWithPassword?key=${apiKey}`,
         method: "POST",
         body: auth
       })
