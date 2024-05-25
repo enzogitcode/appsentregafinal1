@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-//import useSignUpMutation 
+import { useSignUpMutation } from '../services/authServices' 
 import { InputForm } from '../component/indexComponent'
 import React from 'react'
 

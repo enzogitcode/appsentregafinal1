@@ -13,3 +13,5 @@
 -JobItem card de c/u de los trabajos
 
 usar un Slice para los empleados y otro para los empleadores
+
+//Ver si se pueden mezclar las tabs con los stack

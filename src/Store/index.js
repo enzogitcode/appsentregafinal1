@@ -7,11 +7,12 @@ import jobsSlice from './employeeSlice/jobsSlice'
 const store = configureStore ({
     reducer: {
     global: globalReducer,
+    
     jobs: jobsSlice,
-    [changasApi.reducerPath]: changasApi.reducer
+    [changasApi.reducerPath]: changasApi.reducer,
+    [authApi.reducerPath]: authApi.reducer
 
 
-        //buscar los reducers
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(changasApi.middleware),
 

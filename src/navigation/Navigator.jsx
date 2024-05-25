@@ -3,7 +3,6 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeStackNavigator from './HomeStackNavigator'
-import BottomTabNavigatorEmployee from './BottomTabNavigatorEmployee'
 import Home from '../screens/Home'
 import Employer from '../screens/Employer'
 import Employee from '../screens/Employee'
@@ -18,7 +17,7 @@ const Navigator = () => {
         <Stack.Screen InitialRouteName="Hometabs" component={HomeTabs} />
         <Stack.Screen name="Employee" component={Employee} />
         <Stack.Screen name="Employer" component={Employer} />
-      </Stack.Navigator> */}
+  </Stack.Navigator> */}
       <SignupScreen/>
     </NavigationContainer>
   )
