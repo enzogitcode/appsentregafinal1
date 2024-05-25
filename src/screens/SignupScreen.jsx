@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../services/authServices' 
-import InputForm from '../component/inputForm'
+import {InputForm} from '../component/indexComponent'
 import React from 'react'
 
 const SignupScreen = () => {

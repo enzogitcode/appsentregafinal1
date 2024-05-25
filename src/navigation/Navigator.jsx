@@ -13,12 +13,11 @@ const Navigator = () => {
 
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator>
+      <Stack.Navigator>
         <Stack.Screen InitialRouteName="Hometabs" component={HomeTabs} />
         <Stack.Screen name="Employee" component={Employee} />
         <Stack.Screen name="Employer" component={Employer} />
-  </Stack.Navigator> */}
-      <SignupScreen/>
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }
