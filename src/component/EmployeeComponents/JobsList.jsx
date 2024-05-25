@@ -5,6 +5,11 @@ import { useGetJobsByIdQuery } from '../../services/changasServices'
 const JobsList = ({ title, navigation }) => {
 const {data: jobs, error, isLoading } = useGetJobsByIdQuery();
   
+const [data, setData] = useState(null);
+useEffect(() => {
+  console.log(data?.TCMB_AnlikKurBilgileri[0]?.Isim);
+}, [data]);
+
 return (
     <View>
       <Text style={styles.jobListTitle}>{title}</Text>
