@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { ChangasLayout, Header, InputForm, SubmitButton } from '../component/indexComponent'
 import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../services/authServices'
+import { signupSchema } from '../services/authSchema'
 import { colors } from '../constants/colors'
 
 const SignupScreen = ({ navigation }) => {
@@ -54,6 +55,7 @@ const SignupScreen = ({ navigation }) => {
       }
     }
   }
+  const [modal, useSetModal] = useState ("")
   return (
     <ChangasLayout>
       <Header style={styles.title} title={"Signup"} />

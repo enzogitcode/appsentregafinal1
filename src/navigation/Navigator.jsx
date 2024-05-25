@@ -7,6 +7,7 @@ import Home from '../screens/Home'
 import Employer from '../screens/Employer'
 import Employee from '../screens/Employee'
 import HomeTabs from './HomeStackNavigator'
+import LoginScreen from '../screens/LoginScreen'
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
@@ -17,6 +18,7 @@ const Navigator = () => {
         <Stack.Screen InitialRouteName="Hometabs" name="Hometabs" component={HomeTabs} />
         <Stack.Screen name="Employee" component={Employee} />
         <Stack.Screen name="Employer" component={Employer} />
+        <Stack.Screen name="Login" component={LoginScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

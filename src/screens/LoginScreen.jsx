@@ -1,7 +1,7 @@
-import { Pressable, StyleSheet, Text, View } from "react-native"
+import { Pressable, StyleSheet, Text, View, TouchableHighlight } from "react-native"
 import React, { useState, useEffect } from "react"
 import { colors } from "../constants/colors"
-import {SubmitButton, InputForm} from '../component/indexComponent'
+import { SubmitButton, InputForm, Header, ChangasLayout, GoBackButton } from '../component/indexComponent'
 import { useSignInMutation } from "../services/authServices.js"
 import { setUser } from "../features/Users/usersSlice"
 import { useDispatch } from "react-redux"
@@ -28,9 +28,9 @@ const LoginScreen = ({ navigation }) => {
         triggerSignIn({ email, password })
     }
     return (
-        <View style={styles.main}>
+        <ChangasLayout style={styles.main}>
+            <Header title={"Access to Login"} />
             <View style={styles.container}>
-                <Text style={styles.title}>Login to start</Text>
                 <InputForm label={"email"} onChange={setEmail} error={""} />
                 <InputForm
                     label={"password"}
@@ -38,13 +38,12 @@ const LoginScreen = ({ navigation }) => {
                     error={""}
                     isSecure={true}
                 />
-                <SubmitButton onPress={onSubmit} title="Send" />
-                <Text style={styles.sub}>Not have an account?</Text>
-                <Pressable onPress={() => navigation.navigate("Signup")}>
-                    <Text style={styles.subLink}>Sign up</Text>
-                </Pressable>
+                <SubmitButton onPress={onSubmit} title="Enviar" />
+                <Text style={styles.sub}>¿Aún no ha creado una cuenta? Únase a Nosotros</Text>
+                <SubmitButton onPress={() => navigation.navigate("Signup")} title={"Signup"} />
+            <SubmitButton onPress={() => { navigation.goBack() }} style={styles.goBackPressable} title="Volver"/>
             </View>
-        </View>
+        </ChangasLayout>
     )
 }
 
@@ -63,17 +62,18 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: colors.platinum,
-        gap: 15,
+        gap: 18,
         paddingVertical: 20,
         borderRadius: 10,
     },
     title: {
         fontSize: 22,
-        fontFamily: "Josefin",
+        fontFamily: "retosta",
     },
     sub: {
-        fontSize: 14,
-        color: "black",
+        fontSize: 30,
+        textAlign: 'center',
+        fontFamily: 'retosta'
     },
     subLink: {
         fontSize: 14,
