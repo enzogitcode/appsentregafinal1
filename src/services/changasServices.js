@@ -8,10 +8,10 @@ export const changasApi = createApi({
         getJobs: builder.query({ query: () => `jobs.json` }),
         getJobsbyCategory: builder.query({
             query: (category) => `jobs.json?orderBy="category"&equalTo="${category}"`,
-            /* transformResponse: (response) => {
+            transformResponse: (response) => {
                 const responseTransformed = Object.values(response)
                 return responseTransformed
-            } */
+            } 
         }),
         getJobsById: builder.query({
             query: (jobId) => `jobs.json?orderBy="id"&equalTo=${jobId}`,

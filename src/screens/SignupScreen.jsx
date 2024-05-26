@@ -55,7 +55,7 @@ const SignupScreen = ({ navigation }) => {
       }
     }
   }
-  const [modal, useSetModal] = useState ("")
+
   return (
     <ChangasLayout>
       <Header style={styles.title} title={"Signup"} />
@@ -82,6 +82,8 @@ const SignupScreen = ({ navigation }) => {
           </View>
         </View>
       </View>
+
+
     </ChangasLayout>
   )
 }
@@ -90,7 +92,7 @@ const SignupScreen = ({ navigation }) => {
 export default SignupScreen
 
 const styles = StyleSheet.create({
-  main: {marginTop: 10},
+  main: { marginTop: 10 },
   container: { alignItems: 'center' },
   submitButtonStyle: { margin: 10, alignSelf: 'center' },
   pressableLogin: {

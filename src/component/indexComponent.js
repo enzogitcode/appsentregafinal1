@@ -11,6 +11,7 @@ import InputForm from './InputForm'
 import SubmitButton from './SubmitButton'
 import JobsList from './EmployeeComponents/JobsList'
 import ChangasLayout from './ChangasLayout'
+import ModalCustom from './ModalCustom'
 
 export {
     Header,
@@ -25,5 +26,6 @@ export {
     ButtonCustom,
     GoBackButton,
     InputForm,
-    SubmitButton
+    SubmitButton,
+    ModalCustom
 }

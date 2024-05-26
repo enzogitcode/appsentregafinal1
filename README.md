@@ -5,9 +5,6 @@ ChangasApp es una aplicación móvil destinada a
 -Firebase
 
 ## Funcionalidades
--Ver una lista de productos disponibles.
--Ver un carrito de compras.
--Simular una compra.
 
 ### Instalación
 1- Clonar un repositorio.
