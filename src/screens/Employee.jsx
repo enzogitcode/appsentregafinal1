@@ -1,7 +1,7 @@
 import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight, FlatList } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
-import { Header, JobItem, JobsList, JobsListCategories, Searcher, JobsListByCategories, ChangasLayout} from '../component/indexComponent'
+import { ModalCustom, Header, JobItem, JobsList, JobsListCategories, Searcher, JobsListByCategories, ChangasLayout } from '../component/indexComponent'
 
 const Employee = ({ navigation }) => {
 
@@ -16,6 +16,7 @@ const Employee = ({ navigation }) => {
         <JobsListCategories />
         <TouchableHighlight onPress={() => { navigation.goBack() }} style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
       </View>
+      <ModalCustom />
     </ChangasLayout>
   )
 }
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   titleSearchEmployer: {
     fontSize: 28,
     textAlign: 'center',
-    },
+  },
   goBackPressable: {
     backgroundColor: '#000',
     padding: 10,
