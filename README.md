@@ -1,5 +1,5 @@
 # ChangasApp
-ChangasApp es una aplicación móvil destinada a
+ChangasApp es una aplicación móvil destinada a acercar personas a su posible nuevo trabajo, así como también ayudar tanto a emprendedores independientes como empresas en la búsqueda de trabajadores.  
 # Tecnologías utilizadas
 -React Native
 -Firebase
