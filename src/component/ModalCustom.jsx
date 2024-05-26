@@ -46,6 +46,8 @@ const ModalCustom = ({ navigation, mensajeModoVisitante }) => {
         </View>
     );
 };
+
+
 export default ModalCustom
 
 const styles = StyleSheet.create({
