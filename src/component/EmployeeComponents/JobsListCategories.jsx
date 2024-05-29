@@ -7,7 +7,7 @@ import { colors } from '../../constants/colors.js'
 const JobsListCategories = ({ navigation }) => {
   const { data: categories, error, isLoading } = useGetJobsCategoriesQuery()
 
-
+console.log(categories)
   return (
     <FlatList style={styles.jobsListCategoriesContainer}
       onScroll={true}

@@ -9,7 +9,7 @@ const Searcher = ({ title, placeholder }) => {
     <View style={styles.JobSeekerContainer}>
       <Text style={styles.JobSeekerTextTitle}>{title}</Text>
       <TextInput style={styles.JobSeekerTextInput} placeholder={placeholder}></TextInput>
-    <ButtonCustom textTitle={"Buscar"}/>
+    <ButtonCustom buttonText={"Buscar"}/>
     </View>
   )
 }

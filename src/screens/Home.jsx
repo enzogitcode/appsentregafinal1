@@ -1,11 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
-import { Header, ChangasLayout, JobsListCategories } from '../component/indexComponent.js'
+import { Header, ChangasLayout, JobsListCategories, ButtonCustom } from '../component/indexComponent.js'
 import { useSelector } from 'react-redux'
 import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
 import SignupScreen from './SignupScreen.jsx'
 const Home = ({ navigation }) => {
+
+
+    /* const [modalVisible, setModalVisible] = useState(
+        isUser? true : false
+    ); */
+
+    
+
+
 
     return (
         <ChangasLayout style={styles.homeContainer}>
@@ -22,6 +31,7 @@ const Home = ({ navigation }) => {
                     <Text style={styles.textBtn}>Busco empleo</Text>
                 </Pressable>
             </View>
+            <ButtonCustom buttonText={"Login"}/>
         </ChangasLayout>
     )
 }
