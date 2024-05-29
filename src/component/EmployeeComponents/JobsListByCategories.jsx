@@ -1,25 +1,35 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import  { useGetJobsCategoriesQuery } from '../../services/changasServices.js'
+import React, { useEffect } from 'react'
+import { useGetJobsQuery } from '../../services/changasServices.js'
+import { useGetJobsCategoriesQuery } from '../../services/changasServices.js'
 import JobItem from './JobItem'
 
 const JobsListByCategories = () => {
-    
-    const {data: jobsListByCategories, error, isLoading}=useGetJobsCategoriesQuery(categorySelected)
-    
-    console.log(jobsListByCategories)
 
+    const [productsFiltered, setProductsFiltered] = useState([])
+    const { data: productsPreFiltered, error, isLoading } = useGetJobsQuery(categorySelected)
 
-    return (
-        <View>
-            {/* <FlatList 
+    console.log(jobs)
+    useEffect(() => {
+        const jobsPreFiltered = jobs.filter()
+        jobs.title.toLocaleLowerCase().includes(keyWord.toLocaleLowerCase())
+
+        setProductsFiltered(jobsPreFiltered)
+        setError("")
+    }, [jobsPreFiltered, jobs])
+
+}
+
+return (
+    <View>
+        {/* <FlatList 
            data={jobsListByCategories}
            keyExtractor={(jobs) => (jobs.id)}
             renderItem={(job) => <JobItem category={job.category}  />} 
             /> */}
-        </View>
-    )
-}
+    </View>
+)
+
 
 export default JobsListByCategories
 

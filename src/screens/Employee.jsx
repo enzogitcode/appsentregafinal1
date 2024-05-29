@@ -14,6 +14,7 @@ const Employee = ({ navigation }) => {
         </View>
         <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
         <JobsListCategories />
+        <JobsList/>
         <TouchableHighlight onPress={() => { navigation.goBack() }} style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
       </View>
       <ModalCustom />
