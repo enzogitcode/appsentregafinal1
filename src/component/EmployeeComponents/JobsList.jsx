@@ -6,9 +6,10 @@ const JobsList = ({ title, navigation }) => {
 const {data: jobs, error, isLoading } = useGetJobsByIdQuery();
   
 const [data, setData] = useState(null);
+
 useEffect(() => {
-  console.log(data?.TCMB_AnlikKurBilgileri[0]?.Isim);
-}, [data]);
+
+}, []);
 
 return (
     <View>
