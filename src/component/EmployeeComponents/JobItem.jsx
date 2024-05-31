@@ -1,7 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { useGetJobsByIdQuery } from '../../services/changasServices'
+import { useDispatch } from "react-redux"
 
-const JobItem = ({ jobTitle, jobAge, category, firm, location, otherdata, experience }) => {
+const JobItem = ({route, navigation, jobTitle, jobAge, category, firm, location, otherdata, experience }) => {
+  const { jobId: idSelected } = route.params
+  const { data: jobs, error, isLoading } = useGetJobsByIdQuery(idSelected)
+
+  useEffect(() => {
+    console.log (jobs)
+    }, []);
+
+
   return (
     <View style={styles.jobItemContainer}>
       <View style={styles.jobTitleContainer}><Text style={styles.jobTitleText}>{jobTitle}</Text></View>
@@ -34,7 +44,7 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 10,
     borderTopEndRadius: 10
   },
-  jobCardContainer: 
+  jobCardContainer:
   {
     backgroundColor: 'lightgreen',
     padding: 15

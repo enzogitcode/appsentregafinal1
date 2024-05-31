@@ -1,15 +1,19 @@
 import { StyleSheet, Text, View, FlatList } from 'react-native'
 import React from 'react'
+import { useState, useEffect } from 'react'
 import JobItem from './JobItem'
-import { useGetJobsByIdQuery } from '../../services/changasServices'
+import { useGetJobsByIdQuery, useGetJobsQuery } from '../../services/changasServices'
+import { useDispatch } from 'react-redux'
 const JobsList = ({ title, navigation }) => {
-const {data: jobs, error, isLoading } = useGetJobsByIdQuery();
   
-const [data, setData] = useState(null);
+const { jobId: idSelected } = route.params
+  const { data: jobs, error, isLoading } = useGetJobsByIdQuery(idSelected=1)
 
-useEffect(() => {
+  useEffect(() => {
+    console.log (jobs)
+    }, []);
 
-}, []);
+//todos los datos del database
 
 return (
     <View>

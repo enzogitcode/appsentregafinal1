@@ -5,6 +5,7 @@ import { Home, SignupScreen } from '../screens/indexScreens.js'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import Profile from '../screens/Profile.jsx'
+import { JobItem, JobsList, JobsListByCategories, JobsListCategories } from '../component/indexComponent.js'
 
 const Tab = createBottomTabNavigator();
 
@@ -14,6 +15,9 @@ const HomeTabs = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="SignUpScreen" component={SignupScreen} />
       <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="jobsList" component={JobsList}/>
+      <Tab.Screen name="jobsListCategories" component={JobsListCategories}/>
+      <Tab.Screen name="jobItem" component={JobItem}/>
     </Tab.Navigator>
   );
 }
