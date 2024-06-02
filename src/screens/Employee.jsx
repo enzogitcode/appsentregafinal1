@@ -1,7 +1,8 @@
 import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight, FlatList } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
-import { ModalCustom, Header, JobItem, JobsList, JobsListCategories, Searcher, JobsListByCategories, ChangasLayout } from '../component/indexComponent'
+import { ModalCustom, Header, JobItem, JobsList, Searcher, JobsListByCategories, ChangasLayout } from '../component/indexComponent'
+import JobsListCategories from './JobsListCategories'
 
 const Employee = ({ navigation }) => {
 
