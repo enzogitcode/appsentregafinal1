@@ -16,7 +16,7 @@ console.log(categories)
       keyExtractor={(category) => category}
       renderItem={({ item }) => (
         <JobCategoryItem
-          navigation={JobsListByCategories}
+          navigation={navigation}
           category={item}
         />
       )}
