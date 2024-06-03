@@ -1,38 +1,32 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Employee from '../screens/Employee'
-import { JobsListByCategories, JobsListCategories, JobsListByCategories } from '../component/indexComponent'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import {Employee, JobsList, JobsListByCategories} from '../screens/indexScreens'
+
+const Stack = createNativeStackNavigator()
 
 const EmployeeStackNavigation = () => {
     return (
-        <Stack.Navigator >
-            <Stack.Screen
-                name='EmployeeHome'
-                component={Employee}
-                options={{
-                    headerShown: false
-                }}
-            />
-            <Stack.Screen
-                name='JobsListCategories'
-                component={JobsListCategories}
-                options={{
-                    headerShown: false
-                }}
-            />
-            <Stack.Screen
-                name='JobsListByCategories'
-                component={JobsListByCategories}
-                options={{
-                    headerShown: false
-                }}
-            />
-            
-
-        </Stack.Navigator>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name='Employee'
+                    component={Employee}
+                    
+                />
+                <Stack.Screen
+                    name='JobsListByCategories'
+                    component={JobsListByCategories}
+                />
+                <Stack.Screen
+                    name='JobsList'
+                    component={JobsList}
+                />
+                
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }
 
 export default EmployeeStackNavigation
 
-const styles = StyleSheet.create({})

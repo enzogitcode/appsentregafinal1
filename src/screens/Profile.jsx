@@ -1,10 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import ModalCustom from '../component/ModalCustom'
+import { ChangasLayout, Header, ModalCustom } from '../component/indexComponent'
 
 const Profile = () => {
   return (
-    <ModalCustom/>
+    <ChangasLayout>
+      <Header title={"Perfil"}/>
+      <View>
+        <Text>Profile</Text>
+        <Text>Profile</Text>
+        <Text>Profile</Text>
+        <Text>Profile</Text>
+      </View>
+    </ChangasLayout>
   )
 }
 

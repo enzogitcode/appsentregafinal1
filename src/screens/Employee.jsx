@@ -1,9 +1,7 @@
 import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight, FlatList } from 'react-native'
 import React from 'react'
 import { colors } from '../constants/colors'
-import { ModalCustom, Header, JobItem, JobsList, Searcher, ChangasLayout } from '../component/indexComponent'
-import JobsListCategories from './JobsListCategories'
-
+import { ChangasLayout, Header, Searcher, JobsCategoriesList, ModalCustom, ButtonCustom } from '../component/indexComponent'
 const Employee = ({ navigation }) => {
 
   return (
@@ -14,10 +12,9 @@ const Employee = ({ navigation }) => {
           <Text style={styles.titleSearchEmployer}> Postúlese para un trabajo</Text>
         </View>
         <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
-        <JobsListCategories />
-        <TouchableHighlight onPress={() => { navigation.goBack() }} style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
+        <JobsCategoriesList />
+        <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} buttonText={"Volver"} />
       </View>
-      <ModalCustom />
     </ChangasLayout>
   )
 }

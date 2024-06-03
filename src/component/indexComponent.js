@@ -9,10 +9,9 @@ export {default as Searcher} from './Searcher'
 export {default as SwitchCustom} from './SwitchCustom'
 
 //EmployeeComponents
-export { default as JobCategoryItem} from './EmployeeComponents/JobCategoryItem'
 export { default as JobItem } from './EmployeeComponents/JobItem'
-export { default as JobsList } from './EmployeeComponents/JobsList'
-export { default as JobsListByCategories } from './EmployeeComponents/JobsListByCategories'
+export {default as JobCategoryItem} from './EmployeeComponents/JobCategoryItem'
+export {default as JobsCategoriesList} from './EmployeeComponents/JobsCategoriesList' 
 
 //EmployerComponents
 export { default as EmployeeList} from './EmployerComponents/EmployeeList'

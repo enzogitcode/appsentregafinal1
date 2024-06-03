@@ -2,12 +2,8 @@ import { StyleSheet } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import HomeStackNavigator from './HomeStackNavigator'
-import Home from '../screens/Home'
-import Employer from '../screens/Employer'
-import Employee from '../screens/Employee'
-import HomeTabs from './HomeStackNavigator'
-import LoginScreen from '../screens/LoginScreen'
+import HomeTabs from './HomeTabsNavigator'
+import { Employee, Employer, LoginScreen } from '../screens/indexScreens'
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
@@ -16,9 +12,15 @@ const Navigator = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen InitialRouteName="Hometabs" name="Hometabs" component={HomeTabs} />
-        <Stack.Screen name="Employee" component={Employee} />
-        <Stack.Screen name="Employer" component={Employer} />
-        <Stack.Screen name="Login" component={LoginScreen}/>
+        <Stack.Screen name="Employee" component={Employee} options={{
+          headerShown: false
+        }} />
+        <Stack.Screen name="Employer" component={Employer} options={{
+          headerShown: false
+        }} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{
+          headerShown: false
+        }} />
       </Stack.Navigator>
     </NavigationContainer>
   )

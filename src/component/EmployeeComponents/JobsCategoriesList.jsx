@@ -1,15 +1,15 @@
 import React from 'react'
+import { colors } from '../../constants/colors.js'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
-import JobCategoryItem from '../component/EmployeeComponents/JobCategoryItem.jsx'
-import { useGetJobsCategoriesQuery } from '../services/changasServices.js'
-import { colors } from '../constants/colors.js'
+import JobCategoryItem from './JobCategoryItem.jsx'
+import {useGetJobsCategoriesQuery} from '../../services/changasServices.js'
 const JobsListCategories = ({ navigation }) => {
   const { data: categories, error, isLoading } = useGetJobsCategoriesQuery()
 
   
 console.log(categories)
   return (
-    <View>
+    
     <FlatList style={styles.jobsListCategoriesContainer}
       onScroll={true}
       data={categories}
@@ -22,7 +22,7 @@ console.log(categories)
       )}
 
     />
-    </View>
+    
   )
 }
 
@@ -31,6 +31,8 @@ export default JobsListCategories
 const styles = StyleSheet.create({
   jobsListCategoriesContainer: {
     borderWidth: 10,
+    borderRadius: 10,
+    padding: 5,
     borderBlockColor: colors.azulBackground
   }
 })

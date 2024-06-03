@@ -3,6 +3,7 @@ import React from 'react'
 import { colors } from '../../constants/colors'
 import { useDispatch } from 'react-redux'
 import {setCategorySelected} from '../../features/Global/employeeSlice'
+import JobsListByCategories from '../../screens/JobsListByCategories'
 
 const JobCategoryItem = ({ category, navigation }) => {
   const dispatch = useDispatch()

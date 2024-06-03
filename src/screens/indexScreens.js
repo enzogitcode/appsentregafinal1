@@ -1,14 +1,5 @@
-import Home from "./Home"
-import Employee from "./Employee";
-import Employer from "./Employer";
-import JobsCategories from './JobsCategories';
-import SignupScreen from "./SignupScreen";
-import LoginScreen from "./LoginScreen";
-export {
-    Home,
-    Employee,
-    JobsCategories,
-    Employer,
-    SignupScreen,
-    LoginScreen
-}
+export {default as Home} from './Home' 
+export {default as Employee} from './Employee' 
+export {default as Employer} from './Employer' 
+export {default as LoginScreen} from './LoginScreen' 
+export {default as Profile} from './Profile' 
