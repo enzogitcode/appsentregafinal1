@@ -1,31 +1,20 @@
-import Header from './Header'
-import Searcher from './Searcher'
-import ButtonCustom from './ButtonCustom'
-import GoBackButton from './GoBackButton'
-import SearchEmployee from './EmployerComponents/SearchEmployee'
-import EmployeeList from './EmployerComponents/EmployeeList'
-import JobItem from './EmployeeComponents/JobItem'
-import JobsListCategories from '../screens/JobsListCategories'
-import JobsListByCategories from './EmployeeComponents/JobsListByCategories'
-import InputForm from './InputForm'
-import SubmitButton from './SubmitButton'
-import JobsList from './EmployeeComponents/JobsList'
-import ChangasLayout from './ChangasLayout'
-import ModalCustom from './ModalCustom'
+//Components
+export { default as Header } from './Header'
+export { default as ChangasLayout } from './ChangasLayout'
+export { default as ButtonCustom } from './ButtonCustom'
+export { default as GoBackButton } from './GoBackButton'
+export { default as InputForm } from './InputForm'
+export {default as LogoutButton} from './LogoutButton' 
+export {default as Searcher} from './Searcher'
+export {default as SwitchCustom} from './SwitchCustom'
 
-export {
-    Header,
-    ChangasLayout,
-    JobsListCategories,
-    JobsListByCategories,
-    Searcher,
-    SearchEmployee,
-    EmployeeList,
-    JobsList,
-    JobItem,
-    ButtonCustom,
-    GoBackButton,
-    InputForm,
-    SubmitButton,
-    ModalCustom
-}
+//EmployeeComponents
+export { default as JobCategoryItem} from './EmployeeComponents/JobCategoryItem'
+export { default as JobItem } from './EmployeeComponents/JobItem'
+export { default as JobsList } from './EmployeeComponents/JobsList'
+export { default as JobsListByCategories } from './EmployeeComponents/JobsListByCategories'
+
+//EmployerComponents
+export { default as EmployeeList} from './EmployerComponents/EmployeeList'
+export { default as SearchEmployee} from './EmployerComponents/SearchEmployee'
+
