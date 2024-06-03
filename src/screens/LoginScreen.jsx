@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, View, TouchableHighlight } from "react-native"
 import React, { useState, useEffect } from "react"
 import { colors } from "../constants/colors"
-import { SubmitButton, InputForm, Header, ChangasLayout, GoBackButton } from '../component/indexComponent'
+import { SubmitButton, InputForm, Header, ChangasLayout, GoBackButton, ButtonCustom } from '../component/indexComponent'
 import { useSignInMutation } from "../services/authServices.js"
 import { setUser } from "../features/Users/usersSlice"
 import { useDispatch } from "react-redux"
@@ -28,20 +28,22 @@ const LoginScreen = ({ navigation }) => {
         triggerSignIn({ email, password })
     }
     return (
-        <ChangasLayout style={styles.main}>
-            <Header title={"Access to Login"} />
-            <View style={styles.container}>
-                <InputForm label={"email"} onChange={setEmail} error={""} />
-                <InputForm
-                    label={"password"}
-                    onChange={setPassword}
-                    error={""}
-                    isSecure={true}
-                />
-                <SubmitButton onPress={onSubmit} title="Enviar" />
-                <Text style={styles.sub}>¿Aún no ha creado una cuenta? Únase a Nosotros</Text>
-                <SubmitButton onPress={() => navigation.navigate("Signup")} title={"Signup"} />
-            <SubmitButton onPress={() => { navigation.goBack() }} style={styles.goBackPressable} title="Volver"/>
+        <ChangasLayout>
+            <View style={styles.main}>
+                <Header title={"Access to Login"} />
+                <View style={styles.container}>
+                    <InputForm label={"email"} onChange={setEmail} error={""} />
+                    <InputForm
+                        label={"password"}
+                        onChange={setPassword}
+                        error={""}
+                        isSecure={true}
+                    />
+                    <SubmitButton onPress={onSubmit} title="Enviar" />
+                    <Text style={styles.sub}>¿Aún no ha creado una cuenta? Únase a Nosotros</Text>
+                    <SubmitButton onPress={() => navigation.navigate("Signup")} title={"Signup"} />
+                    <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} title="Volver" />
+                </View>
             </View>
         </ChangasLayout>
     )

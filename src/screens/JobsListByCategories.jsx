@@ -3,6 +3,10 @@ import React from 'react'
 
 const JobsListByCategories = ({navigation}) => {
   
+  const handleNavigate = () => {
+    dispatch(setCategorySelected(category))
+    navigation.navigate('JobsListByCategory', { category })
+  }
     return (
     <View>
       <Text></Text>

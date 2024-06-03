@@ -12,7 +12,7 @@ const EmployeeStackNavigation = () => {
                 <Stack.Screen
                     name='Employee'
                     component={Employee}
-                    
+
                 />
                 <Stack.Screen
                     name='JobsListByCategories'

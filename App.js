@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Navigator from './src/navigation/Navigator';
 import { Provider } from 'react-redux';
 import store from './src/store';
-import JobsCategories from './src/screens/JobsCategories';
 export default function App() {
   const [orientation, setOrientation] = useState("portrait")
   const { width, height } = useWindowDimensions()
