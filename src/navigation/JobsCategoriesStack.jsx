@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import JobsListByCategories from '../screens/JobsListByCategories'
-import { JobsCategoriesList } from '../component/indexComponent'
+import { JobItem, JobsCategoriesList } from '../component/indexComponent'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Employee from '../screens/Employee'
@@ -20,8 +20,8 @@ const JobsCategoriesStack = () => {
                     component={JobsListByCategories}
                 />
                 <Stack.Screen
-                    name='Employee'
-                    component={Employee}
+                    name='JobItem'
+                    component={JobItem}
                 />
 
             </Stack.Navigator>

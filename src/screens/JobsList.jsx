@@ -1,19 +1,20 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { JobItem } from '../component/indexComponent'
+import { setIdSelected } from '../features/Global/employeeSlice'
 import { useGetJobsQuery } from '../services/changasServices'
 
-const JobsList = () => {
-  const { data: jobs, error, isLoading } = useGetJobsQuery()
-
+const JobsList = ({ route }) => {
+  const { id: idSelected } = route.params
+  const { data: jobs, error, isLoading } = useGetJobsQuery(idSelected=1)
   console.log(jobs)
   return (
     <View>
       <FlatList
         data={jobs}
         keyExtractor={(job) => job.id}
-        renderItem={<JobItem job={jobs}/>}
-    />
+        renderItem={(job) => <JobItem job={job} />}
+      />
     </View>
   )
 }

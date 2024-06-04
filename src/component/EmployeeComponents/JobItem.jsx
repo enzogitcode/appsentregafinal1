@@ -1,18 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useGetJobsByIdQuery } from '../../services/changasServices'
 import { useDispatch } from "react-redux"
 
-const JobItem = ({route, navigation, jobTitle, jobAge, category, firm, location, otherdata, experience }) => {
-  const { id: idSelected } = route.params
-  const { data: jobs, error, isLoading } = useGetJobsByIdQuery(idSelected)
+const JobItem = ({id, jobTitle, jobAge, category, firm, location, otherdata, experience}) => {
+
 
 
   
-  useEffect(() => {
-    console.log (jobs)
-
-    }, []);
 
   return (
     <View style={styles.jobItemContainer}>
@@ -21,6 +16,7 @@ const JobItem = ({route, navigation, jobTitle, jobAge, category, firm, location,
         <Text style={styles.textSyle}>Categoría:</Text>
         <Text >{category}</Text>
         <Text style={styles.textSyle}>Empresa: {firm}</Text>
+        <Text style={styles.textSyle}>Id: {id}</Text>
         <Text style={styles.textSyle}>Edad buscada: {jobAge}</Text>
         <Text style={styles.textSyle}>Ubicación: {location}</Text>
         <Text style={styles.textSyle}>Requerimientos: {otherdata}</Text>

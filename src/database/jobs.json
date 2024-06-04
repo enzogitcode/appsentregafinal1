@@ -19,4 +19,15 @@
         "jobAge": "18-25",
         "experience": "10"
     }
+    ,
+    {
+        "id": 3,
+        "category": "Informática",
+        "jobtitle": "Backend Developer",
+        "firm": "Mercado Libre",
+        "location": "Location",
+        "otherdata": "Se require conocimientos de Mongo DB",
+        "jobAge": "18-25",
+        "experience": "5"
+    }
 ]

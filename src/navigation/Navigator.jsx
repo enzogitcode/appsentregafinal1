@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeTabs from './HomeTabsNavigator'
 import { Employee, Employer, JobsListByCategories, LoginScreen } from '../screens/indexScreens'
-import { JobsCategoriesList } from '../component/indexComponent'
+import {JobsCategoriesList} from '../component/indexComponent'
 import EmployeeStackNavigation from './EmployeeStackNavigation'
 
 const Stack = createNativeStackNavigator()
@@ -23,6 +23,12 @@ const Navigator = () => {
           headerShown: false
         }} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{
+          headerShown: false
+        }} />
+        <Stack.Screen name="JobsListByCategories" component={JobsListByCategories} options={{
+          headerShown: false
+        }} />
+        <Stack.Screen name="JobsCategoriesList" component={JobsCategoriesList} options={{
           headerShown: false
         }} />
       </Stack.Navigator>

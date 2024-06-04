@@ -4,6 +4,7 @@ import { Home, JobsListByCategories, Profile } from '../screens/indexScreens.js'
 import { JobsCategoriesList } from '../component/indexComponent.js';
 import EmployeeStackNavigation from './EmployeeStackNavigation.jsx';
 import JobsCategoriesStack from './JobsCategoriesStack.jsx';
+import JobsList from '../screens/JobsList.jsx'
 const Tab = createBottomTabNavigator();
 
 const HomeTabs = () => {
