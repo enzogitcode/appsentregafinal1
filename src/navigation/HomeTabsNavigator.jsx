@@ -1,13 +1,16 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Home, Profile } from '../screens/indexScreens.js'
-
+import { Home, JobsListByCategories, Profile } from '../screens/indexScreens.js'
+import { JobsCategoriesList } from '../component/indexComponent.js';
+import EmployeeStackNavigation from './EmployeeStackNavigation.jsx';
+import JobsCategoriesStack from './JobsCategoriesStack.jsx';
 const Tab = createBottomTabNavigator();
 
 const HomeTabs = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="JobsCategoriesStack" component={JobsCategoriesStack} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );

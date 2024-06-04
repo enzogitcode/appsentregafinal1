@@ -1,10 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { JobItem } from '../component/indexComponent'
+import { useGetJobsQuery } from '../services/changasServices'
 
 const JobsList = () => {
+  const { data: jobs, error, isLoading } = useGetJobsQuery()
+
+  console.log(jobs)
   return (
     <View>
-      <Text>JobsList</Text>
+      <FlatList
+        data={jobs}
+        keyExtractor={(job) => job.id}
+        renderItem={<JobItem job={jobs}/>}
+    />
     </View>
   )
 }
