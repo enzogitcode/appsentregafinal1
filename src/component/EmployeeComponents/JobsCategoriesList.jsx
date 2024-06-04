@@ -6,13 +6,8 @@ import { useGetJobsCategoriesQuery } from '../../services/changasServices.js'
 import { useDispatch } from 'react-redux'
 import {setCategorySelected} from '../../features/Global/employeeSlice'
 const JobsCategoriesList = ({ navigation }) => {
-  const dispatch = useDispatch()
   const { data: categories, error, isLoading } = useGetJobsCategoriesQuery()
-  const handleNavigate = () => {
-    dispatch(setCategorySelected(category))
-    navigation.navigate('JobsListByCategory', { category })
-  }
-
+  
 
   return (
 
@@ -22,8 +17,8 @@ const JobsCategoriesList = ({ navigation }) => {
       keyExtractor={(category) => category}
       renderItem={({ item }) => (
         <JobCategoryItem
-          onPress={()=> navigation.navigate('JobsListbyCategories', {category})}
           category={item}
+          navigation={navigation}
         />
       )}
 

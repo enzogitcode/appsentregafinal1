@@ -7,6 +7,7 @@ export { default as InputForm } from './InputForm'
 export {default as LogoutButton} from './LogoutButton' 
 export {default as Searcher} from './Searcher'
 export {default as SwitchCustom} from './SwitchCustom'
+export {default as SubmitButton} from './SubmitButton' 
 
 //EmployeeComponents
 export { default as JobItem } from './EmployeeComponents/JobItem'

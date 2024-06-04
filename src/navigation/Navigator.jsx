@@ -3,7 +3,9 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeTabs from './HomeTabsNavigator'
-import { Employee, Employer, LoginScreen } from '../screens/indexScreens'
+import { Employee, Employer, JobsListByCategories, LoginScreen } from '../screens/indexScreens'
+import { JobsCategoriesList } from '../component/indexComponent'
+import EmployeeStackNavigation from './EmployeeStackNavigation'
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
@@ -13,7 +15,7 @@ const Navigator = () => {
       <Stack.Navigator>
         <Stack.Screen InitialRouteName="Hometabs" name="Hometabs" component={HomeTabs} options={{
           headerShown: false
-        }}/>
+        }} />
         <Stack.Screen name="Employee" component={Employee} options={{
           headerShown: false
         }} />
