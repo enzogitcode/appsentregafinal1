@@ -41,7 +41,7 @@ const LoginScreen = ({ navigation }) => {
                 />
                 <SubmitButton onPress={onSubmit} title="Enviar" />
                 <Text style={styles.sub}>¿Aún no ha creado una cuenta? Únase a Nosotros</Text>
-                <SubmitButton onPress={() => navigation.navigate("Signup")} title={"Signup"} />
+                <SubmitButton onPress={() => navigation.navigate("SignupScreen")} title={"Signup"} />
             </View>
             <ButtonCustom buttonText={"Volver"} onPress={() => { navigation.goBack() }} style={styles.goBackPressable} title="Volver" />
         </View>

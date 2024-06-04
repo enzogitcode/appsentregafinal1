@@ -8,6 +8,7 @@ export {default as LogoutButton} from './LogoutButton'
 export {default as Searcher} from './Searcher'
 export {default as SwitchCustom} from './SwitchCustom'
 export {default as SubmitButton} from './SubmitButton' 
+export {default as ModalCustom} from './ModalCustom' 
 
 //EmployeeComponents
 export { default as JobItem } from './EmployeeComponents/JobItem'

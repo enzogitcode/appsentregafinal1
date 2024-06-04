@@ -77,7 +77,7 @@ const SignupScreen = ({ navigation }) => {
           <View style={styles.submitContainer}>
             <SubmitButton style={styles.submitButtonStyle} onPress={onSubmit} title="Enviar" />
             <Text style={styles.sub}>¿Ya tiene usted una cuenta?</Text>
-            <SubmitButton style={styles.submitButtonStyle} onPress={() => navigation.navigate("Login")} title="Login" />
+            <SubmitButton style={styles.submitButtonStyle} onPress={() => navigation.navigate("LoginScreen")} title="Login" />
             <SubmitButton style={styles.submitButtonStyle} onPress={() => navigation.navigate("Home")} title="¿Continuar como visitante?" />
           </View>
         </View>

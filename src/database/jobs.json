@@ -11,7 +11,7 @@
     },
     {
         "id": 2,
-        "category": "Contrucción",
+        "category": "Construcción",
         "jobtitle": "Albañil",
         "firm": "Constructora",
         "location": "Location",
@@ -28,6 +28,16 @@
         "location": "Location",
         "otherdata": "Se require conocimientos de Mongo DB",
         "jobAge": "18-25",
+        "experience": "5"
+    },
+    {
+        "id": 4,
+        "category": "Comercio",
+        "jobtitle": "Empleado de comercio, venta de artículos de limpieza",
+        "firm": "Trapito",
+        "location": "Location",
+        "otherdata": "Se require conocimientos de ventas",
+        "jobAge": "18-40",
         "experience": "5"
     }
 ]

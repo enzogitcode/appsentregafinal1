@@ -18,7 +18,7 @@ const ModalCustom = ({ navigation, mensajeModoVisitante }) => {
                         <Text style={styles.modalText}>¿Continuar en Modo Visitante?</Text>
                         <Pressable
                             style={[styles.button, styles.buttonClose]}
-                            onPress={() => {setModalVisible(!modalVisible), navigation.navigate({endpoint})} }
+                            onPress={() => {setModalVisible(!modalVisible), navigation.navigate('Hometabs')} }
                             
                             >
                             <Text>{mensajeModoVisitante}En Modo Visitante no podrá postear empleos ni postularse a uno</Text>
@@ -27,11 +27,11 @@ const ModalCustom = ({ navigation, mensajeModoVisitante }) => {
                         <View style={styles.alternativesContainer}>
                             <View>
                                 <Text style={styles.modalText}>¿Aún no ha creado una cuenta? Únase a Nosotros</Text>
-                                <SubmitButton style={styles.button} onPress={() => navigation.navigate("Login")} title="Login" />
+                                <SubmitButton style={styles.button} onPress={() => navigation.navigate("LoginScreen")} title="LoginScreen" />
                             </View>
                             <View>
                                 <Text style={styles.modalText}>¿Aún no se ha registrado?</Text>
-                                <SubmitButton style={styles.button} onPress={() => navigation.navigate("Signup")} title="Signup" />
+                                <SubmitButton style={styles.button} onPress={() => navigation.navigate("SignupScreen")} title="Signup" />
                             </View>
                         </View>
                     </View>

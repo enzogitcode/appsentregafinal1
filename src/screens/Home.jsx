@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
-import { Header, ChangasLayout, ButtonCustom } from '../component/indexComponent.js'
+import { Header, ChangasLayout, ButtonCustom, ModalCustom } from '../component/indexComponent.js'
 const Home = ({ navigation }) => {
     return (
         <ChangasLayout style={styles.homeContainer}>
