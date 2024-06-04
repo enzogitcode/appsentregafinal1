@@ -12,7 +12,7 @@ const Employee = ({ navigation }) => {
           <Text style={styles.titleSearchEmployer}> Postúlese para un trabajo</Text>
         </View>
         <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
-        <JobsCategoriesList onPress={navigation} />
+        <JobsCategoriesList navigation={navigation}/>
         <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} buttonText={"Volver"} />
       </View>
     </ChangasLayout>

@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { ChangasLayout, Header, JobItem } from '../component/indexComponent'
+import { ButtonCustom, ChangasLayout, Header, JobItem } from '../component/indexComponent'
 import { useGetJobsByIdQuery, useGetJobsbyCategoryQuery } from '../services/changasServices'
 import { setIdSelected } from '../features/Global/employeeSlice'
 
@@ -33,7 +33,7 @@ const JobsListByCategories = ({
           data={jobsFetched}
           keyExtractor={(job) => job.id}
           renderItem={({ item }) => <JobItem
-          jobTitle={item.jobtitle}
+            jobTitle={item.jobtitle}
             jobAge={item.jobAge}
             location={item.location}
             otherdata={item.otherdata}
@@ -43,6 +43,7 @@ const JobsListByCategories = ({
           />
           }
         />
+        <ButtonCustom buttonText={"Volver"} onPress={() => { navigation.goBack() }} />
       </View>
     </ChangasLayout>
   )
