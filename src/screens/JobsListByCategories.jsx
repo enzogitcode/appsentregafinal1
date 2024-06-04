@@ -21,9 +21,8 @@ const JobsListByCategories = ({
         job.id
       )
       setJobsFiltered(jobsFiltered)
-      console.log(jobsFiltered)
     }
-  }, [categorySelected])
+  }, [categorySelected, error])
 
 
   return (
@@ -31,13 +30,16 @@ const JobsListByCategories = ({
       <View>
         <Header title={categorySelected} />
         <FlatList
-          data={jobsFiltered}
+          data={jobsFetched}
           keyExtractor={(job) => job.id}
           renderItem={({ item }) => <JobItem
-            job={item}
-            id={item.id}
-            category={categorySelected}
-            jobTitle={item.jobTitle}
+          jobTitle={item.jobtitle}
+            jobAge={item.jobAge}
+            location={item.location}
+            otherdata={item.otherdata}
+            firm={item.firm}
+            experience={item.experience}
+            category={item.category}
           />
           }
         />

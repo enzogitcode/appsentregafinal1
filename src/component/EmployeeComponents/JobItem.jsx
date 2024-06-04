@@ -1,13 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { useGetJobsByIdQuery } from '../../services/changasServices'
+import { setIdSelected } from '../../features/Global/employeeSlice'
 import { useDispatch } from "react-redux"
 
 const JobItem = ({id, jobTitle, jobAge, category, firm, location, otherdata, experience}) => {
 
-
-
-  
 
   return (
     <View style={styles.jobItemContainer}>
