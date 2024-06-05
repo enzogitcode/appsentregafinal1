@@ -34,12 +34,6 @@ const styles = StyleSheet.create({
   titleSearchEmployer: {
     fontSize: 28,
     textAlign: 'center',
-  },
-  goBackText: {
-    fontSize: 25,
-    fontFamily: 'retosta',
-    color: colors.naranjaTitle,
-    padding: 10
   }
 
 })

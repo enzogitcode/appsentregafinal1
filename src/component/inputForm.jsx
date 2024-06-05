@@ -12,6 +12,7 @@ const InputForm = ({
         setInput(text)
         onChange(text)
     }
+
   return (
     <View style={styles.inputContainer}>
       <Text style={styles.subtitle}>{label}</Text>

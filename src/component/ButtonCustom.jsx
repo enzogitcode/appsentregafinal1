@@ -15,6 +15,7 @@ export default ButtonCustom
 const styles = StyleSheet.create({
     pressableBuscar: {
         backgroundColor: '#000',
+        alignSelf: 'center',
         padding: 10,
         borderRadius: 15,
         borderColor: colors.naranjaTitle,

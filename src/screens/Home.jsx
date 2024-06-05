@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
 import { Header, ChangasLayout, ButtonCustom, ModalCustom } from '../component/indexComponent.js'
+
 const Home = ({ navigation }) => {
     return (
         <ChangasLayout style={styles.homeContainer}>
@@ -18,7 +19,7 @@ const Home = ({ navigation }) => {
                     <Text style={styles.textBtn}>Busco empleo</Text>
                 </Pressable>
             </View>
-            <ButtonCustom buttonText={"Login"} onPress={() => {navigation.navigate('LoginScreen')}}/>
+            <ButtonCustom style={styles.buttonCustomStyle} buttonText={"Login"} onPress={() => {navigation.navigate('LoginScreen')}}/>
         </ChangasLayout>
     )
 }
@@ -52,6 +53,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         backgroundColor: colors.azulBackground
     }
-
 }
 )

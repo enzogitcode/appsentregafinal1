@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeTabs from './HomeTabsNavigator'
 import { Employee, Employer, JobsListByCategories, LoginScreen, SignupScreen } from '../screens/indexScreens'
-import {JobsCategoriesList} from '../component/indexComponent'
+import { JobsCategoriesList } from '../component/indexComponent'
 import EmployerList from '../component/EmployerComponents/EmployerList'
 
 const Stack = createNativeStackNavigator()
@@ -12,7 +12,8 @@ const Navigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      >
         <Stack.Screen InitialRouteName="Hometabs" name="Hometabs" component={HomeTabs} options={{
           headerShown: false
         }} />

@@ -1,11 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { useState, useEffect } from 'react'
-import { ChangasLayout, Header, InputForm, SubmitButton } from '../component/indexComponent'
+import { ButtonCustom, ChangasLayout, Header, InputForm, SubmitButton } from '../component/indexComponent'
 import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../services/authServices'
 import { signupSchema } from '../services/authSchema'
 import { colors } from '../constants/colors'
+import SectionedMultiSelect from 'react-native-sectioned-multi-select';
+import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 const SignupScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -14,7 +16,13 @@ const SignupScreen = ({ navigation }) => {
   const [errorPassword, setErrorPassword] = useState("")
   const [confirmPassword, setconfirmPassword] = useState("");
   const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
+  const [selectedItems, setSelectedItems] = useState([]);
+  console.log(`Selected:`, selectedItems);
 
+  const items = [
+    { name: 'Soy Empleador', id: 1 },
+    { name: 'Busco Empleo', id: 2 },
+  ]
   const dispatch = useDispatch()
 
   const [triggerSignUp, result] = useSignUpMutation()
@@ -30,6 +38,14 @@ const SignupScreen = ({ navigation }) => {
       )
     }
   }, [result])
+
+  const renderSelectText = () => {
+    let c = selectedItems.length;
+    if (c = 1) {
+      return `${selectedItems}`;
+    }
+    return 'Choose some vehicles...';
+  }
 
   const onSubmit = () => {
     try {
@@ -74,12 +90,33 @@ const SignupScreen = ({ navigation }) => {
             error={errorConfirmPassword}
             isSecure={true}
           />
-          <View style={styles.submitContainer}>
-            <SubmitButton style={styles.submitButtonStyle} onPress={onSubmit} title="Enviar" />
-            <Text style={styles.sub}>¿Ya tiene usted una cuenta?</Text>
-            <SubmitButton style={styles.submitButtonStyle} onPress={() => navigation.navigate("LoginScreen")} title="Login" />
-            <SubmitButton style={styles.submitButtonStyle} onPress={() => navigation.navigate("Home")} title="¿Continuar como visitante?" />
+          <View>
+            <SectionedMultiSelect
+              selectText="Elige una opción"
+              searchPlaceholderText="Search vehicles..."
+              modalAnimationType="slide"
+
+              showChips={true}
+              styles={styles.sectionedMultiSelect}
+              renderSelectText={renderSelectText}
+              showCancelButton={true}
+              hideSearch={true}
+              showDropDowns={true}
+              single={true}
+              items={items}
+              //required options
+              IconRenderer={Icon}
+              uniqueKey="id"
+              onSelectedItemsChange={setSelectedItems}
+              selectedItems={selectedItems}
+            />
           </View>
+          <SubmitButton style={styles.submitButtonStyle} onPress={onSubmit} title="Enviar" />
+        </View>
+        <View style={styles.alternativesContainer}>
+          <Text style={styles.sub}>¿Ya tiene usted una cuenta?</Text>
+          <ButtonCustom style={styles.submitButtonStyle} onPress={() => navigation.navigate("LoginScreen")} buttonText={"Login"} />
+          <ButtonCustom style={styles.submitButtonStyle} onPress={() => navigation.navigate("Home")} buttonText={"¿Continuar como visitante?"} />
         </View>
       </View>
 
@@ -95,20 +132,19 @@ const styles = StyleSheet.create({
   main: { marginTop: 10 },
   container: { alignItems: 'center' },
   submitButtonStyle: { margin: 10, alignSelf: 'center' },
-  pressableLogin: {
-    alignSelf: 'center',
-    backgroundColor: colors.azulBackground
-  },
   sub: {
     width: '90%',
     fontSize: 30,
     fontFamily: 'retosta',
     textAlign: 'center'
   },
-  submitContainer: {
+  alternativesContainer: {
     alignItems: 'center',
     textAlign: 'center',
     marginTop: 10,
     gap: 10
+  },
+  sectionedMultiSelect: {
+    justifyContent: 'center'
   }
 })
