@@ -14,7 +14,7 @@ const LoginScreen = ({ navigation }) => {
 
     useEffect(() => {
         if (result.isSuccess) {
-            console.log("🕵🏻 ~ useEffect ~ result:", result)
+            console.log(" ~ useEffect ~ result:", result)
             dispatch(
                 setUser({
                     email: result.data.email,
@@ -27,6 +27,7 @@ const LoginScreen = ({ navigation }) => {
     const onSubmit = () => {
         triggerSignIn({ email, password })
     }
+
     return (
         <ChangasLayout style={styles.main}>
         <View >

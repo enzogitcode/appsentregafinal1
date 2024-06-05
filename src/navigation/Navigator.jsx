@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeTabs from './HomeTabsNavigator'
 import { Employee, Employer, JobsListByCategories, LoginScreen, SignupScreen } from '../screens/indexScreens'
 import {JobsCategoriesList} from '../component/indexComponent'
+import EmployerList from '../component/EmployerComponents/EmployerList'
 
 const Stack = createNativeStackNavigator()
 const Navigator = () => {
@@ -31,6 +32,9 @@ const Navigator = () => {
           headerShown: false
         }} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} options={{
+          headerShown: false
+        }} />
+        <Stack.Screen name="EmployeeList" component={EmployerList} options={{
           headerShown: false
         }} />
       </Stack.Navigator>

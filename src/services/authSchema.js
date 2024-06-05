@@ -1,4 +1,5 @@
 import { object, string, ref } from "yup"
+
 export const signupSchema = object().shape({
     email: string().required("El email es requerido").email("El email no es válido"),
     password: string()

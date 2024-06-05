@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { ButtonCustom, ChangasLayout, Header, ModalCustom } from '../component/indexComponent'
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <ChangasLayout>
       <Header title={"Perfil"}/>

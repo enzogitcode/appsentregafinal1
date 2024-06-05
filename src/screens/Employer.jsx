@@ -1,6 +1,6 @@
 import React from 'react'
 import { StatusBar, Platform, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight } from 'react-native'
-import { Searcher, Header, ChangasLayout } from '../component/indexComponent'
+import { Searcher, Header, ChangasLayout, ButtonCustom } from '../component/indexComponent'
 import { colors } from '../constants/colors'
 const Employer = ({ navigation }) => {
 
@@ -12,8 +12,9 @@ const Employer = ({ navigation }) => {
           <Text style={styles.titleEmployer}>Busque un empleado </Text>
         </View>
         <Searcher title={"Buscador de Empleados"} placeholder={"Escriba el nombre de un Empleado o busque por categoría"} />
-        <TouchableHighlight onPress={() => { navigation.goBack() }} title="Go back" style={styles.goBackPressable}><Text style={styles.goBackText}>Volver</Text></TouchableHighlight>
-        {/* <EmployeeList style={styles.employeeListTitle} title={"Lista de Empleados"} /> */}
+      
+        <ButtonCustom onPress={() => { navigation.navigate('EmployeeList') }} style={styles.goBackPressable} buttonText={"Ver Lista completa de Empleados"}/>
+        <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} buttonText={"Volver"}/>
       </View>
     </ChangasLayout>
   )
