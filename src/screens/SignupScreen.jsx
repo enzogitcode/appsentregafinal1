@@ -6,23 +6,40 @@ import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../services/authServices'
 import { signupSchema } from '../services/authSchema'
 import { colors } from '../constants/colors'
-import SectionedMultiSelect from 'react-native-sectioned-multi-select';
-import { MaterialIcons as Icon } from '@expo/vector-icons';
+import { Picker } from '@react-native-picker/picker';
+import { Dropdown } from 'react-native-element-dropdown';
+import AntDesign from '@expo/vector-icons/AntDesign';
+
 
 const SignupScreen = ({ navigation }) => {
+
   const [email, setEmail] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [password, setPassword] = useState("");
   const [errorPassword, setErrorPassword] = useState("")
   const [confirmPassword, setconfirmPassword] = useState("");
   const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
-  const [selectedItems, setSelectedItems] = useState([]);
-  console.log(`Selected:`, selectedItems);
+
+  const [selectedLanguage, setSelectedLanguage] = useState();
+
+  console.log(selectedLanguage)
 
   const items = [
-    { name: 'Soy Empleador', id: 1 },
-    { name: 'Busco Empleo', id: 2 },
-  ]
+    { label: 'Empleador', value: '1' },
+    { label: 'Empleado', value: '2' },
+  ];
+  const [value, setValue] = useState(null);
+  const [isFocus, setIsFocus] = useState(false);
+  const renderLabel = () => {
+    if (value || isFocus) {
+      return (
+        <Text style={[styles.label, isFocus && { color: 'blue' }]}>
+          Elige una opción
+        </Text>
+      );
+    }
+    return null;
+  };
   const dispatch = useDispatch()
 
   const [triggerSignUp, result] = useSignUpMutation()
@@ -39,13 +56,7 @@ const SignupScreen = ({ navigation }) => {
     }
   }, [result])
 
-  const renderSelectText = () => {
-    let c = selectedItems.length;
-    if (c = 1) {
-      return `${selectedItems}`;
-    }
-    return 'Choose some vehicles...';
-  }
+
 
   const onSubmit = () => {
     try {
@@ -76,7 +87,7 @@ const SignupScreen = ({ navigation }) => {
     <ChangasLayout>
       <Header style={styles.title} title={"Signup"} />
       <View style={styles.main}>
-        <View style={styles.container}>
+        <View style={styles.formContainer}>
           <InputForm label={"email"} onChange={setEmail} error={errorMail} />
           <InputForm
             label={"password"}
@@ -91,25 +102,50 @@ const SignupScreen = ({ navigation }) => {
             isSecure={true}
           />
           <View>
-            <SectionedMultiSelect
-              selectText="Elige una opción"
-              searchPlaceholderText="Search vehicles..."
-              modalAnimationType="slide"
 
-              showChips={true}
-              styles={styles.sectionedMultiSelect}
-              renderSelectText={renderSelectText}
-              showCancelButton={true}
-              hideSearch={true}
-              showDropDowns={true}
-              single={true}
-              items={items}
-              //required options
-              IconRenderer={Icon}
-              uniqueKey="id"
-              onSelectedItemsChange={setSelectedItems}
-              selectedItems={selectedItems}
-            />
+            <Picker
+              prompt='Elige'
+              selectedValue={selectedLanguage}
+              onValueChange={(itemValue, itemIndex) =>
+                setSelectedLanguage(itemValue)
+              }>
+              <Picker.Item label="Empleador" value="Empleador" />
+              <Picker.Item label="Empleado" value="Empleado" />
+            </Picker>
+            
+            <View style={styles.container}>
+              {renderLabel()}
+              <Dropdown
+                style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
+                placeholderStyle={styles.placeholderStyle}
+                selectedTextStyle={styles.selectedTextStyle}
+                inputSearchStyle={styles.inputSearchStyle}
+                iconStyle={styles.iconStyle}
+                data={items}
+                search={false}
+                maxHeight={300}
+                labelField="label"
+                valueField="value"
+
+                placeholder={!isFocus ? 'Elige una opción' : '...'}
+                searchPlaceholder="Search..."
+                value={value}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+                onChange={item => {
+                  setValue(item.value);
+                  setIsFocus(false);
+                }}
+                renderLeftIcon={() => (
+                  <AntDesign
+                    style={styles.icon}
+                    color={isFocus ? 'blue' : 'black'}
+                    name="Safety"
+                    size={20}
+                  />
+                )}
+              />
+            </View>
           </View>
           <SubmitButton style={styles.submitButtonStyle} onPress={onSubmit} title="Enviar" />
         </View>
@@ -125,13 +161,11 @@ const SignupScreen = ({ navigation }) => {
   )
 }
 
-
 export default SignupScreen
 
 const styles = StyleSheet.create({
   main: { marginTop: 10 },
-  container: { alignItems: 'center' },
-  submitButtonStyle: { margin: 10, alignSelf: 'center' },
+  submitButtonStyle: { margin: 10 },
   sub: {
     width: '90%',
     fontSize: 30,
@@ -146,5 +180,28 @@ const styles = StyleSheet.create({
   },
   sectionedMultiSelect: {
     justifyContent: 'center'
-  }
-})
+  },
+  dropdown: {
+    margin: 16,
+    height: 50,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.5,
+  },
+  icon: {
+    marginRight: 5,
+  },
+  placeholderStyle: {
+    fontSize: 16,
+  },
+  selectedTextStyle: {
+    fontSize: 16,
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+  },
+  inputSearchStyle: {
+    height: 40,
+    fontSize: 16,
+  },
+});
