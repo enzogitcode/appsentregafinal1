@@ -2,15 +2,17 @@
 ChangasApp es una aplicación móvil destinada a acercar personas a su posible nuevo trabajo, así como también ayudar tanto a emprendedores independientes como empresas en la búsqueda de trabajadores.  
 # Tecnologías utilizadas
 -React Native
--Firebase
+-Firebase - RealTime DataBase
+
 
 ## Funcionalidades
 
+
 ### Instalación
-1- Clonar un repositorio.
-2- Abrimos una terminal
-3- Ejecutamos el comando npm install para descargar los módulos y dependencias.
-4- Ejecutamos el comando npm run dev para visualizar el proyecto.
+1- Clonar el repositorio.
+2- Abrir una terminal
+3- Ejecutar el comando npm install para descargar los módulos y dependencias.
+4- Ejecutar el comando npm run dev para visualizar el proyecto.
 
 ### Licencia
 Este proyecto esta licenciado bajo MIT.

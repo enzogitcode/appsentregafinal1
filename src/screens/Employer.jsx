@@ -2,21 +2,24 @@ import React from 'react'
 import { StatusBar, Platform, SafeAreaView, StyleSheet, Text, View, Pressable, TouchableHighlight } from 'react-native'
 import { Searcher, Header, ChangasLayout, ButtonCustom } from '../component/indexComponent'
 import { colors } from '../constants/colors'
+import { useSelector } from 'react-redux'
+
 const Employer = ({ navigation }) => {
+  const isDark = useSelector(state => state.global.value.darkMode)
 
   return (
     <ChangasLayout style={styles.areaContainer}>
       <View style={styles.employerScreenContainer}>
         <Header title={"Employer"} />
         <View>
-          <Text style={styles.titleEmployer}>Busque un empleado </Text>
-        </View>
-        <Searcher title={"Buscador de Empleados"} placeholder={"Escriba el nombre de un Empleado o busque por categoría"} />
-      
-        <ButtonCustom onPress={() => { navigation.navigate('EmployeeList') }} style={styles.goBackPressable} buttonText={"Ver Lista completa de Empleados"}/>
-        <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} buttonText={"Volver"}/>
+          <Text style={isDark ? {...styles.titleEmployer, color: 'white' } : styles.titleEmployer}>Busque un empleado </Text>
       </View>
-    </ChangasLayout>
+      <Searcher title={"Buscador de Empleados"} placeholder={"Escriba el nombre de un Empleado o busque por categoría"} />
+
+      <ButtonCustom onPress={() => { navigation.navigate('EmployeeList') }} style={styles.goBackPressable} buttonText={"Ver Lista completa de Empleados"} />
+      <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} buttonText={"Volver"} />
+    </View>
+    </ChangasLayout >
   )
 }
 

@@ -5,7 +5,7 @@ import { colors } from '../../constants/colors'
 import { setCategorySelected } from '../../features/Global/employeeSlice'
 
 const JobCategoryItem = ({ category, navigation }) => {
-  
+
   const dispatch = useDispatch()
 
   const handleNavigate = () => {
@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 10,
     borderWidth: 5,
-    borderColor: colors.naranjaTitle
-
+    borderColor: colors.naranjaTitle,
+    backgroundColor: 'white'
   },
   JobCategoryItemText: {
     textAlign: 'center',

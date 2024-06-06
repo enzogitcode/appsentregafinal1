@@ -6,10 +6,8 @@ import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../services/authServices'
 import { signupSchema } from '../services/authSchema'
 import { colors } from '../constants/colors'
-import { Picker } from '@react-native-picker/picker';
 import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from '@expo/vector-icons/AntDesign';
-
 
 const SignupScreen = ({ navigation }) => {
 
@@ -19,16 +17,15 @@ const SignupScreen = ({ navigation }) => {
   const [errorPassword, setErrorPassword] = useState("")
   const [confirmPassword, setconfirmPassword] = useState("");
   const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
-
-  const [selectedLanguage, setSelectedLanguage] = useState();
-
-  console.log(selectedLanguage)
+  const [role, setRole] = useState("")
+  const [errorRole, setErrorRole] = useState("")
 
   const items = [
-    { label: 'Empleador', value: '1' },
-    { label: 'Empleado', value: '2' },
+    { label: 'Empleador', value: 'Empleador' },
+    { label: 'Empleado', value: 'Empleado' },
   ];
   const [value, setValue] = useState(null);
+  console.log(value)
   const [isFocus, setIsFocus] = useState(false);
   const renderLabel = () => {
     if (value || isFocus) {
@@ -63,7 +60,7 @@ const SignupScreen = ({ navigation }) => {
       setErrorMail("")
       setErrorPassword("")
       setErrorConfirmPassword("")
-      const validation = signupSchema.validateSync({ email, password, confirmPassword })
+      const validation = signupSchema.validateSync({ email, password, confirmPassword, role })
       triggerSignUp({ email, password, returnSecureToken: true })
     } catch (err) {
       console.log("Entro al signup del error");
@@ -102,17 +99,6 @@ const SignupScreen = ({ navigation }) => {
             isSecure={true}
           />
           <View>
-
-            <Picker
-              prompt='Elige'
-              selectedValue={selectedLanguage}
-              onValueChange={(itemValue, itemIndex) =>
-                setSelectedLanguage(itemValue)
-              }>
-              <Picker.Item label="Empleador" value="Empleador" />
-              <Picker.Item label="Empleado" value="Empleado" />
-            </Picker>
-            
             <View style={styles.container}>
               {renderLabel()}
               <Dropdown
@@ -127,8 +113,7 @@ const SignupScreen = ({ navigation }) => {
                 labelField="label"
                 valueField="value"
 
-                placeholder={!isFocus ? 'Elige una opción' : '...'}
-                searchPlaceholder="Search..."
+                placeholder={!isFocus ? 'Elige una opción' : 'Elige el rol'}
                 value={value}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
@@ -165,7 +150,7 @@ export default SignupScreen
 
 const styles = StyleSheet.create({
   main: { marginTop: 10 },
-  submitButtonStyle: { margin: 10 },
+  submitButtonStyle: { margin: 10, alignSelf: 'center' },
   sub: {
     width: '90%',
     fontSize: 30,

@@ -2,18 +2,19 @@ import { StatusBar, Platform, Button, SafeAreaView, StyleSheet, Text, View, Pres
 import React, { useState } from 'react'
 import { colors } from '../constants/colors'
 import { ChangasLayout, Header, Searcher, JobsCategoriesList, ModalCustom, ButtonCustom } from '../component/indexComponent'
+import { useSelector } from 'react-redux'
 const Employee = ({ navigation }) => {
-  const [modalVisible, setModalVisible] = useState(true);
-
+  const isDark = useSelector(state => state.global.value.darkMode)
   return (
     <ChangasLayout style={styles.areaContainer}>
       <View style={styles.containerEmployeeScreen}>
         <Header title={"Empleados"} />
         <View>
-          <Text style={styles.titleSearchEmployer}> Postúlese para un trabajo</Text>
+
+          <Text style={isDark? {...styles.titleSearchEmployer, color:'white'} : styles.titleSearchEmployer}> Postúlese para un trabajo</Text>
         </View>
         <Searcher title={"Buscador de Empleos"} placeholder={'Escriba el nombre de un empleo o busque por categoría'} />
-        <JobsCategoriesList navigation={navigation}/>
+        <JobsCategoriesList navigation={navigation} style={isDark ? { ...styles.jobsListCategoriesContainer, borderBlockColor: colors.naranjaTitle } : styles.jobsListCategoriesContainer} />
         <ButtonCustom onPress={() => { navigation.goBack() }} buttonText={"Volver"} />
       </View>
     </ChangasLayout>

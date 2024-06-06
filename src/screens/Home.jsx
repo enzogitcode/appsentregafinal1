@@ -2,11 +2,15 @@ import React, {useState} from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
 import { Header, ChangasLayout, ButtonCustom, ModalCustom } from '../component/indexComponent.js'
+import { useSelector } from 'react-redux'
 
 const Home = ({ navigation }) => {
+
+    const user=9
     return (
         <ChangasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />
+            {user ? <View><Text>Bienvenido User</Text></View> : null}
             <View style={styles.homeContainer}>
                 <Pressable onPress={() => {
                     navigation.navigate('Employer')

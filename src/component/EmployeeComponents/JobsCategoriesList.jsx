@@ -4,10 +4,12 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import JobCategoryItem from './JobCategoryItem.jsx'
 import { useGetJobsCategoriesQuery } from '../../services/changasServices.js'
 import { useDispatch } from 'react-redux'
-import {setCategorySelected} from '../../features/Global/employeeSlice'
+import { setCategorySelected } from '../../features/Global/employeeSlice'
+import { useSelector } from 'react-redux'
 const JobsCategoriesList = ({ navigation }) => {
   const { data: categories, error, isLoading } = useGetJobsCategoriesQuery()
-  
+
+  const isDark = useSelector(state => state.global.value.darkMode)
 
   return (
 
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
     borderWidth: 10,
     borderRadius: 10,
     padding: 5,
-    borderBlockColor: colors.azulBackground
+    borderBlockColor: 'white',
+    backgroundColor: 'lightgreen'
   }
 })
