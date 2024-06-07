@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   containerEmployeeScreen: {
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 10,
+    gap: 2,
   },
   titleSearchEmployer: {
     fontSize: 28,
