@@ -8,6 +8,6 @@ export const signupSchema = object().shape({
     confirmPassword: string()
         .oneOf([ref("password"), null], "Passwords must match")
         .required(),
-    Role: string()
+    role: string()
         .required("Debes elegir un rol")
 })
