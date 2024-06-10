@@ -39,7 +39,7 @@ export const changasApi = createApi({
             {
                 query: ({ ...editedJob }) => ({
                     url: `jobs.json`,
-                    method: 'PUT',
+                    method: 'PATCH',
                     body: editedJob
                 })
             })
