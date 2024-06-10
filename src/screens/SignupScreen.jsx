@@ -67,14 +67,16 @@ const SignupScreen = ({ navigation }) => {
       setErrorConfirmPassword("")
       setErrorRole("")
       const validation = signupSchema.validateSync({ nombreEmpresa, email, password, confirmPassword, role })
-      triggerSignUp({ nombreEmpresa, email, password, returnSecureToken: true })
+      triggerSignUp({ nombreEmpresa, email, password, returnSecureToken: true, role })
+
     } catch (err) {
       console.log("Entro al signup del error");
       console.log(err.path);
       console.log(err.message);
       switch (err.path) {
-        case "empresa":
+        case "nombreEmpresa":
           setErrorNombreEmpresa(err.message)
+          break;
         case "email":
           setErrorMail(err.message)
           break;
