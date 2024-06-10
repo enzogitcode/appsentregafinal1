@@ -52,7 +52,8 @@ const SignupScreen = ({ navigation }) => {
           idToken: result.data.idToken,
           role: result.data.role
         })
-      )
+        )
+      console.log (user)
     }
   }, [result])
 
@@ -66,7 +67,7 @@ const SignupScreen = ({ navigation }) => {
       setErrorConfirmPassword("")
       setErrorRole("")
       const validation = signupSchema.validateSync({ nombreEmpresa, email, password, confirmPassword, role })
-      triggerSignUp({ email, password, returnSecureToken: true })
+      triggerSignUp({ nombreEmpresa, email, password, returnSecureToken: true })
     } catch (err) {
       console.log("Entro al signup del error");
       console.log(err.path);
@@ -92,7 +93,10 @@ const SignupScreen = ({ navigation }) => {
       <Header style={styles.title} title={"Signup"} />
       <View style={styles.main}>
         <View style={styles.formContainer}>
-          <InputForm label={"Nombre de la Empresa"} onChange={setNombreEmpresa} error={errorNombreEmpresa} />
+          <InputForm 
+          label={"Nombre de la Empresa"} 
+          onChange={setNombreEmpresa} 
+          error={errorNombreEmpresa} />
           <InputForm label={"email"} onChange={setEmail} error={errorMail} />
           <InputForm
             label={"password"}
