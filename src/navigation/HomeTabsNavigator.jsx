@@ -5,7 +5,7 @@ import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { colors } from '../constants/colors.js';
 import { useSelector } from 'react-redux';
 import PostAJobForm from '../component/EmployerComponents/PostAJobsForm.jsx';
-
+import textInputCustom from '../component/textInputCustom.jsx';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +23,7 @@ const HomeTabs = () => {
               <Ionicons name="home" color={color} size={size} />
             ),
           }} />
+
       <Tab.Screen name='PostAJobForm' component={PostAJobForm} />
       <Tab.Screen name="SignupScreen" component={SignupScreen} />
       {user ?

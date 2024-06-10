@@ -27,18 +27,32 @@ export const changasApi = createApi({
             }
         }),
         postNwJob: builder.mutation(
-            {query: ({ ...job }) => ({ url: `jobs.json`, method: 'POST', body: job })
+            {
+                query: ({ ...postedJob }) => ({
+                    url: `jobs.json`,
+                    method: 'POST',
+                    body: postedJob
+                })
 
-        })
+            }),
+        editPostedJob: builder.mutation(
+            {
+                query: ({ ...editedJob }) => ({
+                    url: `jobs.json`,
+                    method: 'PUT',
+                    body: editedJob
+                })
+            })
+
     })
 })
 
-export const { useGetJobsQuery, 
-    useGetJobsCategoriesQuery, 
-    useGetJobsbyCategoryQuery, 
+export const { useGetJobsQuery,
+    useGetJobsCategoriesQuery,
+    useGetJobsbyCategoryQuery,
     useGetJobsByIdQuery,
-    usePostNwJobMutation
-
+    usePostNwJobMutation,
+    useEditPostedJobMutation
 } = changasApi
 
 

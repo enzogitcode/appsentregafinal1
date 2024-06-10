@@ -11,6 +11,8 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 const SignupScreen = ({ navigation }) => {
 
+  const [nombreEmpresa, setNombreEmpresa] = useState("");
+  const [errorNombreEmpresa, setErrorNombreEmpresa] = useState("");
   const [email, setEmail] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +27,6 @@ const SignupScreen = ({ navigation }) => {
     { label: 'Empleado', value: 'Empleado' },
   ];
   const [value, setValue] = useState(null);
-  console.log(value)
   const [isFocus, setIsFocus] = useState(false);
   const renderLabel = () => {
     if (value || isFocus) {
@@ -46,8 +47,10 @@ const SignupScreen = ({ navigation }) => {
       console.log(result)
       dispatch(
         setUser({
+          nombreEmpresa: result.data.nombreEmpresa,
           email: result.data.email,
-          idToken: result.data.idToken
+          idToken: result.data.idToken,
+          role: result.data.role
         })
       )
     }
@@ -57,16 +60,20 @@ const SignupScreen = ({ navigation }) => {
 
   const onSubmit = () => {
     try {
+      setErrorNombreEmpresa("")
       setErrorMail("")
       setErrorPassword("")
       setErrorConfirmPassword("")
-      const validation = signupSchema.validateSync({ email, password, confirmPassword, role })
+      setErrorRole("")
+      const validation = signupSchema.validateSync({ nombreEmpresa, email, password, confirmPassword, role })
       triggerSignUp({ email, password, returnSecureToken: true })
     } catch (err) {
       console.log("Entro al signup del error");
       console.log(err.path);
       console.log(err.message);
       switch (err.path) {
+        case "empresa":
+          setErrorNombreEmpresa(err.message)
         case "email":
           setErrorMail(err.message)
           break;
@@ -85,6 +92,7 @@ const SignupScreen = ({ navigation }) => {
       <Header style={styles.title} title={"Signup"} />
       <View style={styles.main}>
         <View style={styles.formContainer}>
+          <InputForm label={"Nombre de la Empresa"} onChange={setNombreEmpresa} error={errorNombreEmpresa} />
           <InputForm label={"email"} onChange={setEmail} error={errorMail} />
           <InputForm
             label={"password"}
@@ -119,6 +127,7 @@ const SignupScreen = ({ navigation }) => {
                 onBlur={() => setIsFocus(false)}
                 onChange={item => {
                   setValue(item.value);
+                  setRole(item.value)
                   setIsFocus(false);
                 }}
                 renderLeftIcon={() => (

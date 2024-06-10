@@ -4,7 +4,7 @@ import { useGetJobsByIdQuery } from '../../services/changasServices'
 import { setIdSelected } from '../../features/Global/employeeSlice'
 import { useDispatch } from "react-redux"
 
-const JobItem = ({id, jobTitle, jobAge, category, firm, location, otherdata, experience}) => {
+const JobItem = ({ jobTitle, jobAge, category, firm, location, otherdata, experience}) => {
 
 
   return (
@@ -14,7 +14,6 @@ const JobItem = ({id, jobTitle, jobAge, category, firm, location, otherdata, exp
         <Text style={styles.textSyle}>Categoría:</Text>
         <Text >{category}</Text>
         <Text style={styles.textSyle}>Empresa: {firm}</Text>
-        <Text style={styles.textSyle}>Id: {id}</Text>
         <Text style={styles.textSyle}>Edad buscada: {jobAge}</Text>
         <Text style={styles.textSyle}>Ubicación: {location}</Text>
         <Text style={styles.textSyle}>Requerimientos: {otherdata}</Text>

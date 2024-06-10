@@ -12,6 +12,9 @@ const InputForm = ({
         setInput(text)
         onChange(text)
     }
+    const onFocus = () => {
+
+      }
 
   return (
     <View style={styles.inputContainer}>
@@ -21,6 +24,7 @@ const InputForm = ({
         value={input}
         onChangeText={onChangeText}
         secureTextEntry={isSecure}
+        onFocus={onFocus}
       />
       {error ? 
         <Text style = {styles.error}>
@@ -39,27 +43,30 @@ const styles = StyleSheet.create({
     inputContainer: {
         flexDirection: 'column',
         justifyContent: 'flex-start',
+        borderWidth: 2,
         alignItems: 'center',
-        width: '100%'
+        width: '100%',
+        borderRadius: 10,
+        marginVertical: 10
     },
     subtitle: {
         width: '90%',
+        justifyContent: 'flex-start',
         fontSize: 20,
-        fontFamily: 'retosta'
-    },
-    error: {
-        paddintTop: 2,
+        fontFamily: 'retosta',
+        textDecorationLine: 'underline'
+        },
+        error: {
+            paddintTop: 2,
         fontSize: 20,
         color: 'red',
         fontFamily: 'retosta',
-    },
-    input: {
+        },
+        input: {
+        margin: '2%',
         width: '90%',
-        borderWidth: 0,
-        borderBottomWidth: 3,
-        borderBottomColor: 'red',
         padding: 2,
         fontFamily: 'retosta',
-        fontSize: 14,
+        fontSize: 20
     }
 })

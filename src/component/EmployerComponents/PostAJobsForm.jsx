@@ -1,54 +1,31 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
-import { useState } from 'react'
+import TextInputCustom from '../textInputCustom'
 import InputForm from '../InputForm'
+import LogoutButton from '../LogoutButton'
+import ButtonCustom from '../ButtonCustom'
 
-const PostAJobForm = (
-  
-  { label,
-    onChange,
-    error = "",
-    isSecure = false }
-  ) => {
-  /* ({
+const PostAJobsForm = () => {
+  const onChange = () => {
 
-    jobTitle, 
-    jobAge, 
-    category, 
-    firm, 
-    location, 
-    otherdata, 
-    experience
-  }) => {
-
-*/
-  const [input, setInput] = useState("");
-  const onChangeText = (text) => {
-    setInput(text)
-    onChange(text)
   }
-
   return (
-    <View style={styles.inputContainer}>
-      <Text style={styles.subtitle}>{label}</Text>
-      <TextInput
-        style={styles.input}
-        value={input}
-        onChangeText={onChangeText}
-        secureTextEntry={isSecure}
-      />
-      {error ?
-        <Text style={styles.error}>
-          {error}
-        </Text>
-        :
-        null
-      }
-    
-    </View>
-  )
+    <View>
+      <InputForm label={'Título'} onChange={onChange} />
+      <InputForm label={'Empresa o Compañia'} onChange={onChange} />
+      <InputForm label={'Descripción del Empleo'} onChange={onChange} />
+      <InputForm label={'Edad Máxima buscada'} onChange={onChange} />
+      <InputForm label={'Edad Mínima buscada'} onChange={onChange} />
+      <InputForm label={'Ubicación'} onChange={onChange} />
+      <InputForm label={'Requerimientos'} onChange={onChange} />
+      <InputForm label={'Años de Emperiencia sugeridos'} onChange={onChange} />
+      <ButtonCustom buttonText={"POST"}/>
+      </View>
+      )
 }
 
-export default PostAJobForm
+      export default PostAJobsForm
 
-const styles = StyleSheet.create({})
+      const styles = StyleSheet.create({ 
+
+      })
