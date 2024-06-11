@@ -1,13 +1,18 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
-import { ButtonCustom, ChangasLayout, Header, ModalCustom } from '../component/indexComponent'
+import { ButtonCustom, ChangasLayout, Header, LogoutButton, ModalCustom } from '../component/indexComponent'
 import { colors } from '../constants/colors'
+import { useSelector } from 'react-redux'
 
 const MyProfile = ({ navigation }) => {
+  const {user} = useSelector(state => state.auth.value)
+
   const [image, setImage] = useState(null)
   return (
     <ChangasLayout>
       <Header title={"Mi Perfil"} />
+
+      {user? <Text>Usuario: {user}</Text>: null}
       <View style={styles.profileContainer}>
         {image ? null :
           <>
@@ -19,6 +24,7 @@ const MyProfile = ({ navigation }) => {
             <ButtonCustom buttonText={"Agregar foto a Mi Perfil"} />
           </>
         }
+        <LogoutButton/>
       </View>
     </ChangasLayout>
   )

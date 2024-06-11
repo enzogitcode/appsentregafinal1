@@ -14,6 +14,7 @@ const JobsCategoriesList = ({ navigation }) => {
   return (
 
     <FlatList style={styles.jobsListCategoriesContainer}
+    scrollEnabled={true}
       data={categories}
       keyExtractor={(category) => category}
       renderItem={({ item }) => (

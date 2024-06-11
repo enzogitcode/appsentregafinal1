@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
 import { Header, ChangasLayout, ButtonCustom, ModalCustom, LogoutButton } from '../component/indexComponent.js'
 import { useSelector } from 'react-redux'
 
 const Home = ({ navigation }) => {
-    const {user} = useSelector(state => state.auth.value)
+    const { user } = useSelector(state => state.auth.value)
 
     return (
         <ChangasLayout style={styles.homeContainer}>
@@ -22,8 +22,8 @@ const Home = ({ navigation }) => {
                 }} style={styles.viewHomeContainer}>
                     <Text style={styles.textBtn}>Busco empleo</Text>
                 </Pressable>
+                {user ? <LogoutButton /> : <ButtonCustom style={styles.buttonCustomStyle} buttonText={"Login"} onPress={() => { navigation.navigate('LoginScreen') }} />}
             </View>
-            {user? <LogoutButton/>: <ButtonCustom style={styles.buttonCustomStyle} buttonText={"Login"} onPress={() => {navigation.navigate('LoginScreen')}}/>}
         </ChangasLayout>
     )
 }
@@ -32,9 +32,9 @@ export default Home;
 
 const styles = StyleSheet.create({
     homeContainer: {
-        marginTop: 10,
+        flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        marginVertical: 20
     },
     textBtn: {
         fontFamily: 'kathen',

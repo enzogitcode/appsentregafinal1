@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     padding: 5,
     borderColor: colors.naranjaTitle,
     borderRadius: 10,
-    backgroundColor: colors.azulBackground
+    backgroundColor: colors.azulBackground,
+    marginHorizontal: 6
   }
   ,
   JobSeekerTextTitle: {

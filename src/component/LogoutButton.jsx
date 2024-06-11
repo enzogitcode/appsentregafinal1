@@ -16,7 +16,9 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 15,
     color: '#fff',
-    backgroundColor: '#c1121f'
+    backgroundColor: '#c1121f',
+    alignSelf: 'center',
+    width: '60%',
   },
   textLogout: {
     textAlign: 'center',

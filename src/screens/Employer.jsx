@@ -6,19 +6,21 @@ import { useSelector } from 'react-redux'
 
 const Employer = ({ navigation }) => {
   const isDark = useSelector(state => state.global.value.darkMode)
-
+  //const { user } = useSelector(state => state.auth.value)
+  const user=9
   return (
     <ChangasLayout style={styles.areaContainer}>
       <View style={styles.employerScreenContainer}>
         <Header title={"Employer"} />
         <View>
-          <Text style={isDark ? {...styles.titleEmployer, color: 'white' } : styles.titleEmployer}>Busque un empleado </Text>
-      </View>
-      <Searcher title={"Buscador de Empleados"} placeholder={"Escriba el nombre de un Empleado o busque por categoría"} />
+          <Text style={isDark ? { ...styles.titleEmployer, color: 'white' } : styles.titleEmployer}>Busque un empleado </Text>
+        </View>
+        <Searcher title={"Buscador de Empleados"} placeholder={"Escriba el nombre de un Empleado o busque por categoría"} />
 
-      <ButtonCustom onPress={() => { navigation.navigate('EmployeeList') }} style={styles.goBackPressable} buttonText={"Ver Lista completa de Empleados"} />
-      <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} buttonText={"Volver"} />
-    </View>
+        {user ? <ButtonCustom onPress={() => { navigation.navigate('PostAJobsForm') }} style={styles.goBackPressable} buttonText={"Postear un nuevo trabajo"} /> : null}
+        <ButtonCustom onPress={() => { navigation.navigate('EmployeeList') }} style={styles.goBackPressable} buttonText={"Ver Lista completa de Empleados"} />
+        <ButtonCustom onPress={() => { navigation.goBack() }} style={styles.goBackPressable} buttonText={"Volver"} />
+      </View>
     </ChangasLayout >
   )
 }
@@ -26,9 +28,7 @@ const Employer = ({ navigation }) => {
 export default Employer
 
 const styles = StyleSheet.create({
-  areaContainer: {
-    margin: Platform.OS === "android" ? StatusBar.currentHeight : 0
-  },
+  areaContainer: { flex: 1 },
   employerScreenContainer: {
     alignItems: 'center',
     justifyContent: 'center',

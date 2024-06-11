@@ -3,13 +3,17 @@ import React from 'react'
 import InputForm from '../InputForm'
 import LogoutButton from '../LogoutButton'
 import ButtonCustom from '../ButtonCustom'
+import Header from '../Header'
+import ChangasLayout from '../ChangasLayout'
+import { useSelector } from 'react-redux'
 
 const PostAJobsForm = () => {
   const onChange = () => {
 
   }
   return (
-    <View>
+    <ChangasLayout>
+      <Header title={'Postear un Trabajo'}/>
       <InputForm label={'Título'} onChange={onChange} />
       <InputForm label={'Empresa o Compañia'} onChange={onChange} />
       <InputForm label={'Descripción del Empleo'} onChange={onChange} />
@@ -19,7 +23,7 @@ const PostAJobsForm = () => {
       <InputForm label={'Requerimientos'} onChange={onChange} />
       <InputForm label={'Años de Emperiencia sugeridos'} onChange={onChange} />
       <ButtonCustom buttonText={"POST"}/>
-      </View>
+      </ChangasLayout>
       )
 }
 

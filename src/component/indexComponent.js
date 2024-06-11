@@ -19,5 +19,4 @@ export {default as JobsCategoriesList} from './EmployeeComponents/JobsCategories
 export { default as EmployeeList} from './EmployerComponents/EmployeeList'
 export { default as SearchEmployee} from './EmployerComponents/SearchEmployee'
 export {default as MyPostedJobList } from './EmployerComponents/MyPostedJobList' 
-export {default as PostAJobsForm} from './EmployerComponents/PostAJobsForm' 
 
