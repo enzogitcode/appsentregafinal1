@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
-import TextInputCustom from '../textInputCustom'
 import InputForm from '../InputForm'
 import LogoutButton from '../LogoutButton'
 import ButtonCustom from '../ButtonCustom'

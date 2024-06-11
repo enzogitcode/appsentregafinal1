@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { apiKey, baseAuthUrl } from "../database/realtimedatabase/realtimeDatabase"
+import { baseAuthUrl, apiKey} from '../database/users'
 
 export const authApi = createApi({
     reducerPath: "authApi",
@@ -13,7 +13,7 @@ export const authApi = createApi({
             }),
         }),
         signIn: builder.mutation({
-            query: ({...auth}) => ({
+            query: ({ ...auth }) => ({
                 url: `/accounts:signInWithPassword?key=${apiKey}`,
                 method: "POST",
                 body: auth

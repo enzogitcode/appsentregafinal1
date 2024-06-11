@@ -2,7 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { useState, useEffect } from 'react'
 import { ButtonCustom, ChangasLayout, Header, InputForm, SubmitButton } from '../component/indexComponent'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import {setUser} from '../features/Users/usersSlice'
 import { useSignUpMutation } from '../services/authServices'
 import { signupSchema } from '../services/authSchema'
 import { colors } from '../constants/colors'
@@ -23,13 +24,13 @@ const SignupScreen = ({ navigation }) => {
   const [errorRole, setErrorRole] = useState("")
 
   const items = [
-    { label: 'Empleador', value: 'Empleador' },
-    { label: 'Empleado', value: 'Empleado' },
+    { label: 'Empleador', roleValue: 'Empleador' },
+    { label: 'Empleado', roleValue: 'Empleado' },
   ];
-  const [value, setValue] = useState(null);
+  const [roleValue, setRoleValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
   const renderLabel = () => {
-    if (value || isFocus) {
+    if (roleValue || isFocus) {
       return (
         <Text style={[styles.label, isFocus && { color: 'blue' }]}>
           Elige una opción
@@ -52,8 +53,8 @@ const SignupScreen = ({ navigation }) => {
           idToken: result.data.idToken,
           role: result.data.role
         })
-        )
-      console.log (user)
+      )
+      console.log(user)
     }
   }, [result])
 
@@ -68,7 +69,7 @@ const SignupScreen = ({ navigation }) => {
       setErrorRole("")
       const validation = signupSchema.validateSync({ nombreEmpresa, email, password, confirmPassword, role })
       triggerSignUp({ nombreEmpresa, email, password, returnSecureToken: true, role })
-
+      {user.role == "Empleado" ? navigation.navigate('Employer'): navigation.navigate('Employee')}
     } catch (err) {
       console.log("Entro al signup del error");
       console.log(err.path);
@@ -82,8 +83,13 @@ const SignupScreen = ({ navigation }) => {
           break;
         case "password":
           setErrorPassword(err.message)
+          break;
         case "confirmPassword":
           setErrorConfirmPassword(err.message)
+          break;
+        case "role":
+          setErrorRole(err.message)
+          break;
         default:
           break;
       }
@@ -95,10 +101,10 @@ const SignupScreen = ({ navigation }) => {
       <Header style={styles.title} title={"Signup"} />
       <View style={styles.main}>
         <View style={styles.formContainer}>
-          <InputForm 
-          label={"Nombre de la Empresa"} 
-          onChange={setNombreEmpresa} 
-          error={errorNombreEmpresa} />
+          <InputForm
+            label={"Nombre de la Empresa"}
+            onChange={setNombreEmpresa}
+            error={errorNombreEmpresa} />
           <InputForm label={"email"} onChange={setEmail} error={errorMail} />
           <InputForm
             label={"password"}
@@ -125,15 +131,15 @@ const SignupScreen = ({ navigation }) => {
                 search={false}
                 maxHeight={300}
                 labelField="label"
-                valueField="value"
+                valueField="roleValue"
 
                 placeholder={!isFocus ? 'Elige una opción' : 'Elige el rol'}
-                value={value}
+                value={roleValue}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
                 onChange={item => {
-                  setValue(item.value);
-                  setRole(item.value)
+                  setRoleValue(item.roleValue);
+                  setRole(item.roleValue)
                   setIsFocus(false);
                 }}
                 renderLeftIcon={() => (
@@ -146,8 +152,8 @@ const SignupScreen = ({ navigation }) => {
                 )}
               />
             </View>
-          </View>
           <SubmitButton style={styles.submitButtonStyle} onPress={onSubmit} title="Enviar" />
+          </View>
         </View>
         <View style={styles.alternativesContainer}>
           <Text style={styles.sub}>¿Ya tiene usted una cuenta?</Text>

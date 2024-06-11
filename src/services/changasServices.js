@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { baseUrl } from '../database/realtimedatabase/realtimeDatabase.js'
-
+import {baseUrl} from '../database/realtimedatabase/realtimeDatabase'
 export const changasApi = createApi({
     reducerPath: "changasApi",
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
@@ -26,6 +25,16 @@ export const changasApi = createApi({
                 return null
             }
         }),
+        candidateJob: builder.mutation(
+            {
+                query: ({ ...candidateJob }) => ({
+                    url: `candidate.json`,
+                    method: 'POST',
+                    body: candidateJob
+                })
+
+            }),
+
         postNwJob: builder.mutation(
             {
                 query: ({ ...postedJob }) => ({

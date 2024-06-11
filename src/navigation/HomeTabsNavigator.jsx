@@ -3,15 +3,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Home, LoginScreen, MyProfile, SignupScreen } from '../screens/indexScreens.js'
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { colors } from '../constants/colors.js';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 import PostAJobForm from '../component/EmployerComponents/PostAJobsForm.jsx';
-import textInputCustom from '../component/textInputCustom.jsx';
 
 const Tab = createBottomTabNavigator();
 
 const HomeTabs = () => {
-  //const user= useSelector (state=> state.authReducer.value.user)
-  const user = 9
+  const {user} = useSelector(state => state.auth.value)
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home}
@@ -24,8 +22,6 @@ const HomeTabs = () => {
             ),
           }} />
 
-      <Tab.Screen name='PostAJobForm' component={PostAJobForm} />
-      <Tab.Screen name="SignupScreen" component={SignupScreen} />
       {user ?
         <Tab.Screen name="MyProfile" component={MyProfile}
           options={{

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import { colors } from "../constants/colors"
 import { useSignInMutation } from "../services/authServices.js"
 import { SubmitButton, InputForm, Header, ButtonCustom, ChangasLayout } from '../component/indexComponent'
-import { setUser } from "../features/Users/usersSlice"
+import { setUser } from "../features/Users/usersSlice.js"
 import { useDispatch } from "react-redux"
 
 const LoginScreen = ({ navigation }) => {

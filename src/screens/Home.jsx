@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import { colors } from '../constants/colors'
-import { Header, ChangasLayout, ButtonCustom, ModalCustom } from '../component/indexComponent.js'
+import { Header, ChangasLayout, ButtonCustom, ModalCustom, LogoutButton } from '../component/indexComponent.js'
 import { useSelector } from 'react-redux'
 
 const Home = ({ navigation }) => {
+    const {user} = useSelector(state => state.auth.value)
 
-    const user=9
     return (
         <ChangasLayout style={styles.homeContainer}>
             <Header title={"ChangasApp"} />
-            {user ? <View><Text>Bienvenido User</Text></View> : null}
+            {user ? <View><Text>Bienvenido {`${user}`}</Text></View> : null}
             <View style={styles.homeContainer}>
                 <Pressable onPress={() => {
                     navigation.navigate('Employer')
@@ -23,7 +23,7 @@ const Home = ({ navigation }) => {
                     <Text style={styles.textBtn}>Busco empleo</Text>
                 </Pressable>
             </View>
-            <ButtonCustom style={styles.buttonCustomStyle} buttonText={"Login"} onPress={() => {navigation.navigate('LoginScreen')}}/>
+            {user? <LogoutButton/>: <ButtonCustom style={styles.buttonCustomStyle} buttonText={"Login"} onPress={() => {navigation.navigate('LoginScreen')}}/>}
         </ChangasLayout>
     )
 }
