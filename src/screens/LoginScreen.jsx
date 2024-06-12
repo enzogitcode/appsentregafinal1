@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native"
+import { ScrollView, StyleSheet, Text, View } from "react-native"
 import React, { useState, useEffect } from "react"
 import { colors } from "../constants/colors"
 import { useSignInMutation } from "../services/authServices.js"
@@ -28,11 +28,11 @@ const LoginScreen = ({ navigation }) => {
                     console.log(" ~ useEffect ~ result:", result)
                     dispatch(
                         setUser({
-                            nombreEmpresa: result.data.nombreEmpresa,
-                            email: result.data.email,
-                            localId: result.data.localId,
-                            idToken: result.data.idToken,
-                            role: result.data.role
+                            nombreEmpresa: result.nombreEmpresa,
+                            email: result.email,
+                            localId: result.localId,
+                            idToken: result.idToken,
+                            role: result.role
                         })
                     )
                 })
@@ -49,8 +49,8 @@ const LoginScreen = ({ navigation }) => {
 
     return (
         <ChangasLayout style={styles.main}>
-            <View >
                 <Header title={"Access to Login"} />
+            <ScrollView >
                 <View style={styles.container}>
                     <InputForm label={"Nombre de la Empresa/Emprendedor"} onChange={setNombreEmpresa} error={""} />
                     <InputForm label={"email"} onChange={setEmail} error={""} />
@@ -66,7 +66,7 @@ const LoginScreen = ({ navigation }) => {
                     <SubmitButton onPress={() => navigation.navigate("SignupScreen")} title={"Signup"} />
                 </View>
                 <ButtonCustom buttonText={"Volver"} onPress={() => { navigation.goBack() }} style={styles.goBackPressable} title="Volver" />
-            </View>
+            </ScrollView>
         </ChangasLayout>
     )
 }

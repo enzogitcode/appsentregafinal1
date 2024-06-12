@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 
 const ImageSelector = ({ navigation }) => {
     const [image, setImage] = useState(null)
-    const dispatch= useDispatch()
+    const dispatch = useDispatch()
     const [imageURI, setImageURI] = useState(null)
     const verifyCameraPermissions = async () => {
         const { granted } = await ImagePicker.requestCameraPermissionsAsync()
@@ -36,39 +36,46 @@ const ImageSelector = ({ navigation }) => {
                     setImage(image)
                 }
             }
-            
+
         } catch (error) {
-            
+
         }
 
     }
-    const confirmImage = () => {
+    const confirmImage = async () => {
         try {
             dispatch(setCameraImage(image))
             navigation.goBack()
-        } catch (error) {
-            
+            triggerPostImage({ image, localId })
+            if (isImageFromCamera) {
+                const result = await ExpoLibrary.createAssetAsync(imageURI)
+                navigation.goBack()
+            }
         }
-    }
-    return (
-        <View style={styles.ImageSelectorContainer}>
-            {image ?
-                <>
-                    <Image />
-                    <ButtonCustom buttonText={"Tomar otra foto"} onPress={pickImage} />
-                    <ButtonCustom buttonText={"Confirmar Foto"} onPress={confirmImage} />
+        catch (error) {
+        }
 
-                </>
-                :
-                <>
-                    <View style={styles.noFotoContainer}>
-                        <Text style={styles.noFotoText}>No hay foto para mostrar</Text>
-                    </View>
-                    <ButtonCustom onPress={pickImage} buttonText={"Tomar una foto"}/>
-                    <ButtonCustom onPress={() => navigation.goBack()} buttonText={"Volver"}/>
-                    </>} 
-        </View>
-    )
+
+        return (
+            <View style={styles.ImageSelectorContainer}>
+                {image || imageFromBase ?
+                    <>
+                        <Image />
+                        <ButtonCustom buttonText={"Tomar otra foto"} onPress={pickImage} />
+                        <ButtonCustom buttonText={"Confirmar Foto"} onPress={confirmImage} />
+
+                    </>
+                    :
+                    <>
+                        <View style={styles.noFotoContainer}>
+                            <Text style={styles.noFotoText}>No hay foto para mostrar</Text>
+                        </View>
+                        <ButtonCustom onPress={pickImage} buttonText={"Tomar una foto"} />
+                        <ButtonCustom onPress={() => navigation.goBack()} buttonText={"Volver"} />
+                    </>}
+            </View>
+        )
+    }
 }
 
 export default ImageSelector

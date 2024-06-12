@@ -10,8 +10,7 @@ import { getSessions } from '../persistence/index.js';
 const Tab = createBottomTabNavigator();
 
 const HomeTabs = () => {
-  //const { user } = useSelector(state => state.auth.value)
-  const user = 9
+  const { user } = useSelector(state => state.auth.value)
 
   useEffect(() => {
     (async () => {
