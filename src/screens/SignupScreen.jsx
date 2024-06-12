@@ -54,7 +54,7 @@ const SignupScreen = ({ navigation }) => {
           role: result.data.role
         })
       )
-      console.log(user)
+      console.log("error", user)
     }
   }, [result])
 

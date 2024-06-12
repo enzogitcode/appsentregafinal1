@@ -5,16 +5,18 @@ import Navigator from './src/navigation/Navigator';
 import { Provider } from 'react-redux';
 import store from './src/store';
 import { initSQLiteDB } from './src/persistence'
-export default function App() {
-  (async ()=> {
-    try {
-        const response = await initSQLiteDB()
-        console.log ({responseCreatingDB: response})
-        console.log("DB initialized");
-    } catch (error) {
-      console.log({errorCreatingDB: error})
-    }
+
+(async () => {
+  try {
+    const response = await initSQLiteDB()
+    console.log({ responseCreatingDB: response })
+    console.log("DB initialized");
+  } catch (error) {
+    console.log({ errorCreatingDB: error })
+  }
 })()
+
+const App = ()=> {
   const [orientation, setOrientation] = useState("portrait")
   const { width, height } = useWindowDimensions()
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function App() {
     return (
       <SafeAreaView style={styles.container}>
         <Provider store={store}>
-          <Navigator/>
+          <Navigator />
         </Provider>
       </SafeAreaView>
     );
@@ -45,3 +47,5 @@ const styles = StyleSheet.create({
     flex: 1,
   }
 });
+
+export default App
