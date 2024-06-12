@@ -1,15 +1,13 @@
-import * as ExpoSQLite from "expo-sqlite"
+import * as ExpoSQLite from 'expo-sqlite';
 
-const db = ExpoSQLite.openDatabase("sessions.db")
-
+const db = ExpoSQLite.openDatabaseAsync("sessions.db")
 export const initSQLiteDB = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql("CREATE TABLE IF NOT EXISTS sessions (localId TEXT PRIMARY KEY NOT NULL, email TEXT NOT NULL, token TEXT NOT NULL, nombreEmpresa TEXT NOT NULL);",
-                    [],
-                    (_, result) => resolve(result),
-                    (_, error) => reject(error)
-                
+                [],
+                (_, result) => resolve(result),
+                (_, error) => reject(error)
             )
         })
     })
@@ -26,10 +24,10 @@ export const insertSession = ({
         db.transaction((tx) => {
             tx.executeSql(
                 'INSERT INTO sessions (nombreEmpresa, localId, email, token, role) VALUES (?, ?, ?, ?, ?);',
-                [nombreEmpresa, localId, email, token, role], 
-                (_, result) => resolve(result), 
-                (_, error) => reject(error) 
-            )
+                [nombreEmpresa, localId, email, token, role],
+                (_, result) => resolve(result),
+                (_, error) => reject(error)
+                )
         })
     })
     return promise
@@ -40,8 +38,8 @@ export const getSessions = ({ }) => {
             tx.executeSql(
                 'SELECT * from sessions',
                 [],
-                (_, result) => resolve(result), 
-                (_, error) => reject(error) 
+                (_, result) => resolve(result),
+                (_, error) => reject(error)
             )
         })
     })
@@ -52,8 +50,8 @@ export const dropSessionsTable = () => {
         db.transaction((tx) => {
             tx.executeSql(
                 "DROP TABLE IF EXISTS sessions",
-                (_, result) => resolve(result), 
-                (_, error) => reject(error) 
+                (_, result) => resolve(result),
+                (_, error) => reject(error)
             )
         })
     })
@@ -65,9 +63,9 @@ export const truncateSessionsTable = () => {
         db.transaction((tx) => {
             tx.executeSql(
                 "DELETE FROM sessions",
-                [], 
-                (_, result) => resolve(result), 
-                (_, error) => reject(error) 
+                [],
+                (_, result) => resolve(result),
+                (_, error) => reject(error)
             )
         })
     })

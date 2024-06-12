@@ -24,7 +24,6 @@ const LoginScreen = ({ navigation }) => {
                 token: result.data.token,
                 role: result.data.role
             })
-            console.log(result.data)
                 .then(() => {
                     dispatch(
                         setUser({
@@ -36,19 +35,14 @@ const LoginScreen = ({ navigation }) => {
                         })
                     )
                 })
-                .catch((err) => {
+                .catch((error) => {
                 })
 
         }
     }, [result])
 
     const onSubmit = () => {
-        try {
-            triggerSignIn({ nombreEmpresa, email, password, role })
-            navigation.navigate("Home")
-        } catch (error) {
-
-        }
+        triggerSignIn({ nombreEmpresa, email, password, role })
     }
 
     return (
