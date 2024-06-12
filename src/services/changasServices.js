@@ -52,20 +52,20 @@ export const changasApi = createApi({
                     body: editedJob
                 })
             }),
-            getProfileImage: builder.query({
-                query: (localId) => `profileImages/${localId}.json`,
-                providesTags: ['profileImageGet']
+        getProfileImage: builder.query({
+            query: (localId) => `profileImages/${localId}.json`,
+            providesTags: ['profileImageGet']
+        }),
+        postProfileImage: builder.mutation({
+            query: ({ image, localId }) => ({
+                url: `profileImages/${localId}.json`,
+                method: "PUT",
+                body: {
+                    image: image
+                },
             }),
-            postProfileImage: builder.mutation({
-                query: ({image, localId}) => ({
-                    url: `profileImages/${localId}.json`,
-                    method: "PUT",
-                    body: {
-                        image: image
-                    },
-                }),
-                invalidatesTags: ['profileImageGet']
-            })
+            invalidatesTags: ['profileImageGet']
+        })
     })
 })
 
@@ -74,7 +74,9 @@ export const { useGetJobsQuery,
     useGetJobsbyCategoryQuery,
     useGetJobsByIdQuery,
     usePostNwJobMutation,
-    useEditPostedJobMutation
+    useEditPostedJobMutation,
+    useGetProfileImageQuery,
+    usePostProfileImageMutation
 } = changasApi
 
 

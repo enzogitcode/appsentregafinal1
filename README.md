@@ -4,9 +4,9 @@ ChangasApp es una aplicación móvil destinada a acercar personas a su posible n
 -React Native
 -Firebase - RealTime DataBase
 
-
 ## Funcionalidades
-
+Crear nuevos empleos.
+Convertirse en candidato a un empleo.
 
 ### Instalación
 1- Clonar el repositorio.
