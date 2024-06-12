@@ -2,11 +2,18 @@ import { StyleSheet, Text, View, Pressable, ScrollView } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Header, ChangasLayout, InputForm, ButtonCustom, LogoutButton } from '../component/indexComponent'
+import { usePostNwJobMutation } from '../services/changasServices'
+const PostAJobsForm = ({ navigation }) => {
+  const isDark = useSelector(state => state.global.value.isDark)
+  const { localId } = useSelector(state => state.auth.value)
 
-const PostAJobsForm = () => {
-  //const isDark = useSelector(state=> state.value.isDark)
+  const [triggerPostNwJob, result] = usePostNwJobMutation()
+
   const onChange = () => {
 
+  }
+  const confirmNwJob = () => {
+    triggerPostNwJob({ user: localId, total })
   }
   return (
     <ChangasLayout>
@@ -21,8 +28,8 @@ const PostAJobsForm = () => {
         <InputForm label={'Requerimientos'} onChange={onChange} />
         <InputForm label={'Años de Emperiencia sugeridos'} onChange={onChange} />
         <View style={styles.buttonsContainer}>
-          <ButtonCustom buttonText={"Volver"} />
-          <ButtonCustom buttonText={"POST"} />
+          <ButtonCustom buttonText={"Volver"} onPress={() => navigation.goBack()} />
+          <ButtonCustom buttonText={"POST"} onPress={confirmNwJob} />
         </View>
         <LogoutButton />
       </ScrollView>
@@ -33,7 +40,7 @@ const PostAJobsForm = () => {
 export default PostAJobsForm
 
 const styles = StyleSheet.create({
-  buttonsContainer:{
+  buttonsContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     gap: 20,

@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 import { ButtonCustom, ChangasLayout, Header, LogoutButton, ModalCustom } from '../component/indexComponent'
 import { colors } from '../constants/colors'
 import { useSelector } from 'react-redux'
+import { useGetProfileImageQuery } from '../services/changasServices'
 
 const MyProfile = ({ navigation }) => {
   const { user } = useSelector(state => state.auth.value)
+  const { localId, imageCamera } = useSelector(state => state.auth.value)
+  const { data: imageFromBase } = useGetProfileImageQuery(localId)
 
-  const [image, setImage] = useState(null)
-  const imageFromBase = null
-  const imageCamera = useSelector(state => state.auth.value)
 
   const launchCamera = async () => {
     navigation.navigate('Image selector')
@@ -20,8 +20,8 @@ const MyProfile = ({ navigation }) => {
     <ChangasLayout>
       <Header title={"Mi Perfil"} />
 
-      {user ? <Text>Usuario: {user}</Text> : null}
       <View style={styles.profileContainer}>
+      {user ? <Text>Usuario: {user}</Text> : null}
         {imageFromBase || imageCamera ? (
           <Image
             source={{ uri: imageFromBase?.image || imageCamera }}
@@ -46,10 +46,11 @@ const MyProfile = ({ navigation }) => {
 export default MyProfile
 
 const styles = StyleSheet.create({
+
   profileContainer: {
     marginVertical: '5%',
     alignItems: 'center',
-    gap: 10
+    gap: 10,
   },
   image: {
     width: 100,
