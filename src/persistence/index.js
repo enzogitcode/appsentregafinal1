@@ -28,9 +28,9 @@ export const insertSession = ({
         db.transaction((tx) => {
             tx.executeSql(
                 'INSERT INTO sessions (nombreEmpresa, localId, email, token, role) VALUES (?, ?, ?, ?, ?);',
-                [nombreEmpresa, localId, email, token, role], //Parameters
-                (_, result) => resolve(result), //Resolve trasaction
-                (_, error) => reject(error) //Transaction error
+                [nombreEmpresa, localId, email, token, role], 
+                (_, result) => resolve(result), 
+                (_, error) => reject(error) 
             )
         })
     })
@@ -43,8 +43,8 @@ export const getSessions = ({ }) => {
             tx.executeSql(
                 'SELECT * from sessions',
                 [],
-                (_, result) => resolve(result), //Resolve trasaction
-                (_, error) => reject(error) //Transaction error
+                (_, result) => resolve(result), 
+                (_, error) => reject(error) 
             )
         })
     })
@@ -54,11 +54,10 @@ export const dropSessionsTable = () => {
     console.log("Will drop table")
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
-            //Define SQL statement. BEWARE of PARENTHESIS
             tx.executeSql(
                 "DROP TABLE IF EXISTS sessions",
-                (_, result) => resolve(result), //Resolve trasaction
-                (_, error) => reject(error) //Transaction error
+                (_, result) => resolve(result), 
+                (_, error) => reject(error) 
             )
         })
     })
@@ -70,12 +69,11 @@ export const truncateSessionsTable = () => {
     console.log("Will truncate table")
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
-            //Define SQL statement. BEWARE of PARENTHESIS
             tx.executeSql(
                 "DELETE FROM sessions",
-                [], //Parameters
-                (_, result) => resolve(result), //Resolve trasaction
-                (_, error) => reject(error) //Transaction error
+                [], 
+                (_, result) => resolve(result), 
+                (_, error) => reject(error) 
             )
         })
     })

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import {baseUrl} from '../database/realtimedatabase/realtimeDatabase'
+import { baseUrl } from '../database/realtimedatabase/realtimeDatabase'
 export const changasApi = createApi({
     reducerPath: "changasApi",
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
@@ -51,8 +51,21 @@ export const changasApi = createApi({
                     method: 'PATCH',
                     body: editedJob
                 })
+            }),
+            getProfileImage: builder.query({
+                query: (localId) => `profileImages/${localId}.json`,
+                providesTags: ['profileImageGet']
+            }),
+            postProfileImage: builder.mutation({
+                query: ({image, localId}) => ({
+                    url: `profileImages/${localId}.json`,
+                    method: "PUT",
+                    body: {
+                        image: image
+                    },
+                }),
+                invalidatesTags: ['profileImageGet']
             })
-
     })
 })
 

@@ -8,29 +8,34 @@ export const authSlice = createSlice({
             user: null,
             token: null,
             localId: null,
-            role: null
+            role: null,
+            imageCamera: null,
+
         }
     },
     reducers: {
-        setUser: (state, {payload}) => {
-            state.value.nombreEmpresa= payload.nombreEmpresa
+        setUser: (state, { payload }) => {
+            state.value.nombreEmpresa = payload.nombreEmpresa
             state.value.user = payload.email
             state.value.token = payload.idToken
             state.value.localId = payload.localId
-            state.value.role= payload.role
+            state.value.role = payload.role
         },
         clearUser: (state) => {
-            state.value.user= null
+            state.value.user = null
             state.value.user = null
             state.value.token = null
-            state.value.role= null
+            state.value.role = null
 
         },
-        setCameraImage: (state, {payload}) => {
+        setCameraImage: (state, { payload }) => {
+            
+            state.value.imageCamera = payload
+
         }
     }
 })
 
-export const {setUser, clearUser, setCameraImage} = authSlice.actions
+export const { setUser, clearUser, setCameraImage } = authSlice.actions
 
 export default authSlice.reducer
