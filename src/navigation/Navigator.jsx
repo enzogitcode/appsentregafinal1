@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeTabs from './HomeTabsNavigator'
-import {Employee, Employer, JobsListByCategories, LoginScreen, SignupScreen, PostAJobsForm } from '../screens/indexScreens'
+import {Employee, Employer, JobsListByCategories, LoginScreen, SignupScreen, PostAJobsForm, ImageSelector, MyProfile } from '../screens/indexScreens'
 import { JobsCategoriesList } from '../component/indexComponent'
 import EmployerList from '../component/EmployerComponents/EmployerList'
 
@@ -39,6 +39,12 @@ const Navigator = () => {
           headerShown: false
         }} />
         <Stack.Screen name="PostAJobsForm" component={PostAJobsForm} options={{
+          headerShown: false
+        }} />
+        <Stack.Screen name="Image selector" component={ImageSelector} options={{
+          headerShown: false
+        }} />
+        <Stack.Screen name="MyProfile" component={MyProfile} options={{
           headerShown: false
         }} />
       </Stack.Navigator>

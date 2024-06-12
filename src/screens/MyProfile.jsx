@@ -5,14 +5,18 @@ import { colors } from '../constants/colors'
 import { useSelector } from 'react-redux'
 
 const MyProfile = ({ navigation }) => {
-  const {user} = useSelector(state => state.auth.value)
-
+  const { user } = useSelector(state => state.auth.value)
   const [image, setImage] = useState(null)
+  const launchCamera= async() => {
+    navigation.navigate('Image selector')
+  }
+
+  const defaultImageRoute= "../../assets/images/defaultProfile"
   return (
     <ChangasLayout>
       <Header title={"Mi Perfil"} />
 
-      {user? <Text>Usuario: {user}</Text>: null}
+      {user ? <Text>Usuario: {user}</Text> : null}
       <View style={styles.profileContainer}>
         {image ? null :
           <>
@@ -21,10 +25,10 @@ const MyProfile = ({ navigation }) => {
               style={styles.image}
               resizeMode='cover'
             />
-            <ButtonCustom buttonText={"Agregar foto a Mi Perfil"} />
+            <ButtonCustom buttonText={"Agregar foto a Mi Perfil"} onPress={launchCamera} />
           </>
         }
-        <LogoutButton/>
+        <LogoutButton />
       </View>
     </ChangasLayout>
   )
@@ -33,7 +37,7 @@ const MyProfile = ({ navigation }) => {
 export default MyProfile
 
 const styles = StyleSheet.create({
-  profileContainer:{
+  profileContainer: {
     marginVertical: '5%',
     alignItems: 'center',
     gap: 10

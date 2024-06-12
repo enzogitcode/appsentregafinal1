@@ -10,7 +10,8 @@ import { getSessions } from '../persistence/index.js';
 const Tab = createBottomTabNavigator();
 
 const HomeTabs = () => {
-  const { user } = useSelector(state => state.auth.value)
+  //const { user } = useSelector(state => state.auth.value)
+  const user = 9
 
   useEffect(() => {
     (async () => {
@@ -51,7 +52,7 @@ const HomeTabs = () => {
         <Tab.Screen name="LoginScreen" component={LoginScreen}
           options={{
             headerShown: false,
-            tabBarLabel: 'LoginScreen',
+            tabBarLabel: 'Login',
             tabBarIcon: ({ color, size }) => (
               <AntDesign name="profile" color={color} size={size} />
             ),

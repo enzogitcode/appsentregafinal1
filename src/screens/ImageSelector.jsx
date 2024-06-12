@@ -13,8 +13,9 @@ const ImageSelector = ({ navigation }) => {
     }
 
     const pickImage = async () => {
-        const isCameraOk = await verifyCameraPermissions()
-        if (isCameraOk) {
+        const permissionCamera = await verifyCameraPermissions()
+
+        if (permissionCamera) {
             let result = await ImagePicker.launchCameraAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.All,
                 allowsEditing: true,
@@ -22,6 +23,8 @@ const ImageSelector = ({ navigation }) => {
                 base64: true,
                 quality: 0.2,
             })
+            console.log(result)
+            console.log(result.assets[0].base64.length)
             if (!result.canceled) {
                 setImage(`:image/jpeg:base64, ${result.assets[0].base64}`)
             }
@@ -32,7 +35,7 @@ const ImageSelector = ({ navigation }) => {
     }
     return (
         <View>
-            {image ?
+            {/* {image ?
                 <>
                     <Image />
                     <ButtonCustom buttonText={"Tomar otra foto"} onPress={pickImage} />
@@ -44,8 +47,8 @@ const ImageSelector = ({ navigation }) => {
                     <View>
                         <Text>No photo to show</Text>
                     </View>
-                    <ButtonCustom buttonText={"Tomar una foto"} />
-                </>}
+                    </>} */}
+                    <ButtonCustom onPress={pickImage} buttonText={"Tomar una foto"}/>
         </View>
     )
 }
