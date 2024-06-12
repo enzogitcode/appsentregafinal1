@@ -4,7 +4,17 @@ import { useEffect, useState } from 'react';
 import Navigator from './src/navigation/Navigator';
 import { Provider } from 'react-redux';
 import store from './src/store';
+import { initSQLiteDB } from './src/persistence'
 export default function App() {
+  (async ()=> {
+    try {
+        const response = await initSQLiteDB()
+        console.log ({responseCreatingDB: response})
+        console.log("DB initialized");
+    } catch (error) {
+      console.log({errorCreatingDB: error})
+    }
+})()
   const [orientation, setOrientation] = useState("portrait")
   const { width, height } = useWindowDimensions()
   useEffect(() => {

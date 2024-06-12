@@ -69,7 +69,6 @@ const SignupScreen = ({ navigation }) => {
       setErrorRole("")
       const validation = signupSchema.validateSync({ nombreEmpresa, email, password, confirmPassword, role })
       triggerSignUp({ nombreEmpresa, email, password, returnSecureToken: true, role })
-      {user.role == "Empleado" ? navigation.navigate('Employer'): navigation.navigate('Employee')}
     } catch (err) {
       console.log("Entro al signup del error");
       console.log(err.path);
