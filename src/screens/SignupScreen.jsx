@@ -67,6 +67,7 @@ const SignupScreen = ({ navigation }) => {
       setErrorRole("")
       const validation = signupSchema.validateSync({ nombreEmpresa, email, password, confirmPassword, role })
       triggerSignUp({ nombreEmpresa, email, password, returnSecureToken: true, role })
+      navigation.navigate("Home")
     } catch (err) {
       switch (err.path) {
         case "nombreEmpresa":
