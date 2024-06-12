@@ -13,17 +13,17 @@ export const authSlice = createSlice({
     },
     reducers: {
         setUser: (state, {payload}) => {
-            state.value.user= payload.nombreEmpresa
+            state.value.nombreEmpresa= payload.nombreEmpresa
             state.value.user = payload.email
             state.value.token = payload.idToken
             state.value.localId = payload.localId
             state.value.role= payload.role
         },
         clearUser: (state) => {
-            state.value.user= payload.nombreEmpresa
+            state.value.user= null
             state.value.user = null
             state.value.token = null
-            state.value.role= payload.role
+            state.value.role= null
 
         },
         setCameraImage: (state, {payload}) => {
