@@ -13,7 +13,6 @@ export const changasApi = createApi({
             query: (category) => `jobs.json?orderBy="category"&equalTo="${category}"`,
             transformResponse: (response) => {
                 const responseTransformed = Object.values(response)
-                console.log(responseTransformed)
                 return responseTransformed
             }
         }),
@@ -22,7 +21,6 @@ export const changasApi = createApi({
             transformResponse: (response) => {
                 const responseTransformed = Object.values(response)
                 if (responseTransformed.length) return responseTransformed[0]
-                console.log(responseTransformed)
                 return null
             }
         }),

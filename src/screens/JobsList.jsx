@@ -7,7 +7,6 @@ import { useGetJobsQuery } from '../services/changasServices'
 const JobsList = ({ route }) => {
   const { id: idSelected } = route.params
   const { data: jobs, error, isLoading } = useGetJobsQuery(idSelected=1)
-  console.log(jobs)
   return (
     <View>
       <FlatList

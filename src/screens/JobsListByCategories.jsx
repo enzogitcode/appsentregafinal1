@@ -13,7 +13,6 @@ const JobsListByCategories = ({
   const { data: jobsFetched, error, isLoading } = useGetJobsbyCategoryQuery(categorySelected)
 
 
-  console.log(jobsFetched)
   const [jobsFiltered, setJobsFiltered] = useState([])
   useEffect(() => {
     if (!isLoading) {

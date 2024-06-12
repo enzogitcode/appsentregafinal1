@@ -16,7 +16,6 @@ const LoginScreen = ({ navigation }) => {
 
     useEffect(() => {
         if (result?.data && result.isSuccess) {
-            console.log(result)
             const result = insertSession({
                 nombreEmpresa: result.data.nombreEmpresa,
                 email: result.data.email,
@@ -25,7 +24,6 @@ const LoginScreen = ({ navigation }) => {
                 role: result.data.role
             })
                 .then(() => {
-                    console.log(" ~ useEffect ~ result:", result)
                     dispatch(
                         setUser({
                             nombreEmpresa: result.nombreEmpresa,
@@ -37,7 +35,6 @@ const LoginScreen = ({ navigation }) => {
                     )
                 })
                 .catch((err) => {
-                    console.log(err)
                 })
 
         }

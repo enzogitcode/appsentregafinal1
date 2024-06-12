@@ -45,7 +45,6 @@ const SignupScreen = ({ navigation }) => {
 
   useEffect(() => {
     if (result.isSuccess) {
-      console.log(result)
       dispatch(
         setUser({
           nombreEmpresa: result.data.nombreEmpresa,
@@ -54,7 +53,6 @@ const SignupScreen = ({ navigation }) => {
           role: result.data.role
         })
       )
-      console.log("error", user)
     }
   }, [result])
 
@@ -70,9 +68,6 @@ const SignupScreen = ({ navigation }) => {
       const validation = signupSchema.validateSync({ nombreEmpresa, email, password, confirmPassword, role })
       triggerSignUp({ nombreEmpresa, email, password, returnSecureToken: true, role })
     } catch (err) {
-      console.log("Entro al signup del error");
-      console.log(err.path);
-      console.log(err.message);
       switch (err.path) {
         case "nombreEmpresa":
           setErrorNombreEmpresa(err.message)

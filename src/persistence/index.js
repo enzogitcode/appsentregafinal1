@@ -3,7 +3,6 @@ import * as ExpoSQLite from "expo-sqlite"
 const db = ExpoSQLite.openDatabase("sessions.db")
 
 export const initSQLiteDB = () => {
-    console.log("Will create table")
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql("CREATE TABLE IF NOT EXISTS sessions (localId TEXT PRIMARY KEY NOT NULL, email TEXT NOT NULL, token TEXT NOT NULL, nombreEmpresa TEXT NOT NULL);",
@@ -14,7 +13,6 @@ export const initSQLiteDB = () => {
             )
         })
     })
-    console.log("Will return promise")
     return promise
 }
 export const insertSession = ({
@@ -34,7 +32,6 @@ export const insertSession = ({
             )
         })
     })
-    console.log(result)
     return promise
 }
 export const getSessions = ({ }) => {
@@ -51,7 +48,6 @@ export const getSessions = ({ }) => {
     return promise
 }
 export const dropSessionsTable = () => {
-    console.log("Will drop table")
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql(
@@ -61,12 +57,10 @@ export const dropSessionsTable = () => {
             )
         })
     })
-    console.log("will return promise")
     return promise
 }
 
 export const truncateSessionsTable = () => {
-    console.log("Will truncate table")
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql(
@@ -77,6 +71,5 @@ export const truncateSessionsTable = () => {
             )
         })
     })
-    console.log("will return promise")
     return promise
 }

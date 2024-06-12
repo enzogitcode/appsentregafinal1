@@ -28,8 +28,6 @@ const ImageSelector = ({ navigation }) => {
                     base64: true,
                     quality: 0.2,
                 })
-                console.log(result)
-                console.log(result.assets[0].base64.length)
                 if (!result.canceled) {
                     setImageURI(result.assets[0].uri)
                     const image = `data:image/jpeg;base64,${result.assets[0].base64}`

@@ -3,16 +3,13 @@ import { useFonts } from 'expo-font';
 import { useEffect, useState } from 'react';
 import Navigator from './src/navigation/Navigator';
 import { Provider } from 'react-redux';
-import store from './src/store';
+import store from './src/Store';
 import { initSQLiteDB } from './src/persistence'
 
 (async () => {
   try {
     const response = await initSQLiteDB()
-    console.log({ responseCreatingDB: response })
-    console.log("DB initialized");
   } catch (error) {
-    console.log({ errorCreatingDB: error })
   }
 })()
 
