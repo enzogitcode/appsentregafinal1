@@ -3,6 +3,7 @@ import { baseUrl } from '../database/realtimedatabase/realtimeDatabase'
 export const changasApi = createApi({
     reducerPath: "changasApi",
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+    tagTypes:["profileImageGet"],
     endpoints: (builder) => ({
         getJobsCategories: builder.query({ query: () => `categories.json` }),
 

@@ -51,7 +51,7 @@ const ImageSelector = ({ navigation }) => {
         }
     }
     return (
-        <View>
+        <View style={styles.ImageSelectorContainer}>
             {image ?
                 <>
                     <Image />
@@ -61,10 +61,11 @@ const ImageSelector = ({ navigation }) => {
                 </>
                 :
                 <>
-                    <View>
-                        <Text>No photo to show</Text>
+                    <View style={styles.noFotoContainer}>
+                        <Text style={styles.noFotoText}>No hay foto para mostrar</Text>
                     </View>
                     <ButtonCustom onPress={pickImage} buttonText={"Tomar una foto"}/>
+                    <ButtonCustom onPress={() => navigation.goBack()} buttonText={"Volver"}/>
                     </>} 
         </View>
     )
@@ -72,4 +73,19 @@ const ImageSelector = ({ navigation }) => {
 
 export default ImageSelector
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    ImageSelectorContainer: {
+        gap: 10,
+        marginVertical: 10,
+        justifyContent: 'center',
+        flex: 1
+    },
+    noFotoContainer: {
+        marginVertical: 10,
+        alignItems: 'center'
+    },
+    noFotoText: {
+        fontFamily: 'retosta',
+        fontSize: 20
+    }
+})
