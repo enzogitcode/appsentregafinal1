@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native"
 import React, { useState, useEffect } from "react"
 import { colors } from "../constants/colors"
-import { useSignInMutation } from "../services/authServices.js"
+import { useSignInMutation } from '../services/authServices.js'
 import { SubmitButton, InputForm, Header, ButtonCustom, ChangasLayout } from '../component/indexComponent'
 import { setUser } from "../features/Users/usersSlice.js"
 import { useDispatch } from "react-redux"
@@ -15,22 +15,24 @@ const LoginScreen = ({ navigation }) => {
     const [role, setRole] = useState()
 
     useEffect(() => {
+
         if (result?.data && result.isSuccess) {
-            const result = insertSession({
+            insertSession({
                 nombreEmpresa: result.data.nombreEmpresa,
                 email: result.data.email,
                 localId: result.data.localId,
                 token: result.data.token,
                 role: result.data.role
             })
+            console.log(result.data)
                 .then(() => {
                     dispatch(
                         setUser({
-                            nombreEmpresa: result.nombreEmpresa,
-                            email: result.email,
-                            localId: result.localId,
-                            idToken: result.idToken,
-                            role: result.role
+                            nombreEmpresa: result.data.nombreEmpresa,
+                            email: result.data.email,
+                            localId: result.data.localId,
+                            idToken: result.data.idToken,
+                            role: result.data.role
                         })
                     )
                 })
@@ -41,12 +43,17 @@ const LoginScreen = ({ navigation }) => {
     }, [result])
 
     const onSubmit = () => {
-        triggerSignIn({ nombreEmpresa, email, password, role })
+        try {
+            triggerSignIn({ nombreEmpresa, email, password, role })
+            navigation.navigate("Home")
+        } catch (error) {
+
+        }
     }
 
     return (
         <ChangasLayout style={styles.main}>
-                <Header title={"Access to Login"} />
+            <Header title={"Access to Login"} />
             <ScrollView >
                 <View style={styles.container}>
                     <InputForm label={"Nombre de la Empresa/Emprendedor"} onChange={setNombreEmpresa} error={""} />
